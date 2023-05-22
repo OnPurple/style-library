@@ -1,0 +1,42 @@
+/**
+ * Print Styles
+ */
+
+/* Order Confirmation */
+@media print {
+  #top-rotating-banner,
+  .desktop-menu,
+  .mobile-menu,
+  #thankyou a,
+  .upper-footer,
+  .lower-footer {
+    display: none !important;
+  }
+
+  .purple-logo {
+    padding: 1.75rem 1rem;
+  }
+
+  .layout.bg-theme--light-purple-20.animate.active,
+  .block--guarantee-banner {
+    display: block !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .layout.twocol-layout.column-width--70-30 .layout-content, .layout.twocol-layout.column-width--30-70 .layout-content {
+    display: flex;
+    flex-flow: row-reverse wrap;
+  }
+
+  .layout.twocol-layout.column-width--70-30 .layout-content .layout__region.layout__region--first {
+    font-size: 1rem;
+    width: 60%;
+    padding-right: 2.56rem;
+  }
+
+  .layout.twocol-layout.column-width--70-30 .layout-content .layout__region--second {
+    width: 39%;
+  }
+}
+

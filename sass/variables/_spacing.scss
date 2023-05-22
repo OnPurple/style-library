@@ -1,0 +1,86 @@
+// Root Css Variables - Spacing
+
+:root {
+  // Content Width
+  --cw-default: 90rem; // 1440px
+  --cw-large: 82.8rem; // 1324.8px
+  --cw-medium: 61.2rem; // 980px
+  --cw-narrow: 46.8rem; // 748.8px
+  --cw-lockup: 32.4rem; // 518px
+  --cw-modal: var(--cw-lockup);
+  --cw-unit: 3.6rem; // 57.6px
+  --cw-unit-half: 1.8rem;
+  --cw-unit-quarter: 0.9rem;
+  --page-gutter: 0.9375rem;
+
+  // Breakpoints
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bg-xl: 1440px;
+
+  // Grid
+  --grid-gutter: 0;
+  --grid-gap: 0.5rem;
+
+  // Typography spacing
+  --vs-type-sm: 0.5rem;   // 8px
+  --vs-type-md: 0.75rem;  // 12px
+  --vs-type-ml: 0.875rem; // 14px
+  --vs-type-lg: 1rem;     // 16px
+
+  // Vertical spacing
+  --vs-micro: .75rem; // 12px
+  --vs-xxxs: 1rem;    // 16px
+  --vs-xxs: 1.25rem;  // 20px.
+  --vs-xs: 1.5rem;    // 24px.
+  --vs-sm: 2rem;
+  --vs-smm: 2.5rem;
+  --vs-ms: 3rem;    // 48px
+  --vs-md: 3.5rem;  // 56px
+  --vs-ml: 4rem;
+  --vs-lg: 5rem;
+  --vs-xl: 8rem; // 128px.
+
+  // Margin Bottom for H's and p's.
+  --mb-paragraph: var(--vs-type-lg);
+  --mb-heading: var(--vs-xs);
+
+  // Margin Bottom for Components
+  --mb-component: 2.5rem;
+
+  // Button Padding
+  --btn-padding-lg: 1rem 2rem;
+  --btn-padding-md: 0.875rem 1.25rem;
+  --btn-padding-sm: 0.5625rem 1.25rem;
+
+  // Button Border Radius
+  --btn-border-radius-lg: 1.5rem;
+  --btn-border-radius-md: 1.25rem;
+  --btn-border-radius-sm: 1rem;
+
+}
+
+@include breakpoint(md) {
+  :root {
+    --page-gutter: 1.875rem;
+    --grid-gutter: 4%;
+    --grid-gap: 2%;
+  }
+}
+
+@include breakpoint(lg) {
+  :root {
+    --page-gutter: 2.5625rem;
+    --vs-md: 4rem;
+    --vs-ml: 5rem;
+    --vs-lg: 8rem;
+    --vs-xl: 12.5rem;
+  }
+}
+
+@include breakpoint(xl) {
+  :root {
+    --page-gutter: 3.625rem;
+  }
+}

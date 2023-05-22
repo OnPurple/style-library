@@ -1,0 +1,389 @@
+////
+/// General theme configuration.
+/// @group Configuration
+////
+
+/// Configuration for Drupal Admin tabs.
+$drupal-tabs: (
+  wrap: (
+    background: #fafafa,
+    border: #efefef,
+  ),
+  link: (
+    color: #251923,
+    background: #efefef,
+    hover-color: #fff,
+    hover-background: #251923,
+  ),
+  alt-colors: #b6c4c5 #575642 #4c4650 #251923,
+);
+$global-font-size: 100%;
+
+// Drupal colors
+$errorbg: #c74e4e;
+$warningbg: #d28712;
+$statusokbg: #2ca20d;
+
+// Primary, Secondary, Tertiary Colors
+$colors: (
+  primary: (
+    purple: var(--purple),
+    medium-purple: var(--medium-pruple),
+    white: var(--white),
+    midnight: var(--midnight),
+    midnight-light: var(--midnight-light),
+  ),
+  secondary: (
+    light-purple: var(--light-purple),
+    aqua-dark: var(--aqua-dark),
+    aqua-light: var(--aqua-light),
+    aqua-text: var(--aqua-text),
+    white: var(--white),
+    reviews: var(--red-light),
+  ),
+  tertiary: (
+    light-gray: var(--light-gray),
+    gray-utility: var(--gray-utility),
+    green-utility: var(--green-utility),
+    red-utility: var(--red-utility),
+  ),
+);
+
+// Solid Background Colors
+$bg-colors: (
+  "purple-60": var(--bg-purple-60),
+  "purple-50": var(--bg-purple-50),
+  "purple-40": var(--bg-purple-40),
+  "purple-20": var(--bg-purple-20),
+  "purple-10": var(--bg-purple-10),
+  "orange": var(--bg-orange),
+  "aqua": var(--bg-aqua),
+  "pink": var(--bg-pink),
+  "green": var(--bg-green),
+  "periwinkle": var(--bg-periwinkle),
+  "card-gray": var(--card-gray),
+);
+$theme-bg-colors: (
+  "light-purple-60": var(--bg-purple-60),
+  "light-purple-50": var(--bg-purple-50),
+  "light-purple-40": var(--bg-purple-40),
+  "light-purple-20": var(--bg-purple-20),
+  "light-purple-10": var(--bg-purple-10),
+  "light-purple": var(--light-purple),
+  "purple-60": var(--purple-60),
+  "purple-40": var(--purple-40),
+  "purple-20": var(--purple-20),
+  "purple-10": var(--purple-10),
+  "orange": var(--orange),
+  "orange-60": var(--orange-60),
+  "orange-40": var(--orange-40),
+  "orange-20": var(--orange-20),
+  "orange-10": var(--orange-10),
+  "pink": var(--pink),
+  "pink-60": var(--pink-60),
+  "pink-40": var(--pink-40),
+  "pink-20": var(--pink-20),
+  "pink-10": var(--pink-10),
+  "aqua": var(--aqua),
+  "aqua-60": var(--aqua-60),
+  "aqua-40": var(--aqua-40),
+  "aqua-20": var(--aqua-20),
+  "light-aqua": var(--aqua-light-40),
+  "coral": var(--coral),
+  "coral-60": var(--coral-60),
+  "coral-40": var(--coral-40),
+  "coral-20": var(--coral-20),
+  "coral-10": var(--coral-10),
+  "periwinkle": var(--periwinkle),
+  "periwinkle-60": var(--periwinkle-60),
+  "periwinkle-40": var(--periwinkle-40),
+  "periwinkle-20": var(--periwinkle-20),
+  "periwinkle-10": var(--periwinkle-10),
+  "green": var(--green),
+  "green-60": var(--green-60),
+  "green-40": var(--green-40),
+  "green-20": var(--green-20),
+  "green-10": var(--green-10),
+  "midnight": var(--midnight),
+  "midnight-60": var(--midnight-60),
+  "white": white,
+  "lilac": var(--lilac),
+  "golden-hour": var(--golden-hour),
+  "catnap": var(--cat-nap),
+  "lavender-skies": var(--lavender-skies),
+  "stardust": var(--stardust),
+  "sandman": var(--sandman),
+);
+
+// Gradient Background Colors
+$bg-gradients: (
+  purple: var(--bg-gradient-purple),
+  pink: var(--bg-gradient-pink),
+  orange: var(--bg-gradient-orange),
+  aqua: var(--bg-gradient-aqua),
+  green: var(--bg-gradient-green),
+  magic-hour: var(--bg-gradient-magic-hour),
+);
+
+/// z-index organization.
+/// See links below for more information.
+///
+/// @link https://css-tricks.com/handling-z-index/
+/// @link http://www.sitepoint.com/using-sass-maps/
+$z-layers: (
+  skip-link: 8000,
+  ajax-throbber: 7000,
+  debug: 1000,
+  above: 1,
+  default: 0,
+  under: -1,
+  bottomless-pit: -9999,
+  // example nested z-index.
+  media:
+    (
+      inset: 1,
+      bg: 0,
+      controls: 4,
+      link: 1,
+    ),
+  card: (
+    bg: 0,
+    bg-show: 2,
+    image: 1,
+    color: 2,
+    link: 3,
+    link-mobile: -1,
+    badge: 4,
+    arrows: 5,
+  ),
+  hero: (
+    media: 0,
+    scrim: 1,
+    content: 2,
+    controls: 3,
+  ),
+);
+
+/// Button config
+$buttons: (
+  primary: (
+    background: transparent,
+    color: var(--twilight),
+    border: 1px solid var(--twilight),
+    active-background: var(--twilight),
+    active-color: var(--white),
+    active-border: var(--twilight),
+  ),
+  primary-filled: (
+    background: var(--twilight),
+    color: var(--white),
+    border: 1px solid var(--twilight),
+    active-background: transparent,
+    active-color: var(--twilight),
+    active-border: 1px solid var(--twilight),
+  ),
+  dark-filled: (
+    background: var(--white),
+    color: var(--twilight),
+    border: 1px solid var(--white),
+    active-background: var(--twilight-10),
+    active-color: var(--twilight),
+    active-border: var(--twilight-10),
+  ),
+  dark: (
+    background: transparent,
+    color: var(--white),
+    border: 1px solid var(--white),
+    active-background: var(--white),
+    active-color: var(--purple),
+    active-border: var(--white),
+  ),
+);
+
+/// Links config
+$links: (
+  default: (
+    color: var(--purple),
+    font-weight: var(--fw-normal),
+    active-color: var(--purple),
+  ),
+  medium: (
+    color: var(--medium-purple),
+    font-weight: var(--fw-medium),
+    active-color: var(--medium-purple),
+  ),
+  primary: (
+    extend: _base,
+  ),
+  dark: (
+    color: var(--white),
+    font-weight: var(--fw-medium),
+    active-color: var(--white),
+  ),
+);
+
+// Grid Settings
+$grid-gutter: var(--grid-gutter);
+$grid-gap: var(--grid-gap);
+$grid-column-gutter: (
+  gutter: $grid-gutter,
+);
+
+// Space between the content and edge of the screen
+$screen-edge-gutter: (
+  xs-screen: $grid-gutter,
+  md-screen: $grid-gutter,
+);
+
+// Icons
+$icons: (
+  arrow: "\e916",
+  arrow-small: "\e917",
+  check: "\e905",
+  check-circle: "\e905",
+  clone: "\e900",
+  down: "\e911",
+  error: "\e000",
+  edit: "\e901",
+  gear: "\e903",
+  info: "\e88e",
+  minus: "\e90b",
+  minus-circle: "\e90a",
+  pause: "\e913",
+  pin: "\e91d",
+  play: "\e914",
+  plus: "\e90d",
+  plus-circle: "\e90c",
+  right: "\e90f",
+  search: "\e915",
+  settings: "\e8b8",
+  star: "\e918",
+  star-outline: "\e919",
+  star-half: "\e91a",
+  trash: "\e902",
+  up: "\e90e",
+  verified: "\e91b",
+  view: "\e904",
+);
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  ml: 900px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+// Keep these layout variables matching css variables.
+// Css variables not compatible with mixins.
+$cw-default: 90rem; // 1440px
+$cw-large: 82.8rem; // 1324.8px
+$cw-medium: 61.2rem; // 980px
+$cw-narrow: 46.8rem; // 748.8px
+$cw-blog: 54rem; // 864px
+
+$grid-margin-gutters: (
+  xs: 0.9375rem,
+  sm: 1.6rem,
+  md: 1.92rem,
+  lg: 2.56rem,
+  xl: 3.6rem,
+);
+$mobile-grid-margin-gutters: (
+  xs: 0.9375rem,
+  sm: 1.6rem,
+);
+$cart-grid-margin-gutters: (
+  xs: 0.9375rem,
+  sm: 1.6rem,
+  md: 1.92rem,
+  lg: 2.56rem,
+  xl: 3rem,
+);
+
+/// Layouts
+$layouts: (
+  full: (
+    width: 100%,
+    gutters: $grid-margin-gutters,
+  ),
+  default: (
+    width: $cw-default,
+    gutters: $grid-margin-gutters,
+  ),
+  blog: (
+    width: $cw-blog,
+    gutters: $grid-margin-gutters,
+  ),
+  narrow: (
+    width: $cw-narrow,
+    gutters: $grid-margin-gutters,
+  ),
+  medium: (
+    width: $cw-medium,
+    gutters: $grid-margin-gutters,
+  ),
+  cart: (
+    width: $cw-default,
+    gutters: $cart-grid-margin-gutters,
+  ),
+  large: (
+    width: $cw-large,
+    gutters: $grid-margin-gutters,
+  ),
+  section-intro: (
+    width: 800px,
+    gutters: $grid-margin-gutters,
+  )
+);
+
+/// Store groups of commonly used selectors
+$selector-groups: (
+  form-inputs: (
+    text: "[type='text']",
+    password: "[type='password']",
+    date: "[type='date']",
+    datetime: "[type='datetime']",
+    datetime-local: "[type='datetime-local']",
+    month: "[type='month']",
+    week: "[type='week']",
+    email: "[type='email']",
+    number: "[type='number']",
+    search: "[type='search']",
+    tel: "[type='tel']",
+    time: "[type='time']",
+    url: "[type='url']",
+    color: "[type='color']",
+    textarea: "textarea"
+  ),
+  headers: (
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6'
+  ),
+  buttons: (
+    input: '[type="button"]',
+    submit: '[type="submit"]',
+    button: 'button'
+  ),
+  body-text: (
+    p: 'p',
+    ul: 'ul',
+    ol: 'ol',
+    div: 'div'
+  ),
+  active: (
+    hover: "&:hover",
+    focus: "&:focus",
+    active: "&:active"
+  ),
+  hover-active: (
+    hover: "&:hover",
+    active: "&:active"
+  )
+);
