@@ -1,0 +1,326 @@
+////
+/// Helpers
+/// @group utility
+////
+
+/// Return a map from the specified key. Optionally specify a sub key.
+/// Works similarly to map.get but with support for sub keys.
+/// @param {map} $map
+/// @param {string} $key - The map key to retrieve.
+/// @param {string} $sub-key [null] - A sub-key of $key
+/// @returns {*|null} The value of the supplied key
+/// @example
+///   key($colors, default, light)
+@function key($map, $key, $sub-key: null) {
+  @if map-has-key($map, $key) {
+    $val: map.get($map, $key);
+
+    @if $sub-key and map-has-key($val, $sub-key) {
+      $val: map.get($val, $sub-key);
+    }
+
+    @return $val;
+  }
+
+  @warn "Unknown '#{$key}' in '#{$map}'.";
+  @return null;
+}
+
+
+/// Allows for sub-maps of configuration maps to extend other sub-maps.
+///
+/// Example:
+///   $conf-map: (
+///     base-config: (
+///       color: red,
+///       size: large
+///     ),
+///     red-button: (
+///       extend: base-config,
+///       arrow: true
+///     )
+///   );
+///
+/// @example
+///   extend-in-map($conf-map, red-button)
+@function extend-in-map($map-to-search, $sub-map-key) {
+  $map-to-merge: key($map-to-search, $sub-map-key);
+
+  @if  map-has-key($map-to-merge, extend) {
+    $key-of-map-to-extend: map.get($map-to-merge, extend);
+
+    @if  map-has-key($map-to-search, $key-of-map-to-extend) {
+      @return map-merge(key($map-to-search, $key-of-map-to-extend), $map-to-merge);
+    }
+  }
+
+  @return $map-to-merge;
+}
+
+/// Retrieve the z-index from $z-layers.
+/// @see $z-layers
+/// @example
+///   z(banner, default)
+@function z($key, $sub-key: null) {
+  @return key($z-layers, $key, $sub-key);
+}
+
+/// Include a group of selectors defined in the $selector-groups map.
+/// @see $selector-groups
+@function selectors($selector-key, $exclude: '') {
+  $selectors: map.get($selector-groups, $selector-key);
+  $selector-string: '';
+  $postfix: '';
+
+  @each $key, $selector in $selectors {
+    @if str-length($selector-string) > 0 {
+      $postfix: ', ';
+    }
+
+    @if not index($exclude, $key) {
+      $selector-string: $selector-string + $postfix + $selector;
+    }
+  }
+
+  @return $selector-string;
+}
+
+/// A mixin wrapper of the selector() function.
+/// @see {function} selectors
+/// @example
+///   @include selectors(active) {
+///     text-decoration: underline;
+///   }
+@mixin selectors($selector-key, $exclude: '') {
+  #{selectors($selector-key, $exclude)} {
+    @content;
+  }
+}
+
+
+/// Helper function to replace characters in a string
+/// Explanation found - https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
+/// @param {String} $string - The string to search (haystack).
+/// @param {String} $search - The string to search for (needle).
+/// @param {String} $replace - The string to replace with each instance of the needle.
+@function str-replace($string, $search, $replace: '') {
+  $index: string.index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+/// Function to create an optimized svg url
+/// @param {String} $svg - The svg to optimize.
+@function svg-url($svg){
+  //  Chunk up string in order to avoid
+  //  "stack level too deep" error
+  $encoded: '';
+  $slice: 2000;
+  $index: 0;
+  $loops: math.ceil(string.length($svg) / $slice);
+
+  @for $i from 1 through $loops {
+    $chunk: string.str-slice($svg, $index, $index + $slice - 1);
+    $chunk: str-replace($chunk,'"','\'');
+    $chunk: str-replace($chunk,'<','%3C');
+    $chunk: str-replace($chunk,'>','%3E');
+    $chunk: str-replace($chunk,'&','%26');
+    $chunk: str-replace($chunk,'#','%23');
+    $chunk: str-replace($chunk,'(','%28');
+    $chunk: str-replace($chunk,')','%29');
+    $encoded: #{$encoded}#{$chunk};
+    $index: $index + $slice;
+  }
+
+  @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+/// Basic clearfix
+/// @example
+///   @include clear()
+@mixin clear() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+/// Get a vw value based on the target max px size and the @include breakpoint
+/// at which you want that max px size to be reached
+/// @param {String} $target - The font-size in px (ie - 72px)
+/// @param {Number} $screen-width [map.get($breakpoints, large)] - The screen-width to use to generate vw-context
+/// @example
+///   get-vw(20px, large)
+@function get-vw($target, $screen-width: map.get($breakpoints, large)) {
+  @if type-of($screen-width) != number {
+    @error '$screen-width must be a number!';
+  }
+
+  $vw-context: ($screen-width * .01) + 0;
+
+  @return ($target / $vw-context) * 1vw;
+}
+
+/// @param {Number} $size - The target max size in px
+/// @param {String} $breakpoint [large] - The key of the bp at which max size is reached, or a specific value (ie - 1000px)
+/// @param {Map} $breakpoint-map [$breakpoints] - A breakpoint map
+/// @param {String} $property [font-size] - The property to set these values for. Defaults to `font-size` and most often will be used for that
+/// @example
+///   @include vw-with-max(15px, large, $property: padding);
+@mixin vw-with-max($size, $breakpoint: large, $breakpoint-map: $breakpoints, $property: font-size) {
+  $target-bp: '';
+
+  @if  type-of($breakpoint) == string {
+    @if  type-of($breakpoint-map) != map {
+      $breakpoint-map: $breakpoints;
+    }
+
+    $target-bp: map.get($breakpoints, $breakpoint);
+  } @else if type-of($breakpoint) == number {
+    $target-bp: $breakpoint + 0;
+  } @else {
+    @error "Sorry, `#{$breakpoint}` is not an appropriate value for $breakpoint. :("
+  }
+
+  #{$property}: get-vw($size, $target-bp);
+
+  @include breakpoint(#{$breakpoint}) {
+    #{$property}: $size;
+  }
+}
+
+/// Flex Grid - Implements a block grid on DIRECT child elements so that `$n` number of items appear on each row.
+/// @param {Number} $n - Number of elements to display per row.
+/// @param {String} $grid-item-selector ['.field__item'] - Selector(s) to use for child elements.
+/// @param {String|Map} $gutter [$grid-column-gutter] - Side gutter value
+/// @param {Number} $bottom-gutter [30px] - Bottom gutter value
+/// @param {Boolean} $nest [true] - Should this exhibit nesting margin behavior
+/// @example
+///   @include tk-flex-block-grid(3, '.field__item')
+@mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
+  @if $nest == true {
+    @if type-of($gutter) == 'map' {
+      margin-left: map.get($gutter, xs-screen) / -2;
+      margin-right: map.get($gutter, xs-screen) / -2;
+
+      @media all and (width >= 768px) {
+        margin-left: map.get($gutter, md-screen) / -2;
+        margin-right: map.get($gutter, md-screen) / -2;
+      }
+    }
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  & > #{$grid-item-selector} {
+    $pct: math.percentage(1 / $n);
+
+    flex: 0 0 $pct;
+    max-width: $pct;
+    margin-top: $bottom-gutter;
+
+    // account for padding on grid item
+    padding: 0 map.get($gutter, xs-screen) / 2;
+
+    @media all and (width >= 768px) {
+      padding: 0 map.get($gutter, md-screen) / 2;
+    }
+
+    // account for margin top for all items not in the first row
+    @for $i from 1 through $n {
+      &:nth-child(#{$i}) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+///
+/// @param {Number} $num - Number to  unit from.
+///
+/// @returns {Number} The same number, sans unit.
+@function strip-unit($num) {
+  @return math.div($num, $num * 0 + 1);
+}
+
+/// Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
+/// @access private
+///
+/// @param {Number} $value - Pixel value to convert.
+/// @param {Number} $base [null] - Base for pixel conversion.
+///
+/// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
+@function -zf-to-rem($value, $base: null) {
+  // Check if the value is a number
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  // Transform em into rem if someone hands over 'em's
+  @if unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  // Calculate rem if units for $value is not rem or em
+  @if unit($value) != 'rem' {
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+  }
+
+  // Turn 0rem into 0
+  @if $value == 0 {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+/// Converts one or more pixel values into matching rem values.
+///
+/// @param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+/// @param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$global-font-size` variable as the base.
+///
+/// @returns {List} A list of converted values.
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: list.length($values);
+
+  // If no base is defined, defer to the global font size
+  @if not $base {
+    $base: $global-font-size;
+  }
+
+  // If the base font size is a %, then multiply it by 16px
+  // This is because 100% font size = 16px in most all browsers
+  @if unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+
+  // Using rem as base allows correct scaling
+  @if unit($base) == 'rem' {
+    $base: strip-unit($base) * 16px;
+  }
+
+  @if $count == 1 {
+    @return -zf-to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: list.append($rem-values, -zf-to-rem(list.nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+// Shorthand for top right bottom left.
+@mixin trbl($position: absolute) {
+  inset: 0;
+  position: $position;
+}

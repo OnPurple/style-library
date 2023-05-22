@@ -1,0 +1,22 @@
+// lazy load styles
+.lazy-overlay {
+  opacity: 1;
+  position: absolute;
+  inset:0;
+
+  &.loaded {
+    opacity: 0;
+  }
+}
+
+.lazy {
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+img {
+  position: relative;
+}

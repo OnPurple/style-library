@@ -1,0 +1,50 @@
+////
+/// Framework - Links
+/// @group frameworkComponents
+////
+
+/// Standard link style mixin
+/// @param {String} $link-key - the key in the $buttons map to use from config
+/// @example
+///   @include link(inline)
+@mixin link($link-key: default) {
+  $link-conf: extend-in-map($links, $link-key);
+
+  color: key($link-conf, color);
+  font-size: rem-calc(14);
+  font-weight: key($link-conf, font-weight);
+  text-decoration: none;
+  border-bottom: 1px solid key($link-conf, color);
+  line-height: 1.25rem;
+
+  @include selectors(active) {
+    color: key($link-conf, active-color);
+  }
+}
+
+@mixin link-arrow {
+  @include icon-after(arrow);
+
+  color: var(--link-color);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: var(--link-tr);
+
+  --link-color: var(--medium-purple);
+  --link-decoration: none;
+  --link-tr: all var(--trt-4) var(--trtf-a2);
+
+  &::after {
+    bottom: 1px;
+    font-size: rem-calc(10);
+    font-weight: var(--fw-medium);
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+@mixin link-arrow-dark {
+  --link-color: var(--white);
+}

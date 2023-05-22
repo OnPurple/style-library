@@ -1,0 +1,68 @@
+// Link Styles
+.link {
+  --link-color: var(--medium-purple);
+  --link-tr: all var(--trt-4) var(--trtf-a2);
+  --link-decoration: none;
+
+  color: var(--link-color);
+  transition: var(--link-tr);
+  text-decoration: var(--link-decoration);
+
+  .dark-mode & {
+    --link-color: var(--white);
+  }
+}
+
+.link--arrow {
+  text-decoration: none;
+
+  @include icon-after(arrow);
+
+  &::after {
+    bottom: 1px;
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    font-size: rem-calc(10);
+    font-weight: var(--fw-bold);
+    vertical-align: middle;
+  }
+}
+
+.link--down-arrow{
+  text-decoration: none;
+
+  @include icon-after(arrow-small);
+
+  &::after {
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: -1rem;
+    margin-top: -0.25rem;
+    font-size: rem-calc(10);
+    font-weight: var(--fw-bold);
+    vertical-align: middle;
+    transform: rotate(180deg);
+  }
+}
+
+.link--underline {
+  border-bottom: 1px solid var(--link-color);
+  text-decoration: none;
+
+  .dark-mode & {
+    --link-color: var(--white);
+  }
+}
+
+.link--back {
+  @include icon-before(arrow);
+
+  &::before {
+    transform: rotate(180deg);
+    font-size: 0.625rem;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+  }
+}

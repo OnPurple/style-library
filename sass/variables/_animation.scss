@@ -1,0 +1,17 @@
+////
+/// Animation declarations
+////
+
+// Assign trt to 'transition-duration' property.
+// Assign trtf to 'transition-timing-function' property.
+:root {
+  --trt-2: 200ms;
+  --trt-4: 400ms;
+  --trt-8: 800ms;
+  --trt-12: 1200ms;
+  --trd-4: 400ms;
+  --trtf-a1: cubic-bezier(0.00, 0.00, 1.00, 1.00);
+  --trtf-a2: cubic-bezier(0.00, 0.18, 0.07, 1.00);
+  --trtf-b1: cubic-bezier(0.24, 1.56, 0.59, 1.00);
+  --trtf-b2: cubic-bezier(0.35, 0.00, 0.36, 1.00);
+}

@@ -1,0 +1,276 @@
+/* stylelint-disable no-descending-specificity */
+// Typography
+// Dark Mode styles apply to midnight or catnap backgrounds.
+.dark-mode {
+  --body-color: var(--white);
+
+  color: var(--body-color);
+
+  &--desktop {
+    @include breakpoint(md) {
+      --body-color: var(--white);
+
+      color: var(--body-color);
+    }
+  }
+}
+
+// Heading
+h1, .h1 {
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  font-size: var(--fs-h1);
+
+  @media all and (min-width: 1024px) {
+    line-height: 56px;
+  }
+}
+
+h2, .h2 {
+  line-height: 36px;
+  letter-spacing: -1.5px;
+  font-size: var(--fs-h2);
+
+  @media all and (min-width: 1024px) {
+    line-height: 52px;
+    letter-spacing: -1.1px;
+  }
+}
+
+h3, .h3 {
+  line-height: 34px;
+  letter-spacing: -1.75px;
+  font-size: var(--fs-h3);
+
+  @media all and (min-width: 1024px) {
+    line-height: 48px;
+  }
+}
+
+h4, .h4 {
+  line-height: 30px;
+  letter-spacing: -1.25px;
+  font-size: var(--fs-h4);
+
+  @media all and (min-width: 1024px) {
+    line-height: 36px;
+  }
+}
+
+h5, .h5 {
+  line-height: 28px;
+  letter-spacing: -1px;
+  font-size: var(--fs-h5);
+
+  @media all and (min-width: 1024px) {
+    line-height: 30px;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-heading);
+  letter-spacing: -0.01em;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: var(--mb-heading);
+
+  p {
+    margin: 0;
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+  }
+
+  .dark-mode & {
+    &:not(.heading--eyebrow) {
+      --heading-color: var(--white);
+    }
+  }
+
+  .dark-mode--desktop & {
+    &:not(.heading--eyebrow) {
+      @include breakpoint(md) {
+        --heading-color: var(--white);
+
+        text-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+      }
+    }
+  }
+}
+
+// Used in the WYSIWYG as a subheading style
+.heading--subheading {
+  color: var(--twilight);
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-family: var(--ff-utility);
+  line-height: initial !important;
+  letter-spacing: initial !important;
+  font-weight: 500;
+}
+
+.heading--secondary {
+  --fw-heading: var(--fw-normal);
+
+  color: var(--heading-color);
+  font-family: var(--ff-secondary);
+  line-height: var(--lh-header);
+}
+
+.field--name-field-quote {
+  font-family: var(--ff-primary);
+  line-height: 30px;
+}
+
+// Paragraph
+.p1,
+.p2,
+.p3,
+.p4 {
+  font-family: var(--ff-utility);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  letter-spacing: -0.01em;
+  text-rendering: optimizelegibility;
+  margin-top: 0;
+  margin-bottom: var(--mb-paragraph);
+
+  strong,
+  b {
+    font-weight: var(--fw-medium);
+  }
+}
+
+.p1 {
+  font-size: var(--fs-p1);
+}
+
+.p2 {
+  font-size: var(--fs-p2);
+}
+
+.p3 {
+  font-size: var(--fs-p3);
+}
+
+.p4 {
+  font-size: var(--fs-p4);
+}
+
+.medium {
+  --fw-body: var(--fw-medium);
+
+  font-weight: var(--fw-body);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-formatted,
+.cke_editable {
+  --ul-spacing: 1.8125rem 0;
+  --ol-spacing: 1rem 0;
+  --list-padding: 1.5rem;
+  --li-spacing: 1rem;
+  --li-fs: var(--fs-p2);
+
+  .color-purple {
+    color: var(--purple);
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    @include link(medium);
+
+    display: inline-block;
+
+    &[data-micromodal-trigger]{
+      margin-left: 0.25rem;
+    }
+  }
+
+  p {
+    margin-top: 0;
+
+    b,
+    strong {
+      font-weight: var(--fw-medium);
+    }
+  }
+
+  ul {
+    margin: var(--ul-spacing);
+  }
+
+  ol {
+    margin: var(--ol-spacing);
+  }
+
+  ul, ol {
+    padding-left: var(--list-padding);
+
+    > li {
+      padding-left: 0.5rem;
+      font-size: var(--li-fs);
+
+      &::marker {
+        font-size: 1rem;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: var(--li-spacing);
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    thead {
+      font-size: 1.15rem;
+    }
+
+    tr {
+      border-bottom: 1px solid #D1CFD7;
+    }
+
+    th, td {
+      padding: 2rem 0.5rem;
+      max-width: 200px;
+    }
+  }
+
+  @include breakpoint-max(md) {
+    .responsive-table {
+      overflow-x: scroll;
+
+      th, td {
+        min-width: 200px;
+      }
+
+      .heading--subheading {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+@include breakpoint-max(md) {
+  br.desktop {
+    display: none;
+  }
+}

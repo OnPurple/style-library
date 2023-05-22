@@ -1,0 +1,33 @@
+// This file supports tooltip styling for HTML inserted into a React component. It needs to be
+// here and not in the React code because React SCSS is obfuscated to support modularization and
+// the HTML inserted into a tooltip will not be able to inherit those obfuscated classes.
+
+.tooltip-content {
+  h5 {
+    color: var(--medium-purple);
+    font-family: var(--ff-utility);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-p2);
+    margin: 0 0 1rem;
+  }
+
+  p {
+    margin: 0 0 0.25rem;
+  }
+
+  p strong {
+    color: var(--purple);
+    font-weight: var(--fw-medium);
+  }
+
+  ul {
+    padding-left: 0;
+    margin: 0 0 1.5rem 1.75rem;
+    font-size: var(--fs-p3);
+    line-height: 1.4;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

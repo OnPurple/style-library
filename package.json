@@ -1,0 +1,28 @@
+{
+  "name": "@purple/style-library",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=8.1.0"
+  },
+  "description": "Global styles used on Purple web properties",
+  "scripts": {
+    "lint": "stylelint '**/*.scss'",
+    "build": "sass ./sass/global.scss dist/global.css --style=compressed"
+  },
+  "author": "Purple dComm",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OnPurple/style-library"
+  },
+  "files":  [
+    "dist",
+    "sass"
+  ],
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^9.0.0"
+  }
+}

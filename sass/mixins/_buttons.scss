@@ -1,0 +1,152 @@
+////
+/// Mixin - Buttons
+////
+
+/// Standard button style mixin
+/// @param {String} $button-key - the key in the $buttons map to use from config
+/// @param {String} $size [small] - the button size, choose from defined keywords in the mixin
+@mixin btn($button-key, $size: large, $icon: null) {
+  $button: extend-in-map($buttons, $button-key);
+
+  @if  $button-key == primary {
+    z-index: 1;
+
+    &::before {
+      @include trbl;
+
+      border-radius: inherit;
+      background: key($button, active-background);
+      content: '';
+      display: block;
+      opacity: 0;
+      transition: opacity var(--trt-4) var(--trtf-a2);
+      z-index: -1;
+    }
+  }
+
+  @if  $size == large {
+    --btn-fs: 1rem;
+    --btn-lh: 1.4;
+    --btn-border-radius: var(--btn-border-radius-lg);
+    --btn-padding: var(--btn-padding-lg);
+  } @else if $size == medium {
+    --btn-fs: 0.875rem;
+    --btn-lh: 1.3;
+    --btn-border-radius: var(--btn-border-radius-md);
+    --btn-padding: var(--btn-padding-md);
+  } @else if $size == small {
+    --btn-fs: 0.75rem;
+    --btn-lh: 1.4;
+    --btn-border-radius: var(--btn-border-radius-sm);
+    --btn-padding: var(--btn-padding-sm);
+  }
+
+  @if  $icon == play {
+    @include icon-after(play);
+  } @else if $icon == link {
+    @include icon-after(arrow);
+  }
+
+  @include selectors(active) {
+    color: key($button, active-color);
+    border-color: key($button, active-border);
+
+    @if  $button-key == primary {
+      &::before {
+        opacity: 1;
+      }
+    } @else {
+      background: key($button, active-background);
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  background: key($button, background);
+  border: key($button, border);
+  color: key($button, color);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: var(--fw-medium);
+  line-height: var(--btn-lh);
+  text-decoration: none;
+  transition: all var(--trt-4) var(--trtf-a2);
+  white-space: nowrap;
+  position: relative;
+  border-radius: 0;
+  padding: var(--btn-padding);
+  font-size: 0.875rem;
+}
+
+@mixin btn-style($button-key) {
+  $button: extend-in-map($buttons, $button-key);
+
+  @if  $button-key == primary or $button-key == secondary or $button-key == disabled {
+    z-index: 1;
+
+    &::before {
+      @include trbl;
+
+      border-radius: inherit;
+      background: key($button, active-background);
+      content: '';
+      display: block;
+      opacity: 0;
+      transition: opacity var(--trt-4) var(--trtf-a2);
+      z-index: -1;
+    }
+  }
+
+  @include selectors(active) {
+    color: key($button, active-color);
+    border-color: key($button, active-border);
+
+    @if  $button-key == primary or $button-key == secondary {
+      &::before {
+        opacity: 1;
+      }
+    } @else {
+      background: key($button, active-background);
+
+      &::before {
+        content: none;
+      }
+    }
+
+    // Update any filled buttons.
+    @if  $button-key == filled-white or $button-key == secondary-cta or $button-key == secondary-dark {
+      background: var(--white) !important;
+      border-color: var(--white);
+      color: var(--purple);
+    }
+  }
+
+  border: key($button, border);
+  color: key($button, color);
+  border-radius: 0 !important;
+  background: transparent !important;
+
+  // Update any filled buttons.
+  @if  $button-key == filled-white or $button-key == secondary-cta {
+    color: white;
+  }
+}
+
+@mixin btn-size($size: large) {
+  @if  $size == large {
+    --btn-fs: 1rem;
+    --btn-border-radius: var(--btn-border-radius-lg);
+    --btn-padding: var(--btn-padding-lg);
+  } @else if $size == medium {
+    --btn-fs: 0.875rem;
+    --btn-lh: 1.3;
+    --btn-border-radius: var(--btn-border-radius-md);
+    --btn-padding: var(--btn-padding-md);
+  } @else if $size == small {
+    --btn-fs: 0.75rem;
+    --btn-border-radius: var(--btn-border-radius-sm);
+    --btn-padding: var(--btn-padding-sm);
+  }
+}

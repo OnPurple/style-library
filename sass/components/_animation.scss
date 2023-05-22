@@ -1,0 +1,21 @@
+////
+/// Animation Utility Classes
+////
+
+// Utility Motion: button states, hover, additional info.
+.tr-a1 {
+  transition-timing-function: var(--tr-a1);
+}
+
+.tr-a2 {
+  transition-timing-function: var(--tr-a2);
+}
+
+// Expressive Motion: page loads, content load on scroll.
+.tr-b1 {
+  transition-timing-function: var(--tr-b1);
+}
+
+.tr-b2 {
+  transition-timing-function: var(--tr-b2);
+}

@@ -1,0 +1,56 @@
+:root {
+  // Font Families
+  --ff-primary: 'Galaxie Copernicus', georgia, serif;
+  --ff-secondary: 'Graphik', arial, sans-serif;
+  --ff-utility: 'Graphik', arial, sans-serif;
+  --ff-header: var(--ff-primary);
+  --ff-body: var(--ff-utility);
+
+  // Font Weight
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-heading: 500;
+  --fw-body: var(--fw-normal);
+
+  // Line Height
+  --lh-body: 1.5;
+
+  // Mobile and Tablet.
+  --fs-h1: 2rem;     // 36px
+  --fs-h2: 1.75rem;  // 28px
+  --fs-h3: 1.625rem; // 26px
+  --fs-h4: 1.5rem;   // 24px
+  --fs-h5: 1.25rem;  // 20px
+  --fs-h6: 1.125rem; // 18px
+
+  // Body Font Size
+  --fs-p1: 1rem;     // 16px
+  --fs-p2: 1rem;     // 16px
+  --fs-p3: 0.875em;  // 14px
+  --fs-p4: 0.75rem;  // 12px
+}
+
+// Desktop Overrides
+@media all and (width >= 768px) {
+  :root {
+    --fs-h1: calc(36px + 36 * ((100vw - 768px) / 672));
+    --fs-h2: calc(36px + 20 * ((100vw - 768px) / 672));
+    --fs-h3: calc(32px + 12 * ((100vw - 768px) / 672));
+    --fs-h4: calc(24px + 12 * ((100vw - 768px) / 672));
+    --fs-h5: 1.5em;
+    --fs-p1: 1.25em;
+  }
+}
+
+@media all and (width >= 1024px) {
+  :root {
+    --fs-h1: 3rem;     // 48px
+    --fs-h2: 2.5rem;   // 40px
+    --fs-h3: 2.25rem;  // 36px
+    --fs-h4: 1.75rem;  // 28px
+    --fs-h5: 1.5rem;   // 24px
+    --fs-h6: 1.25rem;  // 20px
+  }
+}

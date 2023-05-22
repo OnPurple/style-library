@@ -1,0 +1,33 @@
+////
+/// Spacing Utility Classes
+////
+
+// 13 Col
+.cw-narrow {
+  @include left-right(margin, auto);
+
+  max-width: var(--cw-narrow);
+}
+
+// 17 Col
+.cw-medium {
+  @include left-right(margin, auto);
+
+  max-width: var(--cw-medium);
+}
+
+.pb-0{
+  padding-bottom: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+$unit: 3.6rem;
+
+@for $i from 1 through 25 {
+  .cw-#{$i} {
+    max-width: calc( #{$unit} * #{$i});
+  }
+}
