@@ -3,10 +3,18 @@ Global style library for Purple. Please see the Design system figma on how these
 
 ## Overview
 
-Prefer CSS3 variables instead of sass variables
+Prefer CSS3 variables instead of sass variables.
+
+The dist contains the global CSS files. Mixins are not included in the build and
+must be imported to your sass files.
 
 ## Installing
-`npm install `
+`npm i git@github.com:OnPurple/style-library.git`
+## Getting the global styles
+`@import 'node_modules/_/dist/global.min.css'`
+
+## Using mixins in your SCSS files
+`@import 'node_modules/_/sass/base/base'`
 
 ## Project Structure
 ### Base
@@ -33,7 +41,8 @@ Defines the global CSS variables
 
 ## Local Development
 `npm run lint  # lint SCSS`
-`npm run build # build styles`
+
+The GH actions workflow will build and push to the release branch
 
 ## Contributing
 Do not add styles that are specific to a project

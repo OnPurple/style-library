@@ -1,0 +1,36 @@
+name: Build styles and push to release branch
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Push
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compile sass to css
+        run: npm run build
+      
+      - name: Create build artifact
+        run: npm pack
+      
+      - name: Open Tar
+        run: tar -xf purple-style-library-1.0.0.tgz
+    
+      - name: Push build to release branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: release
+          FOLDER: package
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

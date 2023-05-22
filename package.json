@@ -8,10 +8,18 @@
   "description": "Global styles used on Purple web properties",
   "scripts": {
     "lint": "stylelint '**/*.scss'",
-    "build": "sass ./sass/global.scss global.css --style=compressed"
+    "build": "sass ./sass/global.scss dist/global.css --style=compressed"
   },
   "author": "Purple dComm",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OnPurple/style-library"
+  },
+  "files":  [
+    "dist",
+    "sass"
+  ],
   "devDependencies": {
     "sass": "^1.62.1",
     "stylelint": "^15.6.2",
