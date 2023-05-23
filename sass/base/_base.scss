@@ -1,4 +1,12 @@
-// This file will get included on every partial via webpack.
+// Include Sass modules.
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:math";
+@use "sass:string";
+
+// Allow projects to use mixins and utilities.
+
 @import 'config';
 
 // Import Utilities.

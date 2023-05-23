@@ -107,7 +107,7 @@
   $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + str-length($search)), $search, $replace);
   }
 
   @return $string;
@@ -122,10 +122,10 @@
   $encoded: '';
   $slice: 2000;
   $index: 0;
-  $loops: math.ceil(string.length($svg) / $slice);
+  $loops: math.ceil(calc(string.length($svg) / $slice));
 
   @for $i from 1 through $loops {
-    $chunk: string.str-slice($svg, $index, $index + $slice - 1);
+    $chunk: string.slice($svg, $index, $index + $slice - 1);
     $chunk: str-replace($chunk,'"','\'');
     $chunk: str-replace($chunk,'<','%3C');
     $chunk: str-replace($chunk,'>','%3E');
@@ -164,7 +164,7 @@
 
   $vw-context: ($screen-width * .01) + 0;
 
-  @return ($target / $vw-context) * 1vw;
+  @return calc($target / $vw-context) * 1vw;
 }
 
 /// @param {Number} $size - The target max size in px
@@ -206,12 +206,12 @@
 @mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
   @if $nest == true {
     @if type-of($gutter) == 'map' {
-      margin-left: map.get($gutter, xs-screen) / -2;
-      margin-right: map.get($gutter, xs-screen) / -2;
+      margin-left: calc(map.get($gutter, xs-screen) / -2);
+      margin-right: calc(map.get($gutter, xs-screen) / -2);
 
       @media all and (width >= 768px) {
-        margin-left: map.get($gutter, md-screen) / -2;
-        margin-right: map.get($gutter, md-screen) / -2;
+        margin-left: calc(map.get($gutter, md-screen) / -2);
+        margin-right: calc(map.get($gutter, md-screen) / -2);
       }
     }
   }
@@ -219,17 +219,17 @@
   display: flex;
   flex-wrap: wrap;
   & > #{$grid-item-selector} {
-    $pct: math.percentage(1 / $n);
+    $pct: math.percentage(math.div(1 / $n));
 
     flex: 0 0 $pct;
     max-width: $pct;
     margin-top: $bottom-gutter;
 
     // account for padding on grid item
-    padding: 0 map.get($gutter, xs-screen) / 2;
+    padding: 0 calc(map.get($gutter, xs-screen) / 2);
 
     @media all and (width >= 768px) {
-      padding: 0 map.get($gutter, md-screen) / 2;
+      padding: 0 calc(map.get($gutter, md-screen) / 2);
     }
 
     // account for margin top for all items not in the first row

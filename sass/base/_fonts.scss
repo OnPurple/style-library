@@ -1,18 +1,16 @@
 ////
 /// Fonts
-/// @group Configuration
 ////
 
 // Galaxie Copernicus Font
 $galaxie-font-name: 'Galaxie Copernicus';
-$galaxie-font-dir: '~assets/fonts/Galaxie-Copernicus/';
+$galaxie-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Galaxie-Copernicus/';
 
 @font-face {
   font-family: $galaxie-font-name;
   src: url($galaxie-font-dir + 'GalaxieCopernicus-Book.eot');
-  src: url("$galaxie-font-dir + 'GalaxieCopernicus-Book.eot?#iefix'") format('embedded-opentype'),
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Book.eot?#iefix') format('embedded-opentype'),
        url($galaxie-font-dir + 'GalaxieCopernicus-Book.woff2') format('woff2'),
-       url($galaxie-font-dir + 'GalaxieCopernicus-Book.woff') format('woff'),
        url($galaxie-font-dir + 'GalaxieCopernicus-Book.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
@@ -21,87 +19,42 @@ $galaxie-font-dir: '~assets/fonts/Galaxie-Copernicus/';
 @font-face {
   font-family: $galaxie-font-name;
   src: url($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot');
-  src: url("$galaxie-font-dir + 'GalaxieCopernicus-Bold.eot?#iefix'") format('embedded-opentype'),
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot?#iefix') format('embedded-opentype'),
        url($galaxie-font-dir + 'GalaxieCopernicus-Bold.woff2') format('woff2'),
-       url($galaxie-font-dir + 'GalaxieCopernicus-Bold.woff') format('woff'),
        url($galaxie-font-dir + 'GalaxieCopernicus-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
 
-// Wallop Font
-$wallop-font-name: 'Wallop';
-$wallop-font-dir: '~assets/fonts/Wallop/';
-
-@font-face {
-  font-family: $wallop-font-name;
-  src: url($wallop-font-dir + 'WallopPRPL-Bold.eot');
-  src: url("$wallop-font-dir + 'WallopPRPL-Bold.eot?#iefix'") format('embedded-opentype'),
-  url($wallop-font-dir + 'WallopPRPL-Bold.woff2') format('woff2'),
-  url($wallop-font-dir + 'WallopPRPL-Bold.woff') format('woff');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $wallop-font-name;
-  src: url($wallop-font-dir + 'WallopPRPL-BoldItalic.eot');
-  src: url("$wallop-font-dir + 'WallopPRPL-BoldItalic.eot?#iefix'") format('embedded-opentype'),
-  url($wallop-font-dir + 'WallopPRPL-BoldItalic.woff2') format('woff2'),
-  url($wallop-font-dir + 'WallopPRPL-BoldItalic.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-// Plantin Font
-$plantin-font-name: 'Plantin';
-$plantin-font-dir: '~assets/fonts/Plantin/';
-
-@font-face {
-  font-family: $plantin-font-name;
-  src: url($plantin-font-dir + 'PlantinMTProLight.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $plantin-font-name;
-  src: url($plantin-font-dir + 'PlantinMTProBold.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
-}
-
 // Graphik Font
 $graphik-font-name: 'Graphik';
-$graphik-font-dir: '~assets/fonts/Graphik/';
+$graphik-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Graphik/';
 
 @font-face {
   font-family: $graphik-font-name;
-  src: url($graphik-font-dir + 'GraphikRegular.woff2') format('woff2'),
-       url($graphik-font-dir + 'GraphikRegular.woff') format('woff');
+  src: url($graphik-font-dir + 'GraphikRegular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: $graphik-font-name;
-  src: url($graphik-font-dir + 'GraphikMedium.woff2') format('woff2'),
-       url($graphik-font-dir + 'GraphikMedium.woff') format('woff');
+  src: url($graphik-font-dir + 'GraphikMedium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 // Icon Font
 $icon-font-name: 'icomoon';
-$icon-font-dir: '~assets/fonts/icomoon/fonts/';
+$icon-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/icomoon/fonts/';
 
 @font-face {
   font-family: $icon-font-name;
-  src: url("$icon-font-dir + $icon-font-name + '.eot?2983aw'");
-  src: url("$icon-font-dir + $icon-font-name + '.eot?2983aw#iefix'") format('embedded-opentype'),
-  url("$icon-font-dir + $icon-font-name + '.woff?2983aw'") format('woff'),
-  url("$icon-font-dir + $icon-font-name + '.ttf?2983aw'") format('truetype'),
-  url("$icon-font-dir + $icon-font-name + '.svg?2983aw#3xl'") format('svg');
+  src: url($icon-font-dir + $icon-font-name + '.eot?2983aw');
+  src: url($icon-font-dir + $icon-font-name + '.eot?2983aw#iefix') format('embedded-opentype'),
+  url($icon-font-dir + $icon-font-name + '.woff?2983aw') format('woff'),
+  url($icon-font-dir + $icon-font-name + '.ttf?2983aw') format('truetype'),
+  url($icon-font-dir + $icon-font-name + '.svg?2983aw#3xl') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
