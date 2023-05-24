@@ -3,29 +3,32 @@ Global style library for Purple. Please see the Design system figma on how these
 
 ## Overview
 
-Prefer CSS3 variables instead of sass variables.
-
-The dist contains the global CSS files. Mixins are not included in the build and
-must be imported to your sass files.
+- Prefer CSS3 variables instead of sass variables
+- Drupal should host the main global.css file for the purple.com domain
 
 ## Installing
 `npm i git+ssh://git@github.com/OnPurple/style-library.git#release`
+
+## Updating
+`npm update @purple/style-libray`
 
 ## How to get the global styles
 `@import 'node_modules/@purple/style-library/dist/global'`
 
 ## Using mixins in your SCSS files
 Please make sure the global styles are on the page before using the mixins. Otheriwse
-they will be styled corrrectly. This is an optional import.
+they will be styled incorrectly. This is an optional import.
 
 `@import 'node_modules/@purple/style-library/sass/base/_base'`
+
+You can also import specific files in the sass directory for a more granular approach.
 
 ## Font Families and icons
 Fonts and Icons are hosted on Drupal.
 
 ## Project Structure
 ### Base
-SASS variables for configuring mixins
+SASS variables for configuring mixins. This direcoty shouldn't change that much
 
 ### Components
 SASS files containing utitliy classes for creating components

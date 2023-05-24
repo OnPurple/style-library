@@ -65,22 +65,12 @@ $icons: () !default;
 
 /// Replace text with icon
 @mixin replace-text-with-icon($icon, $font-size: $global-font-size) {
-  font: 0/0 transparent;
+  font-size: 0;
   text-decoration: none;
 
   @include icon-before($icon) {
     font-size: $font-size;
     @content;
-  }
-}
-
-// Icon Utility Classes '.icon-circle'
-@each $key, $value in $icons {
-  .icon-before--#{$key} {
-    @include icon-before($key);
-  }
-  .icon-after--#{$key} {
-    @include icon-after($key);
   }
 }
 
