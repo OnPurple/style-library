@@ -1,0 +1,9 @@
+// Icon Utility Classes '.icon-circle'
+@each $key, $value in $icons {
+  .icon-before--#{$key} {
+    @include icon-before($key);
+  }
+  .icon-after--#{$key} {
+    @include icon-after($key);
+  }
+}
