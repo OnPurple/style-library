@@ -29,10 +29,6 @@
   line-height: 1.25rem;
   margin-bottom: var(--vs-xxxs);
 
-  @media all and (width >= 768px) {
-    font-size: 18px;
-  }
-
   .bg-theme--light-purple-60 & {
     --heading-color: var(--purple);
   }
@@ -46,7 +42,7 @@
     color: var(--white);
   }
 
-  &.text-secondary-aqua-text {
+  &.text-promo {
     color: var(--promo-color);
   }
 }
