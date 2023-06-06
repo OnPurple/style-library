@@ -27,6 +27,5 @@ jobs:
 
       - name: Package and publish
         run: |
-          cd packages/style-library && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          npm publish
