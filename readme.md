@@ -1,6 +1,8 @@
 # Purple Style Library
 Global style library for Purple. Please see the Design system figma on how these styles are implemented
 
+:warning: DO NOT push directly to the release branch!! Branch off main and request a PR. GH actions will build and push to release!
+
 ## Overview
 
 - Prefer CSS3 variables instead of sass variables
