@@ -1,7 +1,8 @@
 # Purple Style Library
 Global style library for Purple. Please see the Design system figma on how these styles are implemented
 
-:warning: DO NOT push directly to the release branch!! Branch off main and request a PR. GH actions will build and push to release!
+:warning: DO NOT push directly to the release branch!! Branch off main and request a PR. Disable branch protections before running the actions, then add the
+branch prtections again when the action is done
 
 ## Overview
 
@@ -12,7 +13,7 @@ Global style library for Purple. Please see the Design system figma on how these
 `npm i git+ssh://git@github.com/OnPurple/style-library.git#release`
 
 ## Updating
-`npm update @purple/style-libray`
+`npm rm @purple/style-library && npm i OnPurple/style-library#release`
 
 ## How to get the global styles
 `@import 'node_modules/@purple/style-library/dist/global'`
