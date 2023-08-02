@@ -1,6 +1,29 @@
 // Root Css Variables - Colors
 
 :root {
+  // V3
+  --color-brand-twilight-100: #E9E8EF;
+  --color-brand-twilight-200: #D2D1DF;
+  --color-brand-twilight-300: #A6A4C1;
+  --color-brand-twilight-400: #35316E;
+  --color-brand-twilight-500: #1F1A5E;
+  --color-brand-twilight-600: #151526;
+  --color-brand-twilight-500-rgb: 31, 26, 94;
+  --color-brand-twilightfade-5: rgba(var(--color-brand-twilight-500-rgb),0.05);
+  --color-brand-twilightfade-10: rgba(var(--color-brand-twilight-500-rgb),0.1);
+  --color-brand-twilightfade-15: rgba(var(--color-brand-twilight-500-rgb),0.15);
+  --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb),0.2);
+  --color-brand-twilightfade-45: rgba(var(--color-brand-twilight-500-rgb),0.45);
+  --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb),0.6);
+  --color-brand-white: #FFFFFF;
+  --color-brand-white-rgb: 255, 255, 255;
+  --color-brand-whitefade-5: rgba(var(--white-rgb),0.05);
+  --color-brand-whitefade-10: rgba(var(--white-rgb),0.1);
+  --color-brand-whitefade-15: rgba(var(--white-rgb),0.15);
+  --color-brand-whitefade-20: rgba(var(--white-rgb),0.2);
+  --color-brand-whitefade-45: rgba(var(--white-rgb),0.45);
+  --color-brand-whitefade-60: rgba(var(--white-rgb),0.60);
+
   // Version 2.0 - AKQA COLORS
   --twilight: #1F1A5E;
   --twilight-10: rgb(230 228 237);
