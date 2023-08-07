@@ -2,116 +2,110 @@
 
 :root {
   // V3
-  --color-brand-twilight-100: #e9e8ef;
-  --color-brand-twilight-200: #d2d1df;
-  --color-brand-twilight-300: #a6a4c1;
-  --color-brand-twilight-400: #35316e;
-  --color-brand-twilight-500: #1f1a5e;
+  --color-brand-twilight-100: #E9E8EF;
+  --color-brand-twilight-200: #D2D1DF;
+  --color-brand-twilight-300: #A6A4C1;
+  --color-brand-twilight-400: #35316E;
+  --color-brand-twilight-500: #1F1A5E;
   --color-brand-twilight-600: #151526;
   --color-brand-twilight-500-rgb: 31, 26, 94;
-  --color-brand-twilightfade-5: rgba(var(--color-brand-twilight-500-rgb), 0.05);
-  --color-brand-twilightfade-10: rgba(var(--color-brand-twilight-500-rgb), 0.1);
-  --color-brand-twilightfade-15: rgba(
-    var(--color-brand-twilight-500-rgb),
-    0.15
-  );
-  --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb), 0.2);
-  --color-brand-twilightfade-45: rgba(
-    var(--color-brand-twilight-500-rgb),
-    0.45
-  );
-  --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb), 0.6);
-  --color-brand-white: #ffffff;
+  --color-brand-twilightfade-5: rgba(var(--color-brand-twilight-500-rgb),0.05);
+  --color-brand-twilightfade-10: rgba(var(--color-brand-twilight-500-rgb),0.1);
+  --color-brand-twilightfade-15: rgba(var(--color-brand-twilight-500-rgb),0.15);
+  --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb),0.2);
+  --color-brand-twilightfade-45: rgba(var(--color-brand-twilight-500-rgb),0.45);
+  --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb),0.6);
+  --color-brand-white: #FFFFFF;
   --color-brand-white-rgb: 255, 255, 255;
-  --color-brand-whitefade-5: rgba(var(--color-brand-white-rgb), 0.05);
-  --color-brand-whitefade-10: rgba(var(--color-brand-white-rgb), 0.1);
-  --color-brand-whitefade-15: rgba(var(--color-brand-white-rgb), 0.15);
-  --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb), 0.2);
-  --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb), 0.45);
-  --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb), 0.6);
+  --color-brand-whitefade-5: rgba(var(--color-brand-white-rgb),0.05);
+  --color-brand-whitefade-10: rgba(var(--color-brand-white-rgb),0.1);
+  --color-brand-whitefade-15: rgba(var(--color-brand-white-rgb),0.15);
+  --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb),0.2);
+  --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb),0.45);
+  --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb),0.60);
 
   // Version 2.0 - AKQA COLORS
-  --twilight: #1f1a5e;
+  --twilight: #1F1A5E;
   --twilight-10: rgb(230 228 237);
-  --cat-nap: #8c57b4;
-  --daydream: #d7aafa;
-  --dreamscape: #e091e6;
-  --lavender-skies: #d7c6e6;
-  --stardust: #eceae4;
-  --clear-skies: #98ded9;
-  --golden-hour: #f4b53f;
-  --powernap: #d62ee5;
-  --rem: #2a62d4;
-  --lilac: #efe8f5;
-  --light-lilac: #f7f5ff;
-  --sandman: #f8f5ef;
-  --nocturnal: #6f6990;
-  --orchid: #b113c0;
+  --cat-nap: #8C57B4;
+  --daydream: #D7AAFA;
+  --dreamscape: #E091E6;
+  --lavender-skies: #D7C6E6;
+  --stardust: #ECEAE4;
+  --clear-skies: #98DED9;
+  --golden-hour: #F4B53F;
+  --powernap: #D62EE5;
+  --rem: #2A62D4;
+  --lilac: #EFE8F5;
+  --light-lilac: #F7F5FF;
+  --sandman: #F8F5EF;
+  --nocturnal: #6F6990;
+  --orchid: #B113C0;
 
   // Purple
   --purple: var(--twilight);
-  --purple-60: #8e80bb;
-  --purple-40: #b4aad1;
-  --purple-20: #d9d5e8;
-  --purple-10: #eceaf4;
+  --purple-60: #8E80BB;
+  --purple-40: #B4AAD1;
+  --purple-20: #D9D5E8;
+  --purple-10: #ECEAF4;
   --medium-purple: var(--cat-nap);
   --light-purple: var(--daydream);
   --light-purple-60: var(--daydream);
-  --light-purple-50: #cec9f1;
-  --light-purple-40: #dbd5f5;
-  --light-purple-20: #e4dff7;
-  --light-purple-10: #f6f4fc;
+  --light-purple-50: #CEC9F1;
+  --light-purple-40: #DBD5F5;
+  --light-purple-20: #E4DFF7;
+  --light-purple-10: #F6F4FC;
 
   // Periwinkle
-  --periwinkle: #6d7fe1;
-  --periwinkle-60: #a7b2ed;
-  --periwinkle-40: #c5ccf3;
-  --periwinkle-20: #e2e5f9;
-  --periwinkle-10: #f0f2fc;
+  --periwinkle: #6D7FE1;
+  --periwinkle-60: #A7B2ED;
+  --periwinkle-40: #C5CCF3;
+  --periwinkle-20: #E2E5F9;
+  --periwinkle-10: #F0F2FC;
   --periwinkle-light: var(--periwinkle-10);
 
   // Midnight
-  --midnight: #190f39;
+  --midnight: #190F39;
   --midnight-medium: #341458;
-  --midnight-light: #473f61;
-  --midnight-60: #756f88;
+  --midnight-light: #473F61;
+  --midnight-60: #756F88;
 
   // Green
-  --green: #0e7065;
-  --green-60: #6ea9a3;
-  --green-40: #9fc6c1;
-  --green-20: #cfe2e0;
-  --green-10: #e7f1f0;
+  --green: #0E7065;
+  --green-60: #6EA9A3;
+  --green-40: #9FC6C1;
+  --green-20: #CFE2E0;
+  --green-10: #E7F1F0;
   --green-light: var(--green-10);
 
   // Pink
-  --pink: #fec7d2;
-  --pink-60: #fedde4;
-  --pink-40: #ffe9ed;
-  --pink-20: #fff4f6;
-  --pink-10: #fff9fb;
+  --pink: #FEC7D2;
+  --pink-60: #FEDDE4;
+  --pink-40: #FFE9ED;
+  --pink-20: #FFF4F6;
+  --pink-10: #FFF9FB;
   --pink-light: var(--pink-40);
 
   // Orange
-  --orange: #f6b576;
-  --orange-60: #f9d0ad;
-  --orange-40: #fbe1c8;
-  --orange-20: #fdf0e4;
-  --orange-10: #fef8f1;
+  --orange: #F6B576;
+  --orange-60: #F9D0AD;
+  --orange-40: #FBE1C8;
+  --orange-20: #FDF0E4;
+  --orange-10: #FEF8F1;
   --orange-light: var(--orange-60);
 
   // Lavender
-  --lavender: #d2adee;
-  --lavender-60: #e4cef5;
-  --lavender-40: #eddef8;
-  --lavender-20: #f6effc;
-  --lavender-10: #fbf7fd;
+  --lavender: #D2ADEE;
+  --lavender-60: #E4CEF5;
+  --lavender-40: #EDDEF8;
+  --lavender-20: #F6EFFC;
+  --lavender-10: #FBF7FD;
 
   // Gray
-  --gray-10: #f2f2f2;
-  --gray-20: #e0e0e0;
-  --gray-30: #d9d9d9;
-  --gray-40: #aeaeae;
+  --gray-10: #F2F2F2;
+  --gray-20: #E0E0E0;
+  --gray-30: #D9D9D9;
+  --gray-40: #AEAEAE;
 
   // Background Colors
   --bg-body: var(--white);
@@ -128,64 +122,29 @@
   --bg-yellow: var(--yellow-light);
 
   // Background Gradients
-  --bg-gradient-purple: linear-gradient(
-    180deg,
-    var(--light-purple-20) 0%,
-    var(--white) 100%
-  );
-  --bg-gradient-pink: linear-gradient(
-    180deg,
-    var(--pink-light) 0%,
-    var(--white) 100%
-  );
-  --bg-gradient-orange: linear-gradient(
-    180deg,
-    var(--orange-20) 0%,
-    var(--white) 100%
-  );
-  --bg-gradient-aqua: linear-gradient(
-    180deg,
-    var(--aqua-light-40) 0%,
-    var(--white) 100%
-  );
-  --bg-gradient-green: linear-gradient(
-    180deg,
-    var(--green-light) 0%,
-    var(--white) 100%
-  );
-  --bg-gradient-magic-hour: linear-gradient(
-    104deg,
-    var(--light-purple-60) 3.4%,
-    var(--pink) 94%
-  );
-  --scrim-gradient-dark: linear-gradient(
-    180deg,
-    rgb(var(--scrim-dark) 0) 0%,
-    rgb(var(--scrim-dark) 0.6) 110.2%
-  );
-  --scrim-gradient-light: linear-gradient(
-    180deg,
-    rgb(var(--scrim-light) 0) 0%,
-    rgb(var(--scrim-light) 0.6) 110.2%
-  );
+  --bg-gradient-purple: linear-gradient(180deg, var(--light-purple-20) 0%, var(--white) 100%);
+  --bg-gradient-pink: linear-gradient(180deg, var(--pink-light) 0%, var(--white) 100%);
+  --bg-gradient-orange: linear-gradient(180deg, var(--orange-20) 0%, var(--white) 100%);
+  --bg-gradient-aqua: linear-gradient(180deg, var(--aqua-light-40) 0%, var(--white) 100%);
+  --bg-gradient-green: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%);
+  --bg-gradient-magic-hour: linear-gradient(104deg, var(--light-purple-60) 3.4%, var(--pink) 94%);
+  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--scrim-dark) 0) 0%, rgb(var(--scrim-dark) 0.6) 110.2%);
+  --scrim-gradient-light: linear-gradient(180deg, rgb(var(--scrim-light) 0) 0%, rgb(var(--scrim-light) 0.6) 110.2%);
   --active-bg-primary: var(--twilight);
   --border-gray: var(--border-divider);
-
-  // Borders
-  --border-purple: #1f1a5e73;
 
   // Cart & Checkout
   --price-gray: #c2bfc7;
   --black-title: #3f3c44;
 
   // Common Colors
-  --white: #fff;
+  --white: #FFF;
   --black: #000;
-  --red: #d43900;
+  --red: #D43900;
   --red-light: var(--coral);
-  --light-red-utility: #fef1f0;
-  --gray-utility: #d1cfd7;
-  --light-gray: #f5f5f5;
+  --light-red-utility: #FEF1F0;
+  --gray-utility: #D1CFD7;
+  --light-gray: #F5F5F5;
   --green-utility: #008746;
   --red-utility: var(--red);
   --body-color: var(--twilight);
@@ -193,8 +152,8 @@
   --promo-color: var(--orchid);
   --scrim-dark: 25, 15, 57;
   --scrim-light: 96, 92, 102;
-  --card-gray: #f9f8f9;
-  --yellow-light: #fff0cd;
+  --card-gray: #F9F8F9;
+  --yellow-light: #FFF0CD;
 
   // Dividers
   --border-divider: #dbdae5;
