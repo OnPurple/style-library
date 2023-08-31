@@ -1,5 +1,8 @@
 // Root Css Variables - Colors
 
+// the color-map generates a token for each.
+// color-map is used in components/color to generate text and bg colors.
+
 $color-map: (
         twilight-100: #E9E8EF,
         twilight-200: #D2D1DF,
@@ -13,7 +16,6 @@ $color-map: (
         dreamscape: #E091E6,
         lavenderskies: #D7C6E6,
         stardust: #ECEAE4,
-        white: #FFFFFF,
         clearskies: #98DED9,
         goldenhour: #F4B53F,
         powernap: #D62EE5,
@@ -24,18 +26,7 @@ $color-map: (
 
 :root {
   @each $color-name, $color-value in $color-map {
-    --color-brand-#{$color-name}: #{$color-value};
-  }
-}
-
-// Create a text color class and background color class for each color
-
-@each $color-name, $color-info in $color-map {
-  .text-color-brand-#{$color-name} {
-    color: var(--color-brand-#{$color-name});
-  }
-  .bg-color-brand-#{$color-name} {
-    background-color: var(--color-brand-#{$color-name});
+  '"--color-brand-"+$color-name': #{$color-value};
   }
 }
 
@@ -48,6 +39,7 @@ $color-map: (
   --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb),0.2);
   --color-brand-twilightfade-45: rgba(var(--color-brand-twilight-500-rgb),0.45);
   --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb),0.6);
+  --color-brand-white: #FFFFFF;
   --color-brand-white-rgb: 255, 255, 255;
   --color-brand-whitefade-5: rgba(var(--color-brand-white-rgb),0.05);
   --color-brand-whitefade-10: rgba(var(--color-brand-white-rgb),0.1);
@@ -55,6 +47,7 @@ $color-map: (
   --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb),0.2);
   --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb),0.45);
   --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb),0.60);
+
 
   // Version 2.0 - AKQA COLORS
   --twilight: #1F1A5E;
