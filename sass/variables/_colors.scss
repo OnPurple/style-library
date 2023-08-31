@@ -1,5 +1,8 @@
 // Root Css Variables - Colors
 
+// the color-map generates a token for each.
+// color-map is used in base/framework to generate text and bg colors.
+
 $color-map: (
         twilight-100: #E9E8EF,
         twilight-200: #D2D1DF,
@@ -13,7 +16,6 @@ $color-map: (
         dreamscape: #E091E6,
         lavenderskies: #D7C6E6,
         stardust: #ECEAE4,
-        white: #FFFFFF,
         clearskies: #98DED9,
         goldenhour: #F4B53F,
         powernap: #D62EE5,
@@ -24,18 +26,7 @@ $color-map: (
 
 :root {
   @each $color-name, $color-value in $color-map {
-    --color-brand-#{$color-name}: #{$color-value};
-  }
-}
-
-// Create a text color class and background color class for each color
-
-@each $color-name, $color-info in $color-map {
-  .text-color-brand-#{$color-name} {
-    color: var(--color-brand-#{$color-name});
-  }
-  .bg-color-brand-#{$color-name} {
-    background-color: var(--color-brand-#{$color-name});
+  '"--color-brand-"+$color-name': #{$color-value};
   }
 }
 
@@ -74,6 +65,7 @@ $color-map: (
   --nocturnal: #6F6990;
   --orchid: #B113C0;
   --linen: #F6F6F6;
+  --white: #FFFFFF;
 
   // Purple
   --purple: var(--twilight);
