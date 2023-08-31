@@ -1,13 +1,46 @@
 // Root Css Variables - Colors
 
+$color-map: (
+        twilight-100: #E9E8EF,
+        twilight-200: #D2D1DF,
+        twilight-300: #A6A4C1,
+        twilight-400: #35316E,
+        twilight-500: #1F1A5E,
+        twilight-600: #151526,
+        nocturnal: #6F6990,
+        catnap: #8C57B4,
+        daydream: #D7AAFA,
+        dreamscape: #E091E6,
+        lavenderskies: #D7C6E6,
+        stardust: #ECEAE4,
+        white: #FFFFFF,
+        clearskies: #98DED9,
+        goldenhour: #F4B53F,
+        powernap: #D62EE5,
+        rem: #2A62D4
+);
+
+// create a token for each color
+
+:root {
+  @each $color-name, $color-value in $color-map {
+    --color-brand-#{$color-name}: #{$color-value};
+  }
+}
+
+// Create a text color class and background color class for each color
+
+@each $color-name, $color-info in $color-map {
+  .text-color-brand-#{$color-name} {
+    color: var(--color-brand-#{$color-name});
+  }
+  .bg-color-brand-#{$color-name} {
+    background-color: var(--color-brand-#{$color-name});
+  }
+}
+
 :root {
   // V3
-  --color-brand-twilight-100: #E9E8EF;
-  --color-brand-twilight-200: #D2D1DF;
-  --color-brand-twilight-300: #A6A4C1;
-  --color-brand-twilight-400: #35316E;
-  --color-brand-twilight-500: #1F1A5E;
-  --color-brand-twilight-600: #151526;
   --color-brand-twilight-500-rgb: 31, 26, 94;
   --color-brand-twilightfade-5: rgba(var(--color-brand-twilight-500-rgb),0.05);
   --color-brand-twilightfade-10: rgba(var(--color-brand-twilight-500-rgb),0.1);
@@ -15,7 +48,6 @@
   --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb),0.2);
   --color-brand-twilightfade-45: rgba(var(--color-brand-twilight-500-rgb),0.45);
   --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb),0.6);
-  --color-brand-white: #FFFFFF;
   --color-brand-white-rgb: 255, 255, 255;
   --color-brand-whitefade-5: rgba(var(--color-brand-white-rgb),0.05);
   --color-brand-whitefade-10: rgba(var(--color-brand-white-rgb),0.1);
