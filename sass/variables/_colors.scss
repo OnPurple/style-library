@@ -26,7 +26,7 @@ $color-map: (
 
 :root {
   @each $color-name, $color-value in $color-map {
-  '"--color-brand-"+$color-name': #{$color-value};
+  --color-brand-#{$color-name}: #{$color-value};
   }
 }
 
