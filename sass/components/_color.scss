@@ -1,0 +1,10 @@
+// Create a text color class and background color class for each color
+
+@each $color-name, $color-info in $color-map {
+  .text-color-brand-#{$color-name} {
+    color: var(--color-brand-#{$color-name});
+  }
+  .bg-color-brand-#{$color-name} {
+    background-color: var(--color-brand-#{$color-name});
+  }
+}
