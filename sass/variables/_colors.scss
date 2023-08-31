@@ -39,6 +39,7 @@ $color-map: (
   --color-brand-twilightfade-20: rgba(var(--color-brand-twilight-500-rgb),0.2);
   --color-brand-twilightfade-45: rgba(var(--color-brand-twilight-500-rgb),0.45);
   --color-brand-twilightfade-60: rgba(var(--color-brand-twilight-500-rgb),0.6);
+  --color-brand-white: #FFFFFF;
   --color-brand-white-rgb: 255, 255, 255;
   --color-brand-whitefade-5: rgba(var(--color-brand-white-rgb),0.05);
   --color-brand-whitefade-10: rgba(var(--color-brand-white-rgb),0.1);
@@ -46,6 +47,7 @@ $color-map: (
   --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb),0.2);
   --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb),0.45);
   --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb),0.60);
+
 
   // Version 2.0 - AKQA COLORS
   --twilight: #1F1A5E;
@@ -65,7 +67,6 @@ $color-map: (
   --nocturnal: #6F6990;
   --orchid: #B113C0;
   --linen: #F6F6F6;
-  --white: #FFFFFF;
 
   // Purple
   --purple: var(--twilight);
