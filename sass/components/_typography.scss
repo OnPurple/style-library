@@ -147,7 +147,6 @@ h6, .h6 {
 .p4 {
   font-family: var(--ff-utility);
   font-weight: var(--fw-body);
-  line-height: var(--lh-body);
   text-rendering: optimizelegibility;
   margin-top: 0;
   margin-bottom: var(--mb-paragraph);
@@ -160,22 +159,27 @@ h6, .h6 {
 
 .p00 {
   font-size: var(--fs-p00);
+  line-height: 28px;
 }
 
 .p0 {
   font-size: var(--fs-p0);
+  line-height: 26px;
 }
 
 .p1 {
   font-size: var(--fs-p1);
+  line-height: var(--lh-body);
 }
 
 .p2 {
   font-size: var(--fs-p2);
+  line-height: var(--lh-body);
 }
 
 .p3 {
   font-size: var(--fs-p3);
+  line-height: 20px;
 }
 
 .p4 {
