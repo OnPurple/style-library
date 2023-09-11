@@ -35,17 +35,6 @@
 }
 
 // Desktop Overrides
-@media all and (width >= 768px) {
-  :root {
-    --fs-h1: calc(36px + 36 * ((100vw - 768px) / 672));
-    --fs-h2: calc(36px + 20 * ((100vw - 768px) / 672));
-    --fs-h3: calc(32px + 12 * ((100vw - 768px) / 672));
-    --fs-h4: calc(24px + 12 * ((100vw - 768px) / 672));
-    --fs-h5: 1.5em;
-    --fs-p1: 1.25em;
-  }
-}
-
 @media all and (width >= 1024px) {
   :root {
     --fs-h1: 3rem;     // 48px
