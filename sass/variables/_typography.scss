@@ -34,6 +34,13 @@
   --fs-p4: 0.75rem;  // 12px
 }
 
+//Tablet Overrides
+@media all and (width >= 768px) {
+  :root {
+    --fs-p1: 1.25em;
+  }
+}
+
 // Desktop Overrides
 @media all and (width >= 1024px) {
   :root {
