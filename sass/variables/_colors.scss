@@ -189,8 +189,18 @@ $color-map: (
   --yellow-light: #FFF0CD;
 
   // Messaging
+  --color-messaging-success-100: #E0FFF2;
+  --color-messaging-success-200: #59F0BE;
   --color-messaging-success-300: #066C47;
+  --color-messaging-error-100: #FFDDDB;
+  --color-messaging-error-200: #FF7870;
   --color-messaging-error-300: #AE0A00;
+  --color-messaging-warning-100: #FFF6E1;
+  --color-messaging-warning-200: #FFDA84;
+  --color-messaging-warning-300: #AC5D0F;
+  --color-messaging-notification-100: #EBF1FF;
+  --color-messaging-notification-200: #6FA4FF;
+  --color-messaging-notification-300: var(--rem);
 
   // Dividers
   --border-divider: #dbdae5;
