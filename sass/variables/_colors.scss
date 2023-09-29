@@ -12,30 +12,36 @@ $color-map: (
         twilight-400: #35316E,
         twilight-500: #1F1A5E,
         twilight-600: #151526,
+        gray-100: #F2F2F2,
+        gray-200: #F6F6F6,
+        gray-300: #E0E0E0,
+        gray-400: #C0C0C0,
+        gray-500: #AEAEAE,
         nocturnal: #6F6990,
         catnap: #8C57B4,
         daydream: #D7AAFA,
         dreamscape: #E091E6,
         lavenderskies: #D7C6E6,
+        lilac: #EFE8F5,
+        lilly: #E5B5E8,
+        sandman: #F8F5EF,
         stardust: #ECEAE4,
         clearskies: #98DED9,
         goldenhour: #F4B53F,
         powernap: #D62EE5,
         rem: #2A62D4,
-        promo: #D43330,
-        promo-alt: #395542,
+        orchid: #B113C0,
 );
 
-// create a token for each color
-
 :root {
+  // Create tokens for colors
   @each $color-name, $color-value in $color-map {
   --color-brand-#{$color-name}: #{$color-value};
   }
-}
-
-:root {
-  // V3
+  // Promo / Holiday
+  --color-brand-promo: #D43330;
+  --color-brand-promo-alt: #395542;
+  // Fades
   --color-brand-twilight-500-rgb: 31, 26, 94;
   --color-brand-twilightfade-5: rgba(var(--color-brand-twilight-500-rgb),0.05);
   --color-brand-twilightfade-10: rgba(var(--color-brand-twilight-500-rgb),0.1);
@@ -51,8 +57,29 @@ $color-map: (
   --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb),0.2);
   --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb),0.45);
   --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb),0.60);
+  // Background
+  --color-background-lightest: var(--color-brand-white);
+  --color-background-lighter: var(--color-brand-sandman);
+  --color-background-light: var(--color-brand-stardust);
+  --color-background-dark: var(--color-brand-lilac);
+  --color-background-darker: var(--color-brand-catnap);
+  --color-background-darkest: var(--color-brand-twilight-500);
+  --color-background-promo: var(--color-brand-promo);
+  --color-background-promo-alt: var(--color-brand-promo-alt);
+ // Text
+  --color-text-primary: var(--color-brand-twilight-500);
+  --color-text-secondary: var(--color-brand-nocturnal);
+  --color-text-accent: var(--color-brand-orchid);
+  --color-text-link: var(--color-brand-catnap);
+  --color-text-promo: var(--color-brand-promo);
+  --color-text-promo-alt: var(--color-brand-promo-alt);
+  --color-text-success: var(--color-messaging-success-300);
+  --color-text-warning: var(--color-messaging-warning-300);
+  --color-text-error: var(--color-messaging-error-300);
+  --color-text-notification: var(--color-messaging-notification-300);
+}
 
-
+:root {
   // Version 2.0 - AKQA COLORS
   --twilight: #1F1A5E;
   --twilight-10: rgb(230 228 237);
