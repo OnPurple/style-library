@@ -52,3 +52,59 @@
     --fs-h6: 1.25rem;  // 20px
   }
 }
+
+
+$typography: (
+  heading-display: (
+    font-family: var(--ff-header),
+    font-weight: var(--fw-normal),
+    font-size: 32px,
+    line-height: 48px,
+    letter-spacing: -1.5px,
+    font-size--desktop: 48px,
+    line-height--desktop: 56px,
+  ),
+  heading-xl: (
+    font-family: var(--ff-header),
+    font-weight: var(--fw-normal),
+    font-size: 28px,
+    line-height: 36px,
+    letter-spacing: -1.5px,
+    font-size--desktop: 40px,
+    line-height--desktop: 52px,
+  ),
+  body-xl: (
+    font-family: var(--ff-body),
+    font-weight: var(--fw-normal),
+    font-size: 20px,
+    line-height: 28px,
+  ),
+);
+
+@mixin text($token-type) {
+  $token: extend-in-map($typography, $token-type);
+  font-family: key($token, font-family);
+  font-weight: key($token, font-family);
+  font-size: key($token, font-family);
+  line-height: key($token, font-family);
+  @if map-has-key($token, letter-spacing) {
+    letter-spacing: key($token, letter-spacing);
+  }
+  @if map-has-key($token, font-size--desktop) {
+    @media all and (min-width: 1024px) {
+      font-size: key($token, font-size--desktop);
+    }
+  }
+  @if map-has-key($token, line-height--desktop) {
+    @media all and (min-width: 1024px) {
+      font-size: key($token, line-height--desktop);
+    }
+  }
+}
+
+// Creates a class for each key in $typography map
+@each $key, $css in $typography {
+  .text-#{$key} {
+    @include text($key);
+  }
+}
