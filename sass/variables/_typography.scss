@@ -55,13 +55,105 @@
   }
 }
 
-$typography_defaults: (
-
-);
-
 $typography: (
   display: (
+    default: (
+      font-family: 'whatever',
+    ),
     xl: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    lg: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    md: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    sm: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    xs: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+  ),
+  heading: (
+    default: (),
+    xl: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    lg: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    md: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    sm: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
+    xs: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
@@ -74,33 +166,44 @@ $typography: (
   ),
 );
 
-@mixin typo-default {
-}
-
+/**
+ * @param $type
+ *   Type, e.g. "display", "heading", "body".
+ *
+ * @param $size
+ *   Size, e.g. "xl", "lg", "xs".
+ */
 @mixin text($type, $size) {
-  @each $size, $css in map.get($typography, $type) {
-    @each $prop, $value in $css {
-      @if ($prop != 'breakpoints') {
-        #{$prop}: #{$value};
-      }
-    }
+  $size: map.get(map.get($typography, $type), $size);
 
-    @if (map.has-key($css, 'breakpoints')) {
-      $breakpoints: map.get($css, 'breakpoints');
-      @media all and (min-width: 1024px) {
-        @each $bp_prop, $bp_value in map.get($breakpoints, 'mobile') {
-            #{$bp_prop}: #{$bp_value};
-          }
+  @each $prop, $value in $size {
+    @if ($prop != 'breakpoints') {
+      #{$prop}: #{$value};
+    }
+  }
+
+  @if (map.has-key($size, 'breakpoints')) {
+    $breakpoints: map.get($size, 'breakpoints');
+
+    // Add more as we need them.
+    @media all and (min-width: 1024px) {
+      @each $bp_prop, $bp_value in map.get($breakpoints, 'mobile') {
+        @debug $bp_prop $bp_value;
+        #{$bp_prop}: #{$bp_value};
       }
     }
   }
+
 }
 
 // Creates a class for each key in $typography map
-@each $type, $sizes in $typography {
+@each $category, $sizes in $typography {
   @each $size, $css in $sizes {
-    .text-#{$type}-#{$size} {
-      @include text($type, $size);
+    @if ($size != 'default') {
+      .text-#{$category}-#{$size} {
+        @include text($category, 'default');
+        @include text($category, $size);
+      }
     }
   }
 }
