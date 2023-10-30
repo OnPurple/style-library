@@ -1,3 +1,5 @@
+@use "sass:map";
+
 :root {
   // Font Families
   --ff-primary: 'Galaxie Copernicus', georgia, serif;
@@ -53,58 +55,52 @@
   }
 }
 
+$typography_defaults: (
+
+);
 
 $typography: (
-  heading-display: (
-    font-family: var(--ff-header),
-    font-weight: var(--fw-normal),
-    font-size: 32px,
-    line-height: 48px,
-    letter-spacing: -1.5px,
-    font-size--desktop: 48px,
-    line-height--desktop: 56px,
-  ),
-  heading-xl: (
-    font-family: var(--ff-header),
-    font-weight: var(--fw-normal),
-    font-size: 28px,
-    line-height: 36px,
-    letter-spacing: -1.5px,
-    font-size--desktop: 40px,
-    line-height--desktop: 52px,
-  ),
-  body-xl: (
-    font-family: var(--ff-body),
-    font-weight: var(--fw-normal),
-    font-size: 20px,
-    line-height: 28px,
+  display: (
+    xl: (
+      font-size: 40px,
+      line-height: 52px,
+      breakpoints: (
+        mobile: (
+          font-size: 20px,
+          line-height: 24px,
+        ),
+      )
+    ),
   ),
 );
 
-@mixin text($token-type) {
-  $token: extend-in-map($typography, $token-type);
-  font-family: key($token, font-family);
-  font-weight: key($token, font-family);
-  font-size: key($token, font-family);
-  line-height: key($token, font-family);
-  @if map-has-key($token, letter-spacing) {
-    letter-spacing: key($token, letter-spacing);
-  }
-  @if map-has-key($token, font-size--desktop) {
-    @media all and (min-width: 1024px) {
-      font-size: key($token, font-size--desktop);
+@mixin typo-default {
+}
+
+@mixin text($type, $size) {
+  @each $size, $css in map.get($typography, $type) {
+    @each $prop, $value in $css {
+      @if ($prop != 'breakpoints') {
+        #{$prop}: #{$value};
+      }
     }
-  }
-  @if map-has-key($token, line-height--desktop) {
-    @media all and (min-width: 1024px) {
-      font-size: key($token, line-height--desktop);
+
+    @if (map.has-key($css, 'breakpoints')) {
+      $breakpoints: map.get($css, 'breakpoints');
+      @media all and (min-width: 1024px) {
+        @each $bp_prop, $bp_value in map.get($breakpoints, 'mobile') {
+            #{$bp_prop}: #{$bp_value};
+          }
+      }
     }
   }
 }
 
 // Creates a class for each key in $typography map
-@each $key, $css in $typography {
-  .text-#{$key} {
-    @include text($key);
+@each $type, $sizes in $typography {
+  @each $size, $css in $sizes {
+    .text-#{$type}-#{$size} {
+      @include text($type, $size);
+    }
   }
 }
