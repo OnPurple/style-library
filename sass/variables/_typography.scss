@@ -197,6 +197,8 @@ $typography: (
 }
 
 // Creates a class for each key in $typography map
+// .text-heading-lg
+// .text-display-xl
 @each $category, $sizes in $typography {
   @each $size, $css in $sizes {
     @if ($size != 'default') {
