@@ -231,13 +231,11 @@ $typography: (
 @each $category, $sizes in $typography {
   @each $size, $css in $sizes {
     @if ($size != 'default') {
-      //@debug "<p class='text-#{$category}-#{$size}'>#{$category} #{$size}</p>";
       .text-#{$category}-#{$size} {
         @include text($category, 'default');
         @include text($category, $size);
       }
 
-      //@debug "<p class='text-#{$category}-#{$size}-it'>#{$category} #{$size} it</p>";
       .text-#{$category}-#{$size}-it {
         @include text($category, 'default');
         @include text($category, $size);
