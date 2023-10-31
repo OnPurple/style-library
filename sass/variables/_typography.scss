@@ -57,6 +57,14 @@
 }
 
 /**
+ * Convert px to rem.
+ */
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+/**
  * Typography list from Figma.
  *
  * A nested array by type and size. There can be a "default" size which will be
@@ -68,46 +76,46 @@ $typography: (
       font-family: var(--ff-primary),
     ),
     xl: (
-      font-size: 68px,
-      line-height: 76px,
-      letter-spacing: -2.25px,
+      font-size: toRem(68),
+      line-height: toRem(76),
+      letter-spacing: toRem(-2.25),
       breakpoints: (
         sm: (
-          font-size: 42px,
-          line-height: 56px,
+          font-size: toRem(42),
+          line-height: toRem(56),
         ),
       ),
     ),
     lg: (
-      font-size: 64px,
-      line-height: 72px,
-      letter-spacing: -2px,
+      font-size: toRem(64),
+      line-height: toRem(72),
+      letter-spacing: toRem(-2),
       breakpoints: (
         sm: (
-          font-size: 36px,
-          line-height: 48px,
+          font-size: toRem(36),
+          line-height: toRem(48),
         ),
       )
     ),
     md: (
-      font-size: 54px,
-      line-height: 62px,
-      letter-spacing: -1.75px,
+      font-size: toRem(54),
+      line-height: toRem(62),
+      letter-spacing: toRem(-1.75),
       breakpoints: (
         sm: (
-          font-size: 36px,
-          line-height: 48px,
+          font-size: toRem(36),
+          line-height: toRem(48),
         ),
       )
     ),
     sm: (
-      font-size: 48px,
-      line-height: 56px,
-      letter-spacing: -1.5px,
+      font-size: toRem(48),
+      line-height: toRem(56),
+      letter-spacing: toRem(-1.5),
       breakpoints: (
         sm: (
-          font-size: 36px,
-          line-height: 48px,
+          font-size: toRem(36),
+          line-height: toRem(48),
         ),
       )
     ),
@@ -117,57 +125,57 @@ $typography: (
       font-family: var(--ff-primary),
     ),
     xl: (
-      font-size: 40px,
-      line-height: 52px,
-      letter-spacing: -1.5px,
+      font-size: toRem(40),
+      line-height: toRem(52),
+      letter-spacing: toRem(-1.5),
       breakpoints: (
         sm: (
-          font-size: 28px,
-          line-height: 36px,
+          font-size: toRem(28),
+          line-height: toRem(36),
         ),
       )
     ),
     lg: (
-      font-size: 36px,
-      line-height: 48px,
-      letter-spacing: -1.5px,
+      font-size: toRem(36),
+      line-height: toRem(48),
+      letter-spacing: toRem(-1.5),
       breakpoints: (
         sm: (
-          font-size: 26px,
-          line-height: 34px,
+          font-size: toRem(26),
+          line-height: toRem(34),
         ),
       )
     ),
     md: (
-      font-size: 28px,
-      line-height: 38px,
-      letter-spacing: -1.25px,
+      font-size: toRem(28),
+      line-height: toRem(38),
+      letter-spacing: toRem(-1.25),
       breakpoints: (
         sm: (
-          font-size: 24px,
-          line-height: 30px,
+          font-size: toRem(24),
+          line-height: toRem(30),
         ),
       )
     ),
     sm: (
-      font-size: 24px,
-      line-height: 34px,
-      letter-spacing: -1px,
+      font-size: toRem(24),
+      line-height: toRem(34),
+      letter-spacing: toRem(-1),
       breakpoints: (
         sm: (
-          font-size: 20px,
-          line-height: 28px,
+          font-size: toRem(20),
+          line-height: toRem(28),
         ),
       )
     ),
     xs: (
-      font-size: 20px,
-      line-height: 28px,
-      letter-spacing: -0.5px,
+      font-size: toRem(20),
+      line-height: toRem(28),
+      letter-spacing: toRem(-0.5),
       breakpoints: (
         sm: (
-          font-size: 18px,
-          line-height: 26px,
+          font-size: toRem(18),
+          line-height: toRem(26),
         ),
       )
     ),
@@ -177,20 +185,20 @@ $typography: (
       font-family: var(--ff-secondary),
     ),
     xl: (
-      font-size: 20px,
-      line-height: 28px,
+      font-size: toRem(20),
+      line-height: toRem(28),
     ),
     lg: (
-      font-size: 18px,
-      line-height: 26px,
+      font-size: toRem(18),
+      line-height: toRem(26),
     ),
     md: (
-      font-size: 16px,
-      line-height: 24px,
+      font-size: toRem(16),
+      line-height: toRem(24),
     ),
     sm: (
-      font-size: 14px,
-      line-height: 20px,
+      font-size: toRem(14),
+      line-height: toRem(20),
     ),
   ),
 );
@@ -253,7 +261,7 @@ $typography: (
 .text-utility-eyebrow {
   @include text('body', 'md');
   font-weight: var(--fw-medium);
-  letter-spacing: 1.75px;
+  letter-spacing: toRem(1.75px);
 }
 
 .text-utility-link {
@@ -275,20 +283,20 @@ $typography: (
 
 .text-utility-button {
   @include text('body', 'sm');
-  font-size: 14px;
-  line-height: 20px;
+  font-size: toRem(14px);
+  line-height: toRem(20px);
 }
 
 .text-utility-legal {
   @include text('body', 'md');
-  font-size: 12px;
-  line-height: 18px;
+  font-size: toRem(12px);
+  line-height: toRem(18px);
 }
 
 .text-utility-mega-menu {
   @include text('body', 'md');
   font-family: var(--ff-primary);
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -1.5px;
+  font-size: toRem(16px);
+  line-height: toRem(24px);
+  letter-spacing: toRem(-1.5px);
 }
