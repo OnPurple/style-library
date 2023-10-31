@@ -141,7 +141,7 @@ $typography: (
     md: (
       font-size: 28px,
       line-height: 38px,
-      letter-spacing: 1.25px,
+      letter-spacing: -1.25px,
       breakpoints: (
         sm: (
           font-size: 24px,
@@ -237,7 +237,7 @@ $typography: (
         @include text($category, $size);
       }
 
-      //@debug "<p class='text-#{$category}-#{$size}-it'>#{$category} #{$size} it</p>";
+      @debug "<p class='text-#{$category}-#{$size}-it'>#{$category} #{$size} it</p>";
       .text-#{$category}-#{$size}-it {
         @include text($category, 'default');
         @include text($category, $size);
