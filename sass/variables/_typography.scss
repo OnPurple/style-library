@@ -119,50 +119,55 @@ $typography: (
     xl: (
       font-size: 40px,
       line-height: 52px,
+      letter-spacing: -1.5px,
       breakpoints: (
         sm: (
-          font-size: 20px,
-          line-height: 24px,
+          font-size: 28px,
+          line-height: 36px,
         ),
       )
     ),
     lg: (
-      font-size: 40px,
-      line-height: 52px,
+      font-size: 36px,
+      line-height: 48px,
+      letter-spacing: -1.5px,
       breakpoints: (
         sm: (
-          font-size: 20px,
-          line-height: 24px,
+          font-size: 26px,
+          line-height: 34px,
         ),
       )
     ),
     md: (
-      font-size: 40px,
-      line-height: 52px,
+      font-size: 28px,
+      line-height: 38px,
+      letter-spacing: 1.25px,
       breakpoints: (
         sm: (
-          font-size: 20px,
-          line-height: 24px,
+          font-size: 24px,
+          line-height: 30px,
         ),
       )
     ),
     sm: (
-      font-size: 40px,
-      line-height: 52px,
+      font-size: 24px,
+      line-height: 34px,
+      letter-spacing: -1px,
       breakpoints: (
         sm: (
           font-size: 20px,
-          line-height: 24px,
+          line-height: 28px,
         ),
       )
     ),
     xs: (
-      font-size: 40px,
-      line-height: 52px,
+      font-size: 20px,
+      line-height: 28px,
+      letter-spacing: -0.5px,
       breakpoints: (
         sm: (
-          font-size: 20px,
-          line-height: 24px,
+          font-size: 18px,
+          line-height: 26px,
         ),
       )
     ),
@@ -200,21 +205,21 @@ $typography: (
 @mixin text($type, $size) {
   $size_map: map.get(map.get($typography, $type), $size);
 
-  @each $prop, $value in $size_map {
-    @if ($prop != 'breakpoints') {
-      #{$prop}: #{$value};
-    }
-  }
-
   @if (map.has-key($size_map, 'breakpoints')) {
     $breakpoints: map.get($size_map, 'breakpoints');
 
     @each $bp_size, $bp_props in $breakpoints {
-      @include mixins.breakpoint($bp_size) {
+      @include mixins.breakpoint-max($bp_size) {
         @each $bp_prop, $bp_value in $bp_props {
           #{$bp_prop}: #{$bp_value};
         }
       }
+    }
+  }
+
+  @each $prop, $value in $size_map {
+    @if ($prop != 'breakpoints') {
+      #{$prop}: #{$value};
     }
   }
 }
@@ -226,10 +231,13 @@ $typography: (
 @each $category, $sizes in $typography {
   @each $size, $css in $sizes {
     @if ($size != 'default') {
+      @debug "<p class='text-#{$category}-#{$size}'>#{$category} #{$size}</p>";
       .text-#{$category}-#{$size} {
         @include text($category, 'default');
         @include text($category, $size);
       }
+
+      //@debug "<p class='text-#{$category}-#{$size}-it'>#{$category} #{$size} it</p>";
       .text-#{$category}-#{$size}-it {
         @include text($category, 'default');
         @include text($category, $size);
