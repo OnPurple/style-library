@@ -1,5 +1,5 @@
 @use "sass:map";
-@import "../mixins/_mixins";
+@use "../mixins/_mixins" as mixins;
 
 :root {
   // Font Families
@@ -65,7 +65,7 @@
 $typography: (
   display: (
     default: (
-      font-family: 'Galaxie',
+      font-family: var(--ff-primary),
     ),
     xl: (
       font-size: 68px,
@@ -114,7 +114,7 @@ $typography: (
   ),
   heading: (
     default: (
-      font-family: 'Galaxie',
+      font-family: var(--ff-primary),
     ),
     xl: (
       font-size: 40px,
@@ -169,7 +169,7 @@ $typography: (
   ),
   body: (
     default: (
-      font-family: 'Graphik',
+      font-family: var(--ff-secondary),
     ),
     xl: (
       font-size: 20px,
@@ -209,8 +209,8 @@ $typography: (
   @if (map.has-key($size, 'breakpoints')) {
     $bp_props: map.get($size, 'breakpoints');
 
-    // Add more as we need them.
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    // @todo just loop over all the breakpoints
+    @include mixins.breakpoint('sm') {
       @each $bp_prop, $bp_value in map.get($bp_props, 'sm') {
         #{$bp_prop}: #{$bp_value};
       }
