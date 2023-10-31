@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../mixins/_mixins" as mixins;
+
 :root {
   // Font Families
   --ff-primary: 'Galaxie Copernicus', georgia, serif;
@@ -51,4 +54,249 @@
     --fs-h5: 1.5rem;   // 24px
     --fs-h6: 1.25rem;  // 20px
   }
+}
+
+/**
+ * Convert px to rem.
+ */
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+/**
+ * Typography list from Figma.
+ *
+ * A nested array by type and size. There can be a "default" size which will be
+ * applied to all sizes.
+ */
+$typography: (
+  display: (
+    default: (
+      font-family: var(--ff-primary),
+    ),
+    xl: (
+      font-size: toRem(68),
+      line-height: toRem(76),
+      letter-spacing: toRem(-2.25),
+      breakpoints: (
+        sm: (
+          font-size: toRem(42),
+          line-height: toRem(56),
+        ),
+      ),
+    ),
+    lg: (
+      font-size: toRem(64),
+      line-height: toRem(72),
+      letter-spacing: toRem(-2),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+    md: (
+      font-size: toRem(54),
+      line-height: toRem(62),
+      letter-spacing: toRem(-1.75),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+    sm: (
+      font-size: toRem(48),
+      line-height: toRem(56),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+  ),
+  heading: (
+    default: (
+      font-family: var(--ff-primary),
+    ),
+    xl: (
+      font-size: toRem(40),
+      line-height: toRem(52),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(28),
+          line-height: toRem(36),
+        ),
+      )
+    ),
+    lg: (
+      font-size: toRem(36),
+      line-height: toRem(48),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(26),
+          line-height: toRem(34),
+        ),
+      )
+    ),
+    md: (
+      font-size: toRem(28),
+      line-height: toRem(38),
+      letter-spacing: toRem(-1.25),
+      breakpoints: (
+        sm: (
+          font-size: toRem(24),
+          line-height: toRem(30),
+        ),
+      )
+    ),
+    sm: (
+      font-size: toRem(24),
+      line-height: toRem(34),
+      letter-spacing: toRem(-1),
+      breakpoints: (
+        sm: (
+          font-size: toRem(20),
+          line-height: toRem(28),
+        ),
+      )
+    ),
+    xs: (
+      font-size: toRem(20),
+      line-height: toRem(28),
+      letter-spacing: toRem(-0.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(18),
+          line-height: toRem(26),
+        ),
+      )
+    ),
+  ),
+  body: (
+    default: (
+      font-family: var(--ff-secondary),
+    ),
+    xl: (
+      font-size: toRem(20),
+      line-height: toRem(28),
+    ),
+    lg: (
+      font-size: toRem(18),
+      line-height: toRem(26),
+    ),
+    md: (
+      font-size: toRem(16),
+      line-height: toRem(24),
+    ),
+    sm: (
+      font-size: toRem(14),
+      line-height: toRem(20),
+    ),
+  ),
+);
+
+/**
+ * @param $type
+ *   Type, e.g. "display", "heading", "body".
+ *
+ * @param $size
+ *   Size, e.g. "xl", "lg", "xs".
+ */
+@mixin text($type, $size) {
+  $size_map: map.get(map.get($typography, $type), $size);
+
+  @if (map.has-key($size_map, 'breakpoints')) {
+    $breakpoints: map.get($size_map, 'breakpoints');
+
+    @each $bp_size, $bp_props in $breakpoints {
+      @include mixins.breakpoint-max($bp_size) {
+        @each $bp_prop, $bp_value in $bp_props {
+          #{$bp_prop}: #{$bp_value};
+        }
+      }
+    }
+  }
+
+  @each $prop, $value in $size_map {
+    @if ($prop != 'breakpoints') {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+// Creates a class for each combination in $typography map
+// .text-heading-lg
+// .text-display-xl
+// .text-heading-xl-it
+@each $category, $sizes in $typography {
+  @each $size, $css in $sizes {
+    @if ($size != 'default') {
+      .text-#{$category}-#{$size} {
+        @include text($category, 'default');
+        @include text($category, $size);
+      }
+
+      .text-#{$category}-#{$size}-it {
+        @include text($category, 'default');
+        @include text($category, $size);
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// Body class is the same as "md" just without the key.
+.text-body {
+  @include text('body', 'md');
+}
+
+.text-utility-eyebrow {
+  @include text('body', 'md');
+  font-weight: var(--fw-medium);
+  letter-spacing: toRem(1.75px);
+}
+
+.text-utility-link {
+  @include text('body', 'md');
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+}
+
+.text-utility-link-sm {
+  @include text('body', 'sm');
+  text-decoration: underline;
+}
+
+.text-utility-link-standalone {
+  @include text('body', 'sm');
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+}
+
+.text-utility-button {
+  @include text('body', 'sm');
+  font-size: toRem(14px);
+  line-height: toRem(20px);
+}
+
+.text-utility-legal {
+  @include text('body', 'md');
+  font-size: toRem(12px);
+  line-height: toRem(18px);
+}
+
+.text-utility-mega-menu {
+  @include text('body', 'md');
+  font-family: var(--ff-primary);
+  font-size: toRem(16px);
+  line-height: toRem(24px);
+  letter-spacing: toRem(-1.5px);
 }
