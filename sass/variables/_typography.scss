@@ -198,25 +198,25 @@ $typography: (
  *   Size, e.g. "xl", "lg", "xs".
  */
 @mixin text($type, $size) {
-  $size: map.get(map.get($typography, $type), $size);
+  $size_map: map.get(map.get($typography, $type), $size);
 
-  @each $prop, $value in $size {
+  @each $prop, $value in $size_map {
     @if ($prop != 'breakpoints') {
       #{$prop}: #{$value};
     }
   }
 
-  @if (map.has-key($size, 'breakpoints')) {
-    $bp_props: map.get($size, 'breakpoints');
+  @if (map.has-key($size_map, 'breakpoints')) {
+    $breakpoints: map.get($size_map, 'breakpoints');
 
-    // @todo just loop over all the breakpoints
-    @include mixins.breakpoint('sm') {
-      @each $bp_prop, $bp_value in map.get($bp_props, 'sm') {
-        #{$bp_prop}: #{$bp_value};
+    @each $bp_size, $bp_props in $breakpoints {
+      @include mixins.breakpoint($bp_size) {
+        @each $bp_prop, $bp_value in $bp_props {
+          #{$bp_prop}: #{$bp_value};
+        }
       }
     }
   }
-
 }
 
 // Creates a class for each combination in $typography map
