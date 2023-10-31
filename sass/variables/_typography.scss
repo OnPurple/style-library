@@ -58,7 +58,52 @@
 $typography: (
   display: (
     default: (
-      font-family: 'whatever',
+      font-family: 'Galaxie',
+    ),
+    xl: (
+      font-size: 68px,
+      line-height: 76px,
+      breakpoints: (
+        mobile: (
+          font-size: 42px,
+          line-height: 56px,
+        ),
+      ),
+    ),
+    lg: (
+      font-size: 64px,
+      line-height: 72px,
+      breakpoints: (
+        mobile: (
+          font-size: 36px,
+          line-height: 48px,
+        ),
+      )
+    ),
+    md: (
+      font-size: 54px,
+      line-height: 62px,
+      breakpoints: (
+        mobile: (
+          font-size: 36px,
+          line-height: 48px,
+        ),
+      )
+    ),
+    sm: (
+      font-size: 48px,
+      line-height: 56px,
+      breakpoints: (
+        mobile: (
+          font-size: 36px,
+          line-height: 48px,
+        ),
+      )
+    ),
+  ),
+  heading: (
+    default: (
+      font-family: 'Galaxie',
     ),
     xl: (
       font-size: 40px,
@@ -111,8 +156,10 @@ $typography: (
       )
     ),
   ),
-  heading: (
-    default: (),
+  body: (
+    default: (
+      font-family: 'Galaxie',
+    ),
     xl: (
       font-size: 40px,
       line-height: 52px,
@@ -123,7 +170,7 @@ $typography: (
         ),
       )
     ),
-    lg: (
+  lg: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
@@ -188,7 +235,6 @@ $typography: (
     // Add more as we need them.
     @media all and (min-width: 1024px) {
       @each $bp_prop, $bp_value in map.get($breakpoints, 'mobile') {
-        @debug $bp_prop $bp_value;
         #{$bp_prop}: #{$bp_value};
       }
     }
@@ -205,6 +251,11 @@ $typography: (
       .text-#{$category}-#{$size} {
         @include text($category, 'default');
         @include text($category, $size);
+      }
+      .text-#{$category}-#{$size}-it {
+        @include text($category, 'default');
+        @include text($category, $size);
+        font-style: italic;
       }
     }
   }
