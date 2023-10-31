@@ -1,4 +1,5 @@
 @use "sass:map";
+@import "../mixins/_mixins";
 
 :root {
   // Font Families
@@ -71,7 +72,7 @@ $typography: (
       line-height: 76px,
       letter-spacing: -2.25px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 42px,
           line-height: 56px,
         ),
@@ -82,7 +83,7 @@ $typography: (
       line-height: 72px,
       letter-spacing: -2px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 36px,
           line-height: 48px,
         ),
@@ -93,7 +94,7 @@ $typography: (
       line-height: 62px,
       letter-spacing: -1.75px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 36px,
           line-height: 48px,
         ),
@@ -104,7 +105,7 @@ $typography: (
       line-height: 56px,
       letter-spacing: -1.5px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 36px,
           line-height: 48px,
         ),
@@ -119,7 +120,7 @@ $typography: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 20px,
           line-height: 24px,
         ),
@@ -129,7 +130,7 @@ $typography: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 20px,
           line-height: 24px,
         ),
@@ -139,7 +140,7 @@ $typography: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 20px,
           line-height: 24px,
         ),
@@ -149,7 +150,7 @@ $typography: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 20px,
           line-height: 24px,
         ),
@@ -159,7 +160,7 @@ $typography: (
       font-size: 40px,
       line-height: 52px,
       breakpoints: (
-        mobile: (
+        sm: (
           font-size: 20px,
           line-height: 24px,
         ),
@@ -206,11 +207,11 @@ $typography: (
   }
 
   @if (map.has-key($size, 'breakpoints')) {
-    $breakpoints: map.get($size, 'breakpoints');
+    $bp_props: map.get($size, 'breakpoints');
 
     // Add more as we need them.
-    @media all and (min-width: 1024px) {
-      @each $bp_prop, $bp_value in map.get($breakpoints, 'mobile') {
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      @each $bp_prop, $bp_value in map.get($bp_props, 'sm') {
         #{$bp_prop}: #{$bp_value};
       }
     }
