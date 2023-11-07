@@ -296,3 +296,72 @@ h6, .h6 {
     display: none;
   }
 }
+
+// Creates a class for each combination in $typography map
+// .text-heading-lg
+// .text-display-xl
+// .text-heading-xl-it
+@each $category, $sizes in $typography {
+  @each $size, $css in $sizes {
+    @if ($size != 'default') {
+      .text-#{$category}-#{$size} {
+        @include text($category, 'default');
+        @include text($category, $size);
+      }
+
+      .text-#{$category}-#{$size}-it {
+        @include text($category, 'default');
+        @include text($category, $size);
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// Body class is the same as "md" just without the key.
+.text-body {
+  @include text('body', 'md');
+}
+
+.text-utility-eyebrow {
+  @include text('body', 'md');
+  font-weight: var(--fw-medium);
+  letter-spacing: toRem(1.75px);
+}
+
+.text-utility-link {
+  @include text('body', 'md');
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+}
+
+.text-utility-link-sm {
+  @include text('body', 'sm');
+  text-decoration: underline;
+}
+
+.text-utility-link-standalone {
+  @include text('body', 'sm');
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+}
+
+.text-utility-button {
+  @include text('body', 'sm');
+  font-size: toRem(14px);
+  line-height: toRem(20px);
+}
+
+.text-utility-legal {
+  @include text('body', 'md');
+  font-size: toRem(12px);
+  line-height: toRem(18px);
+}
+
+.text-utility-mega-menu {
+  @include text('body', 'md');
+  font-family: var(--ff-primary);
+  font-size: toRem(16px);
+  line-height: toRem(24px);
+  letter-spacing: toRem(-1.5px);
+}
