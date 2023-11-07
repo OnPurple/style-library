@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "../mixins/_mixins" as mixins;
 
 /**
  * @param $type
@@ -15,7 +14,7 @@
     $breakpoints: map.get($size_map, 'breakpoints');
 
     @each $bp_size, $bp_props in $breakpoints {
-      @include mixins.breakpoint-max($bp_size) {
+      @include breakpoint-max($bp_size) {
         @each $bp_prop, $bp_value in $bp_props {
           #{$bp_prop}: #{$bp_value};
         }
