@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../mixins/_mixins" as mixins;
+
+/**
+ * @param $type
+ *   Type, e.g. "display", "heading", "body".
+ *
+ * @param $size
+ *   Size, e.g. "xl", "lg", "xs".
+ */
+@mixin text($type, $size) {
+  $size_map: map.get(map.get($typography, $type), $size);
+
+  @if (map.has-key($size_map, 'breakpoints')) {
+    $breakpoints: map.get($size_map, 'breakpoints');
+
+    @each $bp_size, $bp_props in $breakpoints {
+      @include mixins.breakpoint-max($bp_size) {
+        @each $bp_prop, $bp_value in $bp_props {
+          #{$bp_prop}: #{$bp_value};
+        }
+      }
+    }
+  }
+
+  @each $prop, $value in $size_map {
+    @if ($prop != 'breakpoints') {
+      #{$prop}: #{$value};
+    }
+  }
+}
