@@ -1,4 +1,6 @@
 @use "sass:map";
+@use '../variables/_typography.scss' as typography;
+
 
 /**
  * @param $type
@@ -8,7 +10,7 @@
  *   Size, e.g. "xl", "lg", "xs".
  */
 @mixin text($type, $size) {
-  $size_map: map.get(map.get($typography, $type), $size);
+  $size_map: map.get(map.get(typography.$typography, $type), $size);
 
   @if (map.has-key($size_map, 'breakpoints')) {
     $breakpoints: map.get($size_map, 'breakpoints');
