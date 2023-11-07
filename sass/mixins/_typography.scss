@@ -1,6 +1,152 @@
 @use "sass:map";
 @use '../variables/_typography.scss' as typography;
 
+/**
+ * Convert px to rem.
+ */
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+/**
+ * Typography list from Figma.
+ *
+ * A nested array by type and size. There can be a "default" size which will be
+ * applied to all sizes.
+ */
+$typography: (
+  display: (
+    default: (
+      font-family: var(--ff-primary),
+    ),
+    xl: (
+      font-size: toRem(68),
+      line-height: toRem(76),
+      letter-spacing: toRem(-2.25),
+      breakpoints: (
+        sm: (
+          font-size: toRem(42),
+          line-height: toRem(56),
+        ),
+      ),
+    ),
+    lg: (
+      font-size: toRem(64),
+      line-height: toRem(72),
+      letter-spacing: toRem(-2),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+    md: (
+      font-size: toRem(54),
+      line-height: toRem(62),
+      letter-spacing: toRem(-1.75),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+    sm: (
+      font-size: toRem(48),
+      line-height: toRem(56),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+  ),
+  heading: (
+    default: (
+      font-family: var(--ff-primary),
+    ),
+    xl: (
+      font-size: toRem(40),
+      line-height: toRem(52),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(28),
+          line-height: toRem(36),
+        ),
+      )
+    ),
+    lg: (
+      font-size: toRem(36),
+      line-height: toRem(48),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(26),
+          line-height: toRem(34),
+        ),
+      )
+    ),
+    md: (
+      font-size: toRem(28),
+      line-height: toRem(38),
+      letter-spacing: toRem(-1.25),
+      breakpoints: (
+        sm: (
+          font-size: toRem(24),
+          line-height: toRem(30),
+        ),
+      )
+    ),
+    sm: (
+      font-size: toRem(24),
+      line-height: toRem(34),
+      letter-spacing: toRem(-1),
+      breakpoints: (
+        sm: (
+          font-size: toRem(20),
+          line-height: toRem(28),
+        ),
+      )
+    ),
+    xs: (
+      font-size: toRem(20),
+      line-height: toRem(28),
+      letter-spacing: toRem(-0.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(18),
+          line-height: toRem(26),
+        ),
+      )
+    ),
+  ),
+  body: (
+    default: (
+      font-family: var(--ff-secondary),
+    ),
+    xl: (
+      font-size: toRem(20),
+      line-height: toRem(28),
+    ),
+    lg: (
+      font-size: toRem(18),
+      line-height: toRem(26),
+    ),
+    md: (
+      font-size: toRem(16),
+      line-height: toRem(24),
+    ),
+    sm: (
+      font-size: toRem(14),
+      line-height: toRem(20),
+    ),
+  ),
+);
 
 /**
  * @param $type
