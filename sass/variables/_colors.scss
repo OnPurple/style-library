@@ -77,6 +77,9 @@ $color-map: (
   --color-text-warning: var(--color-messaging-warning-300);
   --color-text-error: var(--color-messaging-error-300);
   --color-text-notification: var(--color-messaging-notification-300);
+  // Icons
+  --color-icon-primary: var(--color-brand-twilight-500);
+  --color-icon-primary-dark-mode: var(--color-brand-white);
 }
 
 :root {
