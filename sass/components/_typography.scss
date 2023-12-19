@@ -348,8 +348,7 @@ h6, .h6 {
 
 .text-utility-button {
   @include text('body', 'sm');
-  font-size: toRem(14px);
-  line-height: toRem(20px);
+  font-weight: var(--fw-medium);
 }
 
 .text-utility-legal {
