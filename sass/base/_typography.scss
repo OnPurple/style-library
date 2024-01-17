@@ -143,4 +143,31 @@ $typography: (
       line-height: toRem(20),
     ),
   ),
+  banner: (
+    default: (
+      font-family: var(--ff-primary),
+    ),
+    lg: (
+      font-size: toRem(56),
+      line-height: toRem(64),
+      letter-spacing: toRem(-1.5),
+      breakpoints: (
+        sm: (
+          font-size: toRem(36),
+          line-height: toRem(48),
+        ),
+      )
+    ),
+    sm: (
+      font-size: toRem(24),
+      line-height: toRem(34),
+      letter-spacing: toRem(-1),
+      breakpoints: (
+        sm: (
+          font-size: toRem(18),
+          line-height: toRem(26),
+        ),
+      )
+    ),
+  ),
 );
