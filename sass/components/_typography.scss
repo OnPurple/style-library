@@ -364,3 +364,7 @@ h6, .h6 {
   line-height: toRem(24px);
   letter-spacing: toRem(-1.5px);
 }
+
+.text-semibold {
+  font-weight: 600 !important;
+}
