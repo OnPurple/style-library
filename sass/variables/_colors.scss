@@ -194,8 +194,8 @@ $color-map: (
   --bg-gradient-aqua: linear-gradient(180deg, var(--aqua-light-40) 0%, var(--white) 100%);
   --bg-gradient-green: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%);
   --bg-gradient-magic-hour: linear-gradient(104deg, var(--light-purple-60) 3.4%, var(--pink) 94%);
-  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--scrim-dark) 0) 0%, rgb(var(--scrim-dark) 0.6) 110.2%);
-  --scrim-gradient-light: linear-gradient(180deg, rgb(var(--scrim-light) 0) 0%, rgb(var(--scrim-light) 0.6) 110.2%);
+  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--scrim-dark), 0) 0%, rgb(var(--scrim-dark) 0.6) 110.2%);
+  --scrim-gradient-light: linear-gradient(180deg, rgb(var(--scrim-light), 0) 0%, rgb(var(--scrim-light) 0.6) 110.2%);
   --active-bg-primary: var(--twilight);
   --border-gray: var(--border-divider);
 
