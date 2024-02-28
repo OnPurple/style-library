@@ -20,7 +20,7 @@ $galaxie-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Galax
   font-family: $galaxie-font-name;
   src: url($galaxie-font-dir + 'GalaxieCopernicus-Semibold.woff2') format('woff2'),
        url($galaxie-font-dir + 'GalaxieCopernicus-Semibold.ttf') format('truetype');
-  font-weight: 600;
+  font-weight: 500;
   font-display: swap;
 }
 
