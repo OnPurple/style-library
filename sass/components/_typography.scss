@@ -85,7 +85,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   font-family: var(--ff-header);
-  font-weight: var(--fw-heading);
+  font-weight: var(--fw-normal);
   color: var(--heading-color);
   margin-top: 0;
   margin-bottom: var(--mb-heading);
@@ -366,5 +366,5 @@ h6, .h6 {
 }
 
 .text-semibold {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
