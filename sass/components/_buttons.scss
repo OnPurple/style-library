@@ -117,16 +117,11 @@ Button Utility Classes
 
 // Size
 .btn--medium {
-  --btn-padding: var(--btn-padding-md);
-  --btn-border-radius: var(--btn-border-radius-md);
-  --btn-fs: 0.875rem;
-  --btn-lh: 1.3;
+  @include btn-size('medium');
 }
 
 .btn--small {
-  --btn-padding: var(--btn-padding-sm);
-  --btn-border-radius: var(--btn-border-radius-sm);
-  --btn-fs: 0.75rem;
+  @include btn-size('small');
 }
 
 // Disabled button.
