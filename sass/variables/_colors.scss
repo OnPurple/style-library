@@ -194,8 +194,10 @@ $color-map: (
   --bg-gradient-aqua: linear-gradient(180deg, var(--aqua-light-40) 0%, var(--white) 100%);
   --bg-gradient-green: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%);
   --bg-gradient-magic-hour: linear-gradient(104deg, var(--light-purple-60) 3.4%, var(--pink) 94%);
-  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--scrim-dark), 0) 0%, rgb(var(--scrim-dark), 0.6) 110.2%);
-  --scrim-gradient-light: linear-gradient(180deg, rgb(var(--scrim-light), 0) 0%, rgb(var(--scrim-light), 0.6) 110.2%);
+  --scrim-gradient-dark: linear-gradient(180deg, rgba(var(--color-brand-twilight-500-rgb), 0) 0%, var(--scrim-dark) 110.2%);
+  --scrim-gradient-light: linear-gradient(180deg, rgb(96, 92, 102, 0) 0%, rgb(96, 92, 102, 0.6) 110.2%);
+  --scrim-gradient-top: linear-gradient(180deg, rgba(18, 5, 46, 0.60) 0%, rgba(16, 3, 41, 0.00) 31.07%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
+  --scrim-gradient-bottom: linear-gradient(180deg, rgba(16, 3, 41, 0.00) 67.26%, rgba(18, 5, 46, 0.60) 100%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
   --active-bg-primary: var(--twilight);
   --border-gray: var(--border-divider);
 
@@ -219,8 +221,9 @@ $color-map: (
   --body-color: var(--twilight);
   --heading-color: var(--twilight);
   --promo-color: var(--orchid);
-  --scrim-dark: 25, 15, 57;
-  --scrim-light: 96, 92, 102;
+  --scrim-dark: rgba(var(--color-brand-twilightfade-45));
+  --scrim-light: rgba(var(--color-brand-twilightfade-20));
+  --scrim-gray: rgba(21, 21, 38, 0.2);
   --card-gray: #F9F8F9;
   --yellow-light: #FFF0CD;
 
