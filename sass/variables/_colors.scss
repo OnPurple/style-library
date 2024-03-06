@@ -221,8 +221,8 @@ $color-map: (
   --body-color: var(--twilight);
   --heading-color: var(--twilight);
   --promo-color: var(--orchid);
-  --scrim-dark: rgba(var(--color-brand-twilightfade-45));
-  --scrim-light: rgba(var(--color-brand-twilightfade-20));
+  --scrim-dark: var(--color-brand-twilightfade-45);
+  --scrim-light: var(--color-brand-twilightfade-20);
   --scrim-gray: rgba(21, 21, 38, 0.2);
   --card-gray: #F9F8F9;
   --yellow-light: #FFF0CD;
