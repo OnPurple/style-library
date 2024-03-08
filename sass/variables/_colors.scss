@@ -90,37 +90,37 @@ $color-map: (
 
 :root {
   // Version 2.0 - AKQA COLORS
-  --twilight: #1F1A5E;
-  --twilight-10: rgb(230 228 237);
-  --cat-nap: #8C57B4;
-  --daydream: #D7AAFA;
-  --dreamscape: #E091E6;
-  --lavender-skies: #D7C6E6;
-  --stardust: #ECEAE4;
-  --clear-skies: #98DED9;
-  --golden-hour: #F4B53F;
-  --powernap: #D62EE5;
-  --rem: #2A62D4;
-  --lilac: #EFE8F5;
-  --light-lilac: #F7F5FF;
-  --sandman: #F8F5EF;
-  --nocturnal: #6F6990;
-  --orchid: #B113C0;
-  --linen: #F6F6F6;
+  --twilight: var(--color-brand-twilight-500); // replace with twilight-500
+  // --twilight-10: rgb(230 228 237); replace with twilight-100
+  --cat-nap: var(--color-brand-lavender-500);
+  --daydream: var(--color-brand-daydream);
+  --dreamscape: var(--color-brand-dreamscape);
+  --lavender-skies: var(--color-brand-lavenderskies);
+  --stardust: var(--color-brand-stardust);
+  --clear-skies: var(--color-brand-clearskies);
+  --golden-hour: var(--color-brand-goldenhour);
+  --powernap: var(--color-brand-powernap);
+  --rem: var(--color-brand-rem);
+  --lilac: var(--color-brand-lilac);
+  --light-lilac: #F7F5FF; // Needs a replacement color
+  --sandman: var(--color-brand-sandman);
+  --nocturnal: var(--color-brand-nocturnal);
+  --orchid: var(--color-brand-orchid);
+  // --linen: #F6F6F6; //unused
 
   // Purple
-  --purple: var(--twilight);
-  --purple-60: #8E80BB;
-  --purple-40: #B4AAD1;
-  --purple-20: #D9D5E8;
-  --purple-10: #ECEAF4;
-  --medium-purple: var(--cat-nap);
-  --light-purple: var(--daydream);
-  --light-purple-60: var(--daydream);
+  --purple: var(--color-brand-twilight-500);
+  --purple-60: var(--color-brand-lavender-400);
+  --purple-40: var(--color-brand-lavender-300);
+  --purple-20: var(--color-brand-lavender-100);
+  --purple-10: var(--color-brand-lavender-100);
+  --medium-purple: var(--color-brand-lavender-500);
+  --light-purple: var(--color-brand-daydream);
+  --light-purple-60: var(--color-brand-daydream);
   --light-purple-50: #CEC9F1;
   --light-purple-40: #DBD5F5;
   --light-purple-20: #E4DFF7;
-  --light-purple-10: #F6F4FC;
+  --light-purple-10: var(--light-lilac);
 
   // Periwinkle
   --periwinkle: #6D7FE1;
@@ -161,11 +161,11 @@ $color-map: (
   --orange-light: var(--orange-60);
 
   // Lavender
-  --lavender: #D2ADEE;
-  --lavender-60: #E4CEF5;
-  --lavender-40: #EDDEF8;
-  --lavender-20: #F6EFFC;
-  --lavender-10: #FBF7FD;
+  // --lavender: #D2ADEE;
+  // --lavender-60: #E4CEF5;
+  // --lavender-40: #EDDEF8;
+  // --lavender-20: #F6EFFC;
+  // --lavender-10: #FBF7FD;
 
   // Gray
   --gray-10: #F2F2F2;
@@ -198,7 +198,7 @@ $color-map: (
   --scrim-gradient-light: linear-gradient(180deg, rgb(96, 92, 102, 0) 0%, rgb(96, 92, 102, 0.6) 110.2%);
   --scrim-gradient-top: linear-gradient(180deg, rgba(18, 5, 46, 0.60) 0%, rgba(16, 3, 41, 0.00) 31.07%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
   --scrim-gradient-bottom: linear-gradient(180deg, rgba(16, 3, 41, 0.00) 67.26%, rgba(18, 5, 46, 0.60) 100%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
-  --active-bg-primary: var(--twilight);
+  --active-bg-primary: var(--color-brand-twilight-500);
   --border-gray: var(--border-divider);
 
   // Borders
@@ -218,8 +218,8 @@ $color-map: (
   --light-gray: #F5F5F5;
   --green-utility: #008746;
   --red-utility: var(--red);
-  --body-color: var(--twilight);
-  --heading-color: var(--twilight);
+  --body-color: var(--color-brand-twilight-500);
+  --heading-color: var(--color-brand-twilight-500);
   --promo-color: var(--orchid);
   --scrim-dark: var(--color-brand-twilightfade-45);
   --scrim-light: var(--color-brand-twilightfade-20);
@@ -248,6 +248,6 @@ $color-map: (
   --border-purple-100: #1F1A5E26;
 
   .dark-mode {
-    --promo-color: var(--lilac);
+    --promo-color: var(--color-brand-lavender-100);
   }
 }

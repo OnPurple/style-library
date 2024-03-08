@@ -21,10 +21,10 @@ Button Utility Classes
 // Define CSS variables.
 .btn {
   --btn-background: transparent;
-  --btn-border: 1px solid var(--twilight);
-  --btn-color: var(--twilight);
-  --btn-active-background: var(--twilight);
-  --btn-active-border: 1px solid var(--twilight);
+  --btn-border: 1px solid var(--color-brand-twilight-500);
+  --btn-color: var(--color-brand-twilight-500);
+  --btn-active-background: var(--color-brand-twilight-500);
+  --btn-active-border: 1px solid var(--color-brand-twilight-500);
   --btn-active-color: var(--white);
   --btn-icon: none;
   --btn-lh: 1.4;
@@ -57,26 +57,26 @@ Button Utility Classes
     --btn-color: var(--white);
     --btn-active-background: var(--white);
     --btn-active-border: 1px solid var(--white);
-    --btn-active-color: var(--twilight);
+    --btn-active-color: var(--color-brand-twilight-500);
   }
 }
 
 // Inverted button. twilight BG and transparent active BG
 .btn--filled {
-  --btn-background: var(--twilight);
-  --btn-border: 1px solid var(--twilight);
+  --btn-background: var(--color-brand-twilight-500);
+  --btn-border: 1px solid var(--color-brand-twilight-500);
   --btn-color: var(--white);
   --btn-active-background: transparent;
-  --btn-active-border: 1px solid var(--twilight);
-  --btn-active-color: var(--twilight);
+  --btn-active-border: 1px solid var(--color-brand-twilight-500);
+  --btn-active-color: var(--color-brand-twilight-500);
 
   .dark-mode & {
     --btn-background: var(--white);
     --btn-border: 1px solid var(--white);
-    --btn-color: var(--twilight);
-    --btn-active-background: var(--twilight-10);
-    --btn-active-border: var(--twilight-10);
-    --btn-active-color: var(--twilight);
+    --btn-color: var(--color-brand-twilight-500);
+    --btn-active-background: var(--color-brand-twilight-100);
+    --btn-active-border: var(--color-brand-twilight-100);
+    --btn-active-color: var(--color-brand-twilight-500);
   }
 }
 
@@ -84,10 +84,10 @@ Button Utility Classes
 .btn--secondary {
   --btn-background: transparent;
   --btn-border: none;
-  --btn-color: var(--twilight);
+  --btn-color: var(--color-brand-twilight-500);
   --btn-active-background: none;
   --btn-active-border: none;
-  --btn-active-color: var(--twilight);
+  --btn-active-color: var(--color-brand-twilight-500);
 
   @include icon-after(arrow);
 
