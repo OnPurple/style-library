@@ -198,6 +198,7 @@ $color-map: (
   --scrim-gradient-light: linear-gradient(180deg, rgb(96, 92, 102, 0) 0%, rgb(96, 92, 102, 0.6) 110.2%);
   --scrim-gradient-top: linear-gradient(180deg, rgba(18, 5, 46, 0.60) 0%, rgba(16, 3, 41, 0.00) 31.07%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
   --scrim-gradient-bottom: linear-gradient(180deg, rgba(16, 3, 41, 0.00) 67.26%, rgba(18, 5, 46, 0.60) 100%), var(--color-brand-twilightfade-20, rgba(31, 26, 94, 0.20));
+  --scrim-gradient-white: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0.6) 100%);
   --active-bg-primary: var(--twilight);
   --border-gray: var(--border-divider);
 
