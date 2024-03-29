@@ -197,22 +197,24 @@ h6, .h6 {
 }
 
 sup {
+  color: var(--color-brand-lavender-500);
   font-size: 60%;
+  font-weight: var(--fw-medium);
   padding-left: 1px;
   vertical-align: baseline;
+  .dark-mode &,
+  .text-secondary-white &,
+  .color-brand-text-white & {
+    color: var(--color-brand-white);
+  }
   a,
   .text-formatted & a,
   .cke_editable & a {
     border: none;
-    color: var(--color-brand-lavender-500);
+    color: inherit;
     font-size: inherit;
-    font-weight: var(--fw-medium);
+    font-weight: inherit;
     text-decoration: none;
-    .dark-mode &,
-    .text-secondary-white &,
-    .color-brand-text-white & {
-      color: var(--color-brand-white);
-    }
   }
   h1 &,
   h2 &,
