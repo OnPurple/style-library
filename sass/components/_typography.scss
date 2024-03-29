@@ -256,6 +256,42 @@ h6, .h6 {
     }
   }
 
+  sup {
+    font-size: 60%;
+    padding-left: 1px;
+    vertical-align: baseline;
+    a,
+    .text-formatted & a,
+    .cke_editable & a {
+      border: none;
+      color: var(--color-brand-lavender-500);
+      font-size: inherit;
+      font-weight: var(--fw-medium);
+      text-decoration: none;
+      .dark-mode &,
+      .text-secondary-white &,
+      .color-brand-text-white & {
+        color: var(--color-brand-white);
+      }
+    }
+    h1 &,
+    h2 &,
+    h3 &,
+    h4 &,
+    .text-utility-eyebrow &,
+    .paragraph--type--offer &,
+    .paragraph--type--countdown &,
+    .field--name-field-eyebrow & {
+      vertical-align: super;
+    }
+    h1:not(.heading--eyebrow) &,
+    h2:not(.heading--eyebrow) &,
+    h3 &,
+    h4 & {
+      font-size: 40%;
+    }
+  }
+
   table {
     width: 100%;
     font-size: 0.85rem;
