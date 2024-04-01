@@ -209,7 +209,10 @@ sup {
   }
   a,
   .text-formatted & a,
-  .cke_editable & a {
+  .cke_editable & a,
+  a:has(&),
+  .text-formatted a:has(&),
+  .cke_editable a:has(&) {
     border: none;
     color: inherit;
     font-size: inherit;
