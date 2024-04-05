@@ -197,9 +197,9 @@ h6, .h6 {
 }
 
 sup {
-  color: var(--color-brand-lavender-500);
+  color: inherit;
   font-size: 60%;
-  font-weight: var(--fw-medium);
+  font-weight: inherit;
   padding-left: 1px;
   vertical-align: baseline;
   .dark-mode &,
@@ -217,7 +217,7 @@ sup {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
-    text-decoration: none;
+    text-decoration: none !important;
   }
   h1 &,
   h2 &,
@@ -226,7 +226,8 @@ sup {
   .text-utility-eyebrow &,
   .paragraph--type--offer &,
   .paragraph--type--countdown &,
-  .field--name-field-eyebrow & {
+  .field--name-field-eyebrow &,
+  .cke_editable & {
     vertical-align: super;
   }
   h1:not(.heading--eyebrow) &,
