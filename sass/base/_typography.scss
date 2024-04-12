@@ -126,6 +126,10 @@ $typography: (
     default: (
       font-family: var(--ff-secondary),
     ),
+    xxl: (
+      font-size: toRem(26),
+      line-height: toRem(20),
+    ),
     xl: (
       font-size: toRem(20),
       line-height: toRem(28),
@@ -141,6 +145,16 @@ $typography: (
     sm: (
       font-size: toRem(14),
       line-height: toRem(20),
+    ),
+    xxl-lg: (
+      font-size: toRem(26),
+      line-height: toRem(20),
+      breakpoints: (
+        sm: (
+          font-size: toRem(18),
+          line-height: toRem(26),
+        ),
+      )
     ),
   ),
   banner: (
