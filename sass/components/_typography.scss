@@ -218,6 +218,9 @@ sup {
     font-size: inherit;
     font-weight: inherit;
     text-decoration: none !important;
+    &:hover {
+      color: inherit;
+    }
   }
   h1 &,
   h2 &,
