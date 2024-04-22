@@ -156,6 +156,16 @@ $typography: (
         ),
       )
     ),
+    lg-xl: (
+      font-size: toRem(18),
+      line-height: toRem(26),
+      breakpoints: (
+        sm: (
+          font-size: toRem(20),
+          line-height: toRem(28),
+        ),
+      )
+    ),
   ),
   banner: (
     default: (
