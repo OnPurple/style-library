@@ -72,6 +72,10 @@ Button Utility Classes
   --btn-active-border: 1px solid var(--twilight);
   --btn-active-color: var(--twilight);
 
+  @include selectors(hover-active) {
+    --btn-active-border: 1px solid var(--twilight);
+  }
+
   .dark-mode & {
     --btn-background: var(--white);
     --btn-border: 1px solid var(--white);
