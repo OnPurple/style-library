@@ -342,6 +342,10 @@ sup {
   }
 }
 
+.text-no-wrap {
+  display: inline-block;
+}
+
 // Creates a class for each combination in $typography map
 // .text-heading-lg
 // .text-display-xl
