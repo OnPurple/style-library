@@ -226,6 +226,10 @@ sup {
   h2 &,
   h3 &,
   h4 &,
+  .h1 &,
+  .h2 &,
+  .h3 &,
+  .h4 &,
   .text-utility-eyebrow &,
   .paragraph--type--offer &,
   .paragraph--type--countdown &,
@@ -236,7 +240,11 @@ sup {
   h1:not(.heading--eyebrow) &,
   h2:not(.heading--eyebrow) &,
   h3 &,
-  h4 & {
+  h4 &,
+  .h1:not(.heading--eyebrow) &,
+  .h2:not(.heading--eyebrow) &,
+  .h3 &,
+  .h4 &, {
     font-size: 30%;
   }
 }
@@ -353,14 +361,24 @@ sup {
 @each $category, $sizes in $typography {
   @each $size, $css in $sizes {
     @if ($size != 'default') {
-      .text-#{$category}-#{$size} {
-        @include text($category, 'default');
-        @include text($category, $size);
-      }
-
+      .text-#{$category}-#{$size},
       .text-#{$category}-#{$size}-it {
         @include text($category, 'default');
         @include text($category, $size);
+
+        // Adjust <sup> font size for larger typography.
+        @if ($category != 'body' and
+        not ($category == 'heading' and $size == 'sm') and
+        not ($category == 'heading' and $size == 'xs') and
+        not ($category == 'banner' and $size == 'sm')) {
+          sup {
+            font-size: 30%;
+            vertical-align: super;
+          }
+        }
+      }
+
+      .text-#{$category}-#{$size}-it {
         font-style: italic;
       }
     }
