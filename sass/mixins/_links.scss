@@ -15,7 +15,8 @@
   font-weight: key($link-conf, font-weight);
   text-decoration: none;
   border-bottom: 1px solid key($link-conf, color);
-  line-height: 1.25rem;
+  letter-spacing: inherit;
+  line-height: 1;
 
   @include selectors(active) {
     color: key($link-conf, active-color);
