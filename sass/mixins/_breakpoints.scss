@@ -8,7 +8,7 @@
 }
 
 @mixin breakpoint-max($bp) {
-  @media (max-width: map-get(config.$breakpoints, $bp) - 1px) {
+  @media (max-width: (map-get(config.$breakpoints, $bp) - 1px)) {
     @content;
   }
 }
