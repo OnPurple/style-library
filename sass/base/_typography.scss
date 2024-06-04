@@ -193,5 +193,16 @@ $typography: (
         ),
       )
     ),
+    xs: (
+      font-size: toRem(24),
+      line-height: toRem(34),
+      letter-spacing: toRem(-1),
+      breakpoints: (
+        sm: (
+          font-size: toRem(14),
+          line-height: toRem(20),
+        ),
+      )
+    ),
   ),
 );
