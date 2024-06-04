@@ -267,10 +267,11 @@ sup {
 
   a {
     @include link(medium);
-
     display: inline-block;
+  }
 
-    &[data-micromodal-trigger]{
+  a, button {
+    &[data-micromodal-trigger] {
       margin-left: 0.25rem;
     }
   }
@@ -354,6 +355,16 @@ sup {
   display: inline-block;
 }
 
+.highlight-round {
+  border-radius: 17px;
+  display: inline-block;
+  line-height: 1;
+  padding: 4px;
+  @include breakpoint(md) {
+    padding: 6px;
+  }
+}
+
 // Creates a class for each combination in $typography map
 // .text-heading-lg
 // .text-display-xl
@@ -370,7 +381,8 @@ sup {
         @if ($category != 'body' and
         not ($category == 'heading' and $size == 'sm') and
         not ($category == 'heading' and $size == 'xs') and
-        not ($category == 'banner' and $size == 'sm')) {
+        not ($category == 'banner' and $size == 'sm') and
+        not ($category == 'banner' and $size == 'xs')) {
           sup {
             font-size: 30%;
             vertical-align: super;
