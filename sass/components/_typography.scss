@@ -365,6 +365,11 @@ sup {
   }
 }
 
+// "--custom-highlight-color" is set in field--heading-1.html.twig & field--heading-2.html.twig.
+.highlight-custom {
+  background-color: var(--custom-highlight-color);
+}
+
 // Creates a class for each combination in $typography map
 // .text-heading-lg
 // .text-display-xl
