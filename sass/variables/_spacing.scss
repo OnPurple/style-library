@@ -37,7 +37,7 @@
   --vs-sm: 2rem;
   --vs-smm: 2.5rem;
   --vs-ms: 3rem;    // 48px
-  --vs-md: 3.5rem;  // 56px
+  --vs-md: 2.5rem;  // 40px
   --vs-ml: 4rem;
   --vs-lg: 5rem;
   --vs-xl: 8rem; // 128px.
@@ -72,7 +72,7 @@
 @include breakpoint(lg) {
   :root {
     --page-gutter: 2.5625rem;
-    --vs-md: 4rem;
+    --vs-md: 3rem;
     --vs-ml: 5rem;
     --vs-lg: 8rem;
     --vs-xl: 12.5rem;
