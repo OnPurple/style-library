@@ -204,5 +204,15 @@ $typography: (
         ),
       )
     ),
+    xxs: (
+      font-size: toRem(20),
+      line-height: toRem(28),
+      breakpoints: (
+        sm: (
+          font-size: toRem(14),
+          line-height: toRem(20),
+        ),
+      )
+    ),
   ),
 );
