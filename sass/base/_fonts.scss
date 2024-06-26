@@ -76,6 +76,13 @@ $graphik-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Graph
   font-display: swap;
 }
 
+@font-face {
+  font-family: $graphik-font-name;
+  src: url($graphik-font-dir + 'GraphikSemibold.otf') format('otf');
+  font-weight: 600;
+  font-display: swap;
+}
+
 // Icon Font
 $icon-font-name: 'icomoon';
 $icon-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/icomoon/fonts/';
