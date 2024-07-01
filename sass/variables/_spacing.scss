@@ -37,7 +37,7 @@
   --vs-sm: 2rem;
   --vs-smm: 2.5rem;
   --vs-ms: 3rem;    // 48px
-  --vs-md: 2.5rem;  // 40px
+  --vs-md: 3.5rem;  // 56px
   --vs-ml: 4rem;
   --vs-lg: 5rem;
   --vs-xl: 8rem; // 128px.
@@ -66,16 +66,18 @@
     --page-gutter: 1.875rem;
     --grid-gutter: 4%;
     --grid-gap: 2%;
+    --global-layout-spacing: 2.5rem; //40px
   }
 }
 
 @include breakpoint(lg) {
   :root {
     --page-gutter: 2.5625rem;
-    --vs-md: 3rem;
+    --vs-md: 4rem;
     --vs-ml: 5rem;
     --vs-lg: 8rem;
     --vs-xl: 12.5rem;
+    --global-layout-spacing: 3rem; //48px
   }
 }
 
