@@ -119,7 +119,7 @@
     @if  $button-key == filled-white or $button-key == secondary-cta or $button-key == secondary-dark {
       background: var(--white) !important;
       border-color: var(--white);
-      color: var(--purple);
+      color: var(--color-brand-twilight-500);
     }
   }
 
