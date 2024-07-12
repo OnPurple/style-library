@@ -18,7 +18,7 @@
     display: inline-block;
     position: absolute;
     width: 160px;
-    background: var(--purple);
+    background: var(--color-brand-twilight-500);
     color: var(--white);
     padding: 5px;
     left: -1000px;
@@ -42,7 +42,7 @@
   transition: background 500ms;
 
   &:focus {
-    background: var(--light-purple);
+    background: var(--color-brand-lavender-400);
     outline: none;
   }
 }

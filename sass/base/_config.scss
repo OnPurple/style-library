@@ -27,14 +27,14 @@ $statusokbg: #2ca20d;
 // Primary, Secondary, Tertiary Colors
 $colors: (
   primary: (
-    purple: var(--purple),
+    purple: var(--color-brand-twilight-500),
     medium-purple: var(--medium-pruple),
     white: var(--white),
     midnight: var(--midnight),
     midnight-light: var(--midnight-light),
   ),
   secondary: (
-    light-purple: var(--light-purple),
+    light-purple: var(--color-brand-lavender-400),
     aqua-dark: var(--aqua-dark),
     aqua-light: var(--aqua-light),
     aqua-text: var(--aqua-text),
@@ -168,26 +168,26 @@ $z-layers: (
 $buttons: (
   primary: (
     background: transparent,
-    color: var(--twilight),
-    border: 1px solid var(--twilight),
-    active-background: var(--twilight),
+    color: var(--color-brand-twilight-500),
+    border: 1px solid var(--color-brand-twilight-500),
+    active-background: var(--color-brand-twilight-500),
     active-color: var(--white),
-    active-border: var(--twilight),
+    active-border: var(--color-brand-twilight-500),
   ),
   primary-filled: (
-    background: var(--twilight),
+    background: var(--color-brand-twilight-500),
     color: var(--white),
-    border: 1px solid var(--twilight),
+    border: 1px solid var(--color-brand-twilight-500),
     active-background: transparent,
-    active-color: var(--twilight),
-    active-border: 1px solid var(--twilight),
+    active-color: var(--color-brand-twilight-500),
+    active-border: 1px solid var(--color-brand-twilight-500),
   ),
   dark-filled: (
     background: var(--white),
-    color: var(--twilight),
+    color: var(--color-brand-twilight-500),
     border: 1px solid var(--white),
     active-background: var(--twilight-10),
-    active-color: var(--twilight),
+    active-color: var(--color-brand-twilight-500),
     active-border: var(--twilight-10),
   ),
   dark: (
@@ -195,7 +195,7 @@ $buttons: (
     color: var(--white),
     border: 1px solid var(--white),
     active-background: var(--white),
-    active-color: var(--purple),
+    active-color: var(--color-brand-twilight-500),
     active-border: var(--white),
   ),
 );
@@ -203,14 +203,14 @@ $buttons: (
 /// Links config
 $links: (
   default: (
-    color: var(--purple),
+    color: var(--color-brand-twilight-500),
     font-weight: var(--fw-normal),
-    active-color: var(--purple),
+    active-color: var(--color-brand-twilight-500),
   ),
   medium: (
-    color: var(--medium-purple),
+    color: var(--color-brand-lavender-500),
     font-weight: var(--fw-medium),
-    active-color: var(--medium-purple),
+    active-color: var(--color-brand-lavender-500),
   ),
   primary: (
     extend: _base,
