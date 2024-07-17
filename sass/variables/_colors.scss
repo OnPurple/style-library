@@ -182,18 +182,18 @@ $color-map: (
   --gray-40: #AEAEAE;
 
   // Background Colors
-  --bg-body: var(--white);
-  --bg-purple-60: var(--color-brand-lavender-400);
-  --bg-purple-50: var(--light-purple-50);
-  --bg-purple-40: var(--light-purple-40);
-  --bg-purple-20: var(--light-purple-20);
-  --bg-purple-10: var(--light-purple-10);
-  --bg-orange: var(--orange-20);
-  --bg-aqua: var(--aqua-light-40);
-  --bg-pink: var(--pink-light);
-  --bg-green: var(--green-10);
-  --bg-periwinkle: var(--periwinkle-10);
-  --bg-yellow: var(--yellow-light);
+  // --bg-body: var(--white);
+  // --bg-purple-60: var(--color-brand-lavender-400);
+  // --bg-purple-50: var(--light-purple-50);
+  // --bg-purple-40: var(--light-purple-40);
+  // --bg-purple-20: var(--light-purple-20);
+  // --bg-purple-10: var(--light-purple-10); One place in react this needs to be updated.
+  // --bg-orange: var(--orange-20);
+  // --bg-aqua: var(--aqua-light-40);
+  // --bg-pink: var(--pink-light);
+  // --bg-green: var(--green-10);
+  // --bg-periwinkle: var(--periwinkle-10);
+  --bg-yellow: var(--yellow-light); // 2 replacements in React
 
   // Background Gradients
   --bg-gradient-purple: linear-gradient(180deg, var(--light-purple-20) 0%, var(--white) 100%);
