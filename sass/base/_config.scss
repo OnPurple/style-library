@@ -110,9 +110,13 @@ $theme-bg-colors: (
   "lilac": var(--lilac),
   "golden-hour": var(--golden-hour),
   "catnap": var(--cat-nap),
-  "lavender-skies": var(--lavender-skies),
+  "lavender-skies": var(--color-brand-lavender-200),
   "stardust": var(--stardust),
   "sandman": var(--sandman),
+  "lavender-200": var(--color-brand-lavender-200),
+  "lavender-500": var(--color-brand-lavender-500),
+  "medium-purple": var(--color-brand-medium-purple),
+  "twilightfade-5": var(--color-brand-twilightfade-5)
 );
 
 // Gradient Background Colors
