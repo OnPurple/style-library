@@ -50,25 +50,29 @@ $colors: (
 );
 
 // Solid Background Colors
+// Unused delete
+/*
 $bg-colors: (
-  "purple-60": var(--bg-purple-60),
-  "purple-50": var(--bg-purple-50),
-  "purple-40": var(--bg-purple-40),
-  "purple-20": var(--bg-purple-20),
-  "purple-10": var(--bg-purple-10),
-  "orange": var(--bg-orange),
-  "aqua": var(--bg-aqua),
-  "pink": var(--bg-pink),
-  "green": var(--bg-green),
-  "periwinkle": var(--bg-periwinkle),
+  "purple-60": var(--color-brand-lavender-400),
+  "purple-50": var(--light-purple-50),
+  "purple-40": var(--light-purple-40),
+  "purple-20": var(--light-purple-20),
+  "purple-10": var(--light-purple-10),
+  "orange": var(--orange-20),
+  "aqua": var(--aqua-light-40),
+  "pink": var(--pink-light),
+  "green": var(--green-10),
+  "periwinkle": var(--periwinkle-10),
   "card-gray": var(--card-gray),
 );
+ */
+
 $theme-bg-colors: (
-  "light-purple-60": var(--bg-purple-60),
-  "light-purple-50": var(--bg-purple-50),
-  "light-purple-40": var(--bg-purple-40),
-  "light-purple-20": var(--bg-purple-20),
-  "light-purple-10": var(--bg-purple-10),
+  "light-purple-60": var(--color-brand-lavender-400),
+  "light-purple-50": var(--light-purple-50),
+  "light-purple-40": var(--light-purple-40),
+  "light-purple-20": var(--light-purple-20),
+  "light-purple-10": var(--light-purple-10),
   "light-purple": var(--light-purple),
   "purple-60": var(--purple-60),
   "purple-40": var(--purple-40),
@@ -113,13 +117,18 @@ $theme-bg-colors: (
   "lavender-skies": var(--color-brand-lavender-300),
   "stardust": var(--stardust),
   "sandman": var(--sandman),
+  "lavender-100": var(--color-brand-lavender-100),
   "lavender-200": var(--color-brand-lavender-200),
+  "lavender-300": var(--color-brand-lavender-300),
+  "lavender-400": var(--color-brand-lavender-400),
   "lavender-500": var(--color-brand-lavender-500),
   "medium-purple": var(--color-brand-medium-purple),
   "twilightfade-5": var(--color-brand-twilightfade-5)
 );
 
 // Gradient Background Colors
+// Unused
+/*
 $bg-gradients: (
   purple: var(--bg-gradient-purple),
   pink: var(--bg-gradient-pink),
@@ -128,6 +137,7 @@ $bg-gradients: (
   green: var(--bg-gradient-green),
   magic-hour: var(--bg-gradient-magic-hour),
 );
+ */
 
 /// z-index organization.
 /// See links below for more information.
