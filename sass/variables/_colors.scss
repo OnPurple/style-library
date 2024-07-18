@@ -12,11 +12,11 @@ $color-map: (
         twilight-400: #35316E,
         twilight-500: #1F1A5E,
         twilight-600: #151526,
-        lavender-100: #EFE8F5,
+        lavender-100: #EFE8F5, // lilac
         lavender-200: #E8DAF4,
-        lavender-300: #D7C6E6,
-        lavender-400: #D7AAFA,
-        lavender-500: #844FB0,
+        lavender-300: #D7C6E6, // lavender-skies
+        lavender-400: #D7AAFA, // daydream & light-purple-60
+        lavender-500: #844FB0, // catnap
         lavender-600: #693A8F,
         gray-100: #F2F2F2,
         gray-200: #F6F6F6,
@@ -24,9 +24,9 @@ $color-map: (
         gray-400: #C0C0C0,
         gray-500: #AEAEAE,
         nocturnal: #6F6990,
+        dreamscape: #E091E6,
         catnap: #844FB0, // replace with color-brand-lavender-500
         daydream: #D7AAFA, // replace with color-brand-lavender-400
-        dreamscape: #E091E6,
         lavender-skies: #D7C6E6, // replace-with color-brand-lavender-300
         lilac: #EFE8F5, // replace with color-brand-lavender-100
         lilly: #E5B5E8,
@@ -76,7 +76,7 @@ $color-map: (
   --color-background-lighter: var(--color-brand-sandman);
   --color-background-light: var(--color-brand-stardust);
   --color-background-dark: var(--color-brand-lavender-100);
-  --color-background-darker: var(--color-brand-catnap);
+  --color-background-darker: var(--color-brand-lavender-500);
   --color-background-darkest: var(--color-brand-twilight-500);
   --color-background-promo: var(--color-brand-promo);
   --color-background-promo-alt: var(--color-brand-promo-alt);
@@ -84,7 +84,7 @@ $color-map: (
   --color-text-primary: var(--color-brand-twilight-500);
   --color-text-secondary: var(--color-brand-nocturnal);
   --color-text-accent: var(--color-brand-orchid);
-  --color-text-link: var(--color-brand-catnap);
+  --color-text-link: var(--color-brand-lavender-500);
   --color-text-promo: var(--color-brand-promo);
   --color-text-promo-alt: var(--color-brand-promo-alt);
   --color-text-success: var(--color-messaging-success-300);
@@ -182,18 +182,18 @@ $color-map: (
   --gray-40: #AEAEAE;
 
   // Background Colors
-  --bg-body: var(--white);
-  --bg-purple-60: var(--color-brand-lavender-400);
-  --bg-purple-50: var(--light-purple-50);
-  --bg-purple-40: var(--light-purple-40);
-  --bg-purple-20: var(--light-purple-20);
-  --bg-purple-10: var(--light-purple-10);
-  --bg-orange: var(--orange-20);
-  --bg-aqua: var(--aqua-light-40);
-  --bg-pink: var(--pink-light);
-  --bg-green: var(--green-10);
-  --bg-periwinkle: var(--periwinkle-10);
-  --bg-yellow: var(--yellow-light);
+  // --bg-body: var(--white);
+  // --bg-purple-60: var(--color-brand-lavender-400);
+  // --bg-purple-50: var(--light-purple-50);
+  // --bg-purple-40: var(--light-purple-40);
+  // --bg-purple-20: var(--light-purple-20);
+  // --bg-purple-10: var(--light-purple-10); One place in react this needs to be updated.
+  // --bg-orange: var(--orange-20);
+  // --bg-aqua: var(--aqua-light-40);
+  // --bg-pink: var(--pink-light);
+  // --bg-green: var(--green-10);
+  // --bg-periwinkle: var(--periwinkle-10);
+  --bg-yellow: var(--yellow-light); // 2 replacements in React
 
   // Background Gradients
   --bg-gradient-purple: linear-gradient(180deg, var(--light-purple-20) 0%, var(--white) 100%);
@@ -209,9 +209,6 @@ $color-map: (
   --scrim-gradient-white: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0.6) 100%);
   --active-bg-primary: var(--color-brand-twilight-500);
   --border-gray: var(--border-divider);
-
-  // Borders
-  --border-purple: #1F1A5E73;
 
   // Cart & Checkout
   --price-gray: #c2bfc7;
@@ -253,8 +250,8 @@ $color-map: (
   // Dividers
   --border-divider: #dbdae5;
   --border-divider-dark: rgb(255 255 255 / 30%);
-
-  --border-purple-100: #1F1A5E26;
+  --border-purple: var(--color-brand-twilightfade-45);
+  --border-purple-100: var(--color-brand-twilightfade-15);
 
   .dark-mode {
     --promo-color: var(--color-brand-lavender-100);
