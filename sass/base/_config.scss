@@ -50,6 +50,8 @@ $colors: (
 );
 
 // Solid Background Colors
+// Unused delete
+/*
 $bg-colors: (
   "purple-60": var(--color-brand-lavender-400),
   "purple-50": var(--light-purple-50),
@@ -63,6 +65,8 @@ $bg-colors: (
   "periwinkle": var(--periwinkle-10),
   "card-gray": var(--card-gray),
 );
+ */
+
 $theme-bg-colors: (
   "light-purple-60": var(--color-brand-lavender-400),
   "light-purple-50": var(--light-purple-50),
@@ -113,13 +117,18 @@ $theme-bg-colors: (
   "lavender-skies": var(--color-brand-lavender-300),
   "stardust": var(--stardust),
   "sandman": var(--sandman),
+  "lavender-100": var(--color-brand-lavender-100),
   "lavender-200": var(--color-brand-lavender-200),
+  "lavender-300": var(--color-brand-lavender-300),
+  "lavender-400": var(--color-brand-lavender-400),
   "lavender-500": var(--color-brand-lavender-500),
   "medium-purple": var(--color-brand-medium-purple),
   "twilightfade-5": var(--color-brand-twilightfade-5)
 );
 
 // Gradient Background Colors
+// Unused
+/*
 $bg-gradients: (
   purple: var(--bg-gradient-purple),
   pink: var(--bg-gradient-pink),
@@ -128,6 +137,7 @@ $bg-gradients: (
   green: var(--bg-gradient-green),
   magic-hour: var(--bg-gradient-magic-hour),
 );
+ */
 
 /// z-index organization.
 /// See links below for more information.
