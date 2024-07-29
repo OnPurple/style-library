@@ -130,15 +130,15 @@ $color-map: (
   --lavender-skies: var(--color-brand-lavender-300);
   --stardust: var(--color-brand-stardust);
   --clear-skies: var(--color-brand-clearskies);
-  --golden-hour: #F4B53F;
-  --powernap: #D62EE5;
-  --rem: #2A62D4;
+  --golden-hour: var(--color-brand-goldenhour);
+  --powernap: var(--color-brand-powernap);
+  --rem: var(--color-brand-rem);
   --lilac: var(--color-brand-lavender-100);
-  --light-lilac: #F7F5FF;
-  --sandman: #F8F5EF;
-  --nocturnal: #6F6990;
-  --orchid: #B113C0;
-  --linen: #F6F6F6;
+  --light-lilac: #F7F5FF; // replace
+  --sandman: var(--color-brand-sandman);
+  --nocturnal: var(--color-brand-nocturnal);
+  --orchid: var(--color-brand-orchid);
+  --linen: var(--color-brand-gray-200);
 
   /**
    * @tokens Colors Legacy
@@ -245,18 +245,13 @@ $color-map: (
   --border-gray: var(--border-divider);
 
   /**
-   * @tokens Colors Cart & Checkout
+   * @tokens Colors Common Legacy
    * @presenter Color
    */
 
   // Cart & Checkout
-  --price-gray: #c2bfc7;
-  --black-title: #3f3c44;
-
-  /**
-   * @tokens Colors Common Legacy
-   * @presenter Color
-   */
+  --price-gray: #c2bfc7; // Unused
+  --black-title: #3f3c44; // Replace with correct token
 
   // Common Colors
   --white: #FFF;
