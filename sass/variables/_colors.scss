@@ -48,7 +48,10 @@ $color-map: (
 );
 
 :root {
-  // Create tokens for colors
+  /**
+   * @tokens Brand Colors
+   * @presenter Color
+   */
   @each $color-name, $color-value in $color-map {
   --color-brand-#{$color-name}: #{$color-value};
   }
@@ -71,7 +74,10 @@ $color-map: (
   --color-brand-whitefade-20: rgba(var(--color-brand-white-rgb),0.2);
   --color-brand-whitefade-45: rgba(var(--color-brand-white-rgb),0.45);
   --color-brand-whitefade-60: rgba(var(--color-brand-white-rgb),0.60);
-  // Background
+  /**
+   * @tokens Brand Colors Backgrounds
+   * @presenter Color
+   */
   --color-background-lightest: var(--color-brand-white);
   --color-background-lighter: var(--color-brand-sandman);
   --color-background-light: var(--color-brand-stardust);
@@ -80,7 +86,10 @@ $color-map: (
   --color-background-darkest: var(--color-brand-twilight-500);
   --color-background-promo: var(--color-brand-promo);
   --color-background-promo-alt: var(--color-brand-promo-alt);
- // Text
+  /**
+   * @tokens Brand Typography
+   * @presenter Color
+   */
   --color-text-primary: var(--color-brand-twilight-500);
   --color-text-secondary: var(--color-brand-nocturnal);
   --color-text-accent: var(--color-brand-orchid);
@@ -91,13 +100,28 @@ $color-map: (
   --color-text-warning: var(--color-messaging-warning-300);
   --color-text-error: var(--color-messaging-error-300);
   --color-text-notification: var(--color-messaging-notification-300);
-  // Icons
+  /**
+   * @tokens Brand Iconography
+   * @presenter Color
+   */
   --color-icon-primary: var(--color-brand-twilight-500);
   --color-icon-primary-dark-mode: var(--color-brand-white);
+
+  /**
+   * @tokens Brand Borders
+   * @presenter Color
+   */
+  --border-divider: #dbdae5;
+  --border-divider-dark: rgb(255 255 255 / 30%);
+  --border-purple: var(--color-brand-twilightfade-45);
+  --border-purple-100: var(--color-brand-twilightfade-15);
 }
 
 :root {
-  // Version 2.0 - AKQA COLORS
+  /**
+   * @tokens AKQA deprecated
+   * @presenter Color
+   */
   --twilight: var(--color-brand-twilight-500);
   --twilight-10: rgb(230 228 237);
   --cat-nap: var(--color-brand-lavender-500);
@@ -106,15 +130,20 @@ $color-map: (
   --lavender-skies: var(--color-brand-lavender-300);
   --stardust: var(--color-brand-stardust);
   --clear-skies: var(--color-brand-clearskies);
-  --golden-hour: #F4B53F;
-  --powernap: #D62EE5;
-  --rem: #2A62D4;
+  --golden-hour: var(--color-brand-goldenhour);
+  --powernap: var(--color-brand-powernap);
+  --rem: var(--color-brand-rem);
   --lilac: var(--color-brand-lavender-100);
-  --light-lilac: #F7F5FF;
-  --sandman: #F8F5EF;
-  --nocturnal: #6F6990;
-  --orchid: #B113C0;
-  --linen: #F6F6F6;
+  --light-lilac: #F7F5FF; // replace
+  --sandman: var(--color-brand-sandman);
+  --nocturnal: var(--color-brand-nocturnal);
+  --orchid: var(--color-brand-orchid);
+  --linen: var(--color-brand-gray-200);
+
+  /**
+   * @tokens Colors Legacy
+   * @presenter Color
+   */
 
   // Purple
   --purple: var(--color-brand-twilight-500);
@@ -195,6 +224,11 @@ $color-map: (
   // --bg-periwinkle: var(--periwinkle-10);
   --bg-yellow: var(--yellow-light); // 2 replacements in React
 
+  /**
+   * @tokens Colors Gradients
+   * @presenter Color
+   */
+
   // Background Gradients
   --bg-gradient-purple: linear-gradient(180deg, var(--light-purple-20) 0%, var(--white) 100%);
   --bg-gradient-pink: linear-gradient(180deg, var(--pink-light) 0%, var(--white) 100%);
@@ -210,9 +244,14 @@ $color-map: (
   --active-bg-primary: var(--color-brand-twilight-500);
   --border-gray: var(--border-divider);
 
+  /**
+   * @tokens Colors Common Legacy
+   * @presenter Color
+   */
+
   // Cart & Checkout
-  --price-gray: #c2bfc7;
-  --black-title: #3f3c44;
+  --price-gray: #c2bfc7; // Unused
+  --black-title: #3f3c44; // Replace with correct token
 
   // Common Colors
   --white: #FFF;
@@ -246,12 +285,6 @@ $color-map: (
   --color-messaging-notification-100: #EBF1FF;
   --color-messaging-notification-200: #6FA4FF;
   --color-messaging-notification-300: var(--rem);
-
-  // Dividers
-  --border-divider: #dbdae5;
-  --border-divider-dark: rgb(255 255 255 / 30%);
-  --border-purple: var(--color-brand-twilightfade-45);
-  --border-purple-100: var(--color-brand-twilightfade-15);
 
   .dark-mode {
     --promo-color: var(--color-brand-lavender-100);
