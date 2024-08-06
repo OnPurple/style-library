@@ -122,7 +122,7 @@
   $encoded: '';
   $slice: 2000;
   $index: 0;
-  $loops: math.ceil(calc(string.length($svg) / $slice));
+  $loops: math.ceil(calc(string.length($svg) / $slice);
 
   @for $i from 1 through $loops {
     $chunk: string.slice($svg, $index, $index + $slice - 1);
@@ -138,107 +138,6 @@
   }
 
   @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
-}
-
-/// Basic clearfix
-/// @example
-///   @include clear()
-@mixin clear() {
-  &::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-}
-
-/// Get a vw value based on the target max px size and the @include breakpoint
-/// at which you want that max px size to be reached
-/// @param {String} $target - The font-size in px (ie - 72px)
-/// @param {Number} $screen-width [map.get($breakpoints, large)] - The screen-width to use to generate vw-context
-/// @example
-///   get-vw(20px, large)
-@function get-vw($target, $screen-width: map.get($breakpoints, large)) {
-  @if type-of($screen-width) != number {
-    @error '$screen-width must be a number!';
-  }
-
-  $vw-context: ($screen-width * .01) + 0;
-
-  @return calc($target / $vw-context) * 1vw;
-}
-
-/// @param {Number} $size - The target max size in px
-/// @param {String} $breakpoint [large] - The key of the bp at which max size is reached, or a specific value (ie - 1000px)
-/// @param {Map} $breakpoint-map [$breakpoints] - A breakpoint map
-/// @param {String} $property [font-size] - The property to set these values for. Defaults to `font-size` and most often will be used for that
-/// @example
-///   @include vw-with-max(15px, large, $property: padding);
-@mixin vw-with-max($size, $breakpoint: large, $breakpoint-map: $breakpoints, $property: font-size) {
-  $target-bp: '';
-
-  @if  type-of($breakpoint) == string {
-    @if  type-of($breakpoint-map) != map {
-      $breakpoint-map: $breakpoints;
-    }
-
-    $target-bp: map.get($breakpoints, $breakpoint);
-  } @else if type-of($breakpoint) == number {
-    $target-bp: $breakpoint + 0;
-  } @else {
-    @error "Sorry, `#{$breakpoint}` is not an appropriate value for $breakpoint. :("
-  }
-
-  #{$property}: get-vw($size, $target-bp);
-
-  @include breakpoint(#{$breakpoint}) {
-    #{$property}: $size;
-  }
-}
-
-/// Flex Grid - Implements a block grid on DIRECT child elements so that `$n` number of items appear on each row.
-/// @param {Number} $n - Number of elements to display per row.
-/// @param {String} $grid-item-selector ['.field__item'] - Selector(s) to use for child elements.
-/// @param {String|Map} $gutter [$grid-column-gutter] - Side gutter value
-/// @param {Number} $bottom-gutter [30px] - Bottom gutter value
-/// @param {Boolean} $nest [true] - Should this exhibit nesting margin behavior
-/// @example
-///   @include tk-flex-block-grid(3, '.field__item')
-@mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
-  @if $nest == true {
-    @if type-of($gutter) == 'map' {
-      margin-left: calc(map.get($gutter, xs-screen) / -2);
-      margin-right: calc(map.get($gutter, xs-screen) / -2);
-
-      @media all and (width >= 768px) {
-        margin-left: calc(map.get($gutter, md-screen) / -2);
-        margin-right: calc(map.get($gutter, md-screen) / -2);
-      }
-    }
-  }
-
-  display: flex;
-  flex-wrap: wrap;
-  & > #{$grid-item-selector} {
-    $pct: math.percentage(math.div(1 / $n));
-
-    flex: 0 0 $pct;
-    max-width: $pct;
-    margin-top: $bottom-gutter;
-
-    // account for padding on grid item
-    padding: 0 calc(map.get($gutter, xs-screen) / 2);
-
-    @media all and (width >= 768px) {
-      padding: 0 calc(map.get($gutter, md-screen) / 2);
-    }
-
-    // account for margin top for all items not in the first row
-    @for $i from 1 through $n {
-      &:nth-child(#{$i}) {
-        margin-top: 0;
-      }
-    }
-  }
 }
 
 /// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
@@ -324,3 +223,127 @@
   inset: 0;
   position: $position;
 }
+
+
+
+/*
+
+Unused
+
+/// Basic clearfix
+/// @example
+///   @include clear()
+@mixin clear() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+ */
+
+/*
+ Unused
+
+/// Get a vw value based on the target max px size and the @include breakpoint
+/// at which you want that max px size to be reached
+/// @param {String} $target - The font-size in px (ie - 72px)
+/// @param {Number} $screen-width [map.get($breakpoints, large)] - The screen-width to use to generate vw-context
+/// @example
+///   get-vw(20px, large)
+@function get-vw($target, $screen-width: map.get($breakpoints, large)) {
+  @if type-of($screen-width) != number {
+    @error '$screen-width must be a number!';
+  }
+
+  $vw-context: ($screen-width * .01) + 0;
+
+  @return calc($target / $vw-context) * 1vw;
+}
+ */
+
+/// @param {Number} $size - The target max size in px
+/// @param {String} $breakpoint [large] - The key of the bp at which max size is reached, or a specific value (ie - 1000px)
+/// @param {Map} $breakpoint-map [$breakpoints] - A breakpoint map
+/// @param {String} $property [font-size] - The property to set these values for. Defaults to `font-size` and most often will be used for that
+/// @example
+///   @include vw-with-max(15px, large, $property: padding);
+
+/*
+
+Unused
+
+@mixin vw-with-max($size, $breakpoint: large, $breakpoint-map: $breakpoints, $property: font-size) {
+  $target-bp: '';
+
+  @if  type-of($breakpoint) == string {
+    @if  type-of($breakpoint-map) != map {
+      $breakpoint-map: $breakpoints;
+    }
+
+    $target-bp: map.get($breakpoints, $breakpoint);
+  } @else if type-of($breakpoint) == number {
+    $target-bp: $breakpoint + 0;
+  } @else {
+    @error "Sorry, `#{$breakpoint}` is not an appropriate value for $breakpoint. :("
+  }
+
+  #{$property}: get-vw($size, $target-bp);
+
+  @include breakpoint(#{$breakpoint}) {
+    #{$property}: $size;
+  }
+}
+ */
+
+/// Flex Grid - Implements a block grid on DIRECT child elements so that `$n` number of items appear on each row.
+/// @param {Number} $n - Number of elements to display per row.
+/// @param {String} $grid-item-selector ['.field__item'] - Selector(s) to use for child elements.
+/// @param {String|Map} $gutter [$grid-column-gutter] - Side gutter value
+/// @param {Number} $bottom-gutter [30px] - Bottom gutter value
+/// @param {Boolean} $nest [true] - Should this exhibit nesting margin behavior
+/// @example
+///   @include tk-flex-block-grid(3, '.field__item')
+
+/*
+
+Unused
+
+@mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
+  @if $nest == true {
+    @if type-of($gutter) == 'map' {
+      margin-left: calc(map.get($gutter, xs-screen) / -2);
+      margin-right: calc(map.get($gutter, xs-screen) / -2);
+
+      @media all and (width >= 768px) {
+        margin-left: calc(map.get($gutter, md-screen) / -2);
+        margin-right: calc(map.get($gutter, md-screen) / -2);
+      }
+    }
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  & > #{$grid-item-selector} {
+    $pct: math.percentage(math.div(1 / $n));
+
+    flex: 0 0 $pct;
+    max-width: $pct;
+    margin-top: $bottom-gutter;
+
+    // account for padding on grid item
+    padding: 0 calc(map.get($gutter, xs-screen) / 2);
+
+    @media all and (width >= 768px) {
+      padding: 0 calc(map.get($gutter, md-screen) / 2);
+    }
+
+    // account for margin top for all items not in the first row
+    @for $i from 1 through $n {
+      &:nth-child(#{$i}) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+ */
