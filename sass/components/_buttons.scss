@@ -49,6 +49,7 @@ Button Utility Classes
   @include selectors(hover-active) {
     // Fix 1px difference since button is dark.
     --btn-active-border: var(--btn-active-background);
+
     border-color: var(--btn-active-border);
     background: var(--btn-active-background);
     color: var(--btn-active-color);
