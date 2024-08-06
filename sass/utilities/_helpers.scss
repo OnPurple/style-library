@@ -1,3 +1,8 @@
+@use "sass:math";
+@use "sass:string";
+@use "sass:map";
+@use "sass:list";
+
 ////
 /// Helpers
 /// @group utility
@@ -113,9 +118,6 @@
   @return $string;
 }
 
-@use "sass:math";
-@use "sass:string";
-
 /// Function to create an optimized svg url
 /// @param {String} $svg - The svg to optimize.
 @function svg-url($svg){
@@ -226,11 +228,7 @@
   position: $position;
 }
 
-
-
-/*
-
-Unused
+// Unused
 
 /// Basic clearfix
 /// @example
@@ -242,10 +240,8 @@ Unused
     clear: both;
   }
 }
- */
 
-/*
- Unused
+// Unused
 
 /// Get a vw value based on the target max px size and the @include breakpoint
 /// at which you want that max px size to be reached
@@ -260,9 +256,8 @@ Unused
 
   $vw-context: ($screen-width * .01) + 0;
 
-  @return calc($target / $vw-context) * 1vw;
+  // @return calc($target / $vw-context) * 1vw;
 }
- */
 
 /// @param {Number} $size - The target max size in px
 /// @param {String} $breakpoint [large] - The key of the bp at which max size is reached, or a specific value (ie - 1000px)
@@ -271,9 +266,7 @@ Unused
 /// @example
 ///   @include vw-with-max(15px, large, $property: padding);
 
-/*
-
-Unused
+// Unused
 
 @mixin vw-with-max($size, $breakpoint: large, $breakpoint-map: $breakpoints, $property: font-size) {
   $target-bp: '';
@@ -296,7 +289,6 @@ Unused
     #{$property}: $size;
   }
 }
- */
 
 /// Flex Grid - Implements a block grid on DIRECT child elements so that `$n` number of items appear on each row.
 /// @param {Number} $n - Number of elements to display per row.
@@ -307,9 +299,7 @@ Unused
 /// @example
 ///   @include tk-flex-block-grid(3, '.field__item')
 
-/*
-
-Unused
+// Unused
 
 @mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
   @if $nest == true {
@@ -348,4 +338,3 @@ Unused
     }
   }
 }
- */
