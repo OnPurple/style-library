@@ -52,16 +52,16 @@ $icons: () !default;
 /// Add an icon to the before pseudo class
 @mixin icon-before($icon, $replace: false) {
   &::before {
-    @include icon($icon, $replace);
     @content;
+    @include icon($icon, $replace);
   }
 }
 
 /// Add an icon to the after pseudo class
 @mixin icon-after($icon, $replace: false) {
   &::after {
-    @include icon($icon, $replace);
     @content;
+    @include icon($icon, $replace);
   }
 }
 
@@ -72,6 +72,7 @@ $icons: () !default;
 
   @include icon-before($icon) {
     font-size: $font-size;
+
     @content;
   }
 }

@@ -10,6 +10,12 @@
 @mixin text($type, $size) {
   $size-map: map.get(map.get($typography, $type), $size);
 
+  @each $prop, $value in $size-map {
+    @if $prop != 'breakpoints' {
+      #{$prop}: #{$value};
+    }
+  }
+
   @if map.has-key($size-map, 'breakpoints') {
     $breakpoints: map.get($size-map, 'breakpoints');
 
@@ -19,12 +25,6 @@
           #{$bp_prop}: #{$bp_value};
         }
       }
-    }
-  }
-
-  @each $prop, $value in $size-map {
-    @if $prop != 'breakpoints' {
-      #{$prop}: #{$value};
     }
   }
 }

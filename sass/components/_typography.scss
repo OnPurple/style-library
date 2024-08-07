@@ -271,9 +271,9 @@ sup {
   }
 
   a {
-    @include link(medium);
-
     display: inline-block;
+
+    @include link(medium);
   }
 
   a, button {
