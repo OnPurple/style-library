@@ -2,6 +2,7 @@
 @use "sass:string";
 @use "sass:map";
 @use "sass:list";
+@use "sass:meta";
 
 ////
 /// Helpers
@@ -17,10 +18,10 @@
 /// @example
 ///   key($colors, default, light)
 @function key($map, $key, $sub-key: null) {
-  @if map-has-key($map, $key) {
+  @if map.has-key($map, $key) {
     $val: map.get($map, $key);
 
-    @if $sub-key and map-has-key($val, $sub-key) {
+    @if $sub-key and map.has-key($val, $sub-key) {
       $val: map.get($val, $sub-key);
     }
 
@@ -51,11 +52,11 @@
 @function extend-in-map($map-to-search, $sub-map-key) {
   $map-to-merge: key($map-to-search, $sub-map-key);
 
-  @if  map-has-key($map-to-merge, extend) {
+  @if  map.has-key($map-to-merge, extend) {
     $key-of-map-to-extend: map.get($map-to-merge, extend);
 
-    @if  map-has-key($map-to-search, $key-of-map-to-extend) {
-      @return map-merge(key($map-to-search, $key-of-map-to-extend), $map-to-merge);
+    @if  map.has-key($map-to-search, $key-of-map-to-extend) {
+      @return map.merge(key($map-to-search, $key-of-map-to-extend), $map-to-merge);
     }
   }
 
@@ -78,11 +79,11 @@
   $postfix: '';
 
   @each $key, $selector in $selectors {
-    @if str-length($selector-string) > 0 {
+    @if string.length($selector-string) > 0 {
       $postfix: ', ';
     }
 
-    @if not index($exclude, $key) {
+    @if not list.index($exclude, $key) {
       $selector-string: $selector-string + $postfix + $selector;
     }
   }
@@ -112,7 +113,7 @@
   $index: string.index($string, $search);
 
   @if $index {
-    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + str-length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -162,18 +163,18 @@
 /// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
 @function -zf-to-rem($value, $base: null) {
   // Check if the value is a number
-  @if type-of($value) != 'number' {
-    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+  @if meta.type-of($value) != 'number' {
+    @warn meta.inspect($value) + ' was passed to rem-calc(), which is not a number.';
     @return $value;
   }
 
   // Transform em into rem if someone hands over 'em's
-  @if unit($value) == 'em' {
+  @if math.unit($value) == 'em' {
     $value: strip-unit($value) * 1rem;
   }
 
   // Calculate rem if units for $value is not rem or em
-  @if unit($value) != 'rem' {
+  @if math.unit($value) != 'rem' {
     $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
@@ -202,12 +203,12 @@
 
   // If the base font size is a %, then multiply it by 16px
   // This is because 100% font size = 16px in most all browsers
-  @if unit($base) == '%' {
+  @if math.unit($base) == '%' {
     $base: math.div($base, 100%) * 16px;
   }
 
   // Using rem as base allows correct scaling
-  @if unit($base) == 'rem' {
+  @if math.unit($base) == 'rem' {
     $base: strip-unit($base) * 16px;
   }
 
@@ -250,7 +251,7 @@
 /// @example
 ///   get-vw(20px, large)
 @function get-vw($target, $screen-width: map.get($breakpoints, large)) {
-  @if type-of($screen-width) != number {
+  @if meta.type-of($screen-width) != number {
     @error '$screen-width must be a number!';
   }
 
@@ -271,13 +272,13 @@
 @mixin vw-with-max($size, $breakpoint: large, $breakpoint-map: $breakpoints, $property: font-size) {
   $target-bp: '';
 
-  @if  type-of($breakpoint) == string {
-    @if  type-of($breakpoint-map) != map {
+  @if  meta.type-of($breakpoint) == string {
+    @if  meta.type-of($breakpoint-map) != map {
       $breakpoint-map: $breakpoints;
     }
 
     $target-bp: map.get($breakpoints, $breakpoint);
-  } @else if type-of($breakpoint) == number {
+  } @else if meta.type-of($breakpoint) == number {
     $target-bp: $breakpoint + 0;
   } @else {
     @error "Sorry, `#{$breakpoint}` is not an appropriate value for $breakpoint. :("
@@ -303,14 +304,13 @@
 
 @mixin tk-flex-block-grid($n: 1, $grid-item-selector: '.field__item', $gutter: $grid-column-gutter, $bottom-gutter: 30px, $nest: true) {
   @if $nest == true {
-    @if type-of($gutter) == 'map' {
-      margin-left: calc(map.get($gutter, xs-screen) / -2);
-      margin-right: calc(map.get($gutter, xs-screen) / -2);
+    @if meta.type-of($gutter) == 'map' {
+      margin-left: calc(#{map.get($gutter, xs-screen)} / -2);
+      margin-right: calc(#{map.get($gutter, xs-screen)} / -2);
 
       @media all and (width >= 768px) {
-        margin-left: calc(map.get($gutter, md-screen) / -2);
-        margin-right: calc(map.get($gutter, md-screen) / -2);
-      }
+        margin-left: calc(#{map.get($gutter, md-screen)} / -2);
+        margin-right: calc(#{map.get($gutter, md-screen)} / -2);      }
     }
   }
 
@@ -324,10 +324,10 @@
     margin-top: $bottom-gutter;
 
     // account for padding on grid item
-    padding: 0 calc(map.get($gutter, xs-screen) / 2);
+    padding: 0 calc(#{map.get($gutter, xs-screen)} / 2);
 
     @media all and (width >= 768px) {
-      padding: 0 calc(map.get($gutter, md-screen) / 2);
+      padding: 0 calc(#{map.get($gutter, md-screen)} / 2);
     }
 
     // account for margin top for all items not in the first row

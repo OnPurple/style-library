@@ -1,15 +1,16 @@
 @use '../base/_config.scss' as config;
+@use "sass:map";
 
 // Breakpoints
 
 @mixin breakpoint($bp) {
-  @media (min-width: map-get(config.$breakpoints, $bp)) {
+  @media (min-width: map.get(config.$breakpoints, $bp)) {
     @content;
   }
 }
 
 @mixin breakpoint-max($bp) {
-  @media (max-width: map-get(config.$breakpoints, $bp) - 1px) {
+  @media (max-width: map.get(config.$breakpoints, $bp) - 1px) {
     @content;
   }
 }

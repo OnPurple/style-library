@@ -1,3 +1,5 @@
+@use "sass:map";
+
 ////
 /// Icons
 /// @group utility
@@ -36,7 +38,7 @@ $icons: () !default;
 
 /// Add a font icon. This must be used in a before or after pseudo class
 @mixin icon($icon, $replace: false, $map: $icons) {
-  @if  map-has-key($map, $icon) {
+  @if  map.has-key($map, $icon) {
     $icon: map.get($map, $icon);
   }
 
