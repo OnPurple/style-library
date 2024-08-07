@@ -308,7 +308,7 @@
       margin-left: calc(#{map.get($gutter, xs-screen)} / -2);
       margin-right: calc(#{map.get($gutter, xs-screen)} / -2);
 
-      @media all and (width >= 768px) {
+      @media all and (width: 768px) {
         margin-left: calc(#{map.get($gutter, md-screen)} / -2);
         margin-right: calc(#{map.get($gutter, md-screen)} / -2);      }
     }
@@ -326,7 +326,7 @@
     // account for padding on grid item
     padding: 0 calc(#{map.get($gutter, xs-screen)} / 2);
 
-    @media all and (width >= 768px) {
+    @media all and (width: 768px) {
       padding: 0 calc(#{map.get($gutter, md-screen)} / 2);
     }
 
