@@ -8,10 +8,16 @@
  *   Size, e.g. "xl", "lg", "xs".
  */
 @mixin text($type, $size) {
-  $size_map: map.get(map.get($typography, $type), $size);
+  $size-map: map.get(map.get($typography, $type), $size);
 
-  @if (map.has-key($size_map, 'breakpoints')) {
-    $breakpoints: map.get($size_map, 'breakpoints');
+  @each $prop, $value in $size-map {
+    @if $prop != 'breakpoints' {
+      #{$prop}: #{$value};
+    }
+  }
+
+  @if map.has-key($size-map, 'breakpoints') {
+    $breakpoints: map.get($size-map, 'breakpoints');
 
     @each $bp_size, $bp_props in $breakpoints {
       @include breakpoint-max($bp_size) {
@@ -19,12 +25,6 @@
           #{$bp_prop}: #{$bp_value};
         }
       }
-    }
-  }
-
-  @each $prop, $value in $size_map {
-    @if ($prop != 'breakpoints') {
-      #{$prop}: #{$value};
     }
   }
 }

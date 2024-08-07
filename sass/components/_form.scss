@@ -44,11 +44,11 @@ form {
       }
 
       &:checked {
-        @include icon-before(check);
-
         background-color: var(--purple);
         color: white;
         font-size: 1rem;
+
+        @include icon-before(check);
       }
     }
 
@@ -63,11 +63,11 @@ form {
         border: 2px solid white;
 
         &:checked {
-          @include icon-before(check);
-
           background-color: white;
           color: var(--purple);
           font-size: 1rem;
+
+          @include icon-before(check);
         }
       }
     }
