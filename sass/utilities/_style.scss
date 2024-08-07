@@ -3,38 +3,6 @@
 /// @group utility
 ////
 
-$img-dir: '../../assets/images' !default;
-
-
-/// Apply a background color that extends past it's wrapper.
-/// @example
-///   @include full-width-bg-color(green, before)
-@mixin full-width-bg-color($color, $psuedo-element: before, $addRelative: true, $z-index: null) {
-  @if  $addRelative {
-    position: relative;
-  }
-
-  @if  $z-index {
-    z-index: $z-index;
-  }
-
-  &:#{$psuedo-element} {
-    content: '';
-    position: absolute;
-    width: 500%;
-    top: 0;
-    left: -150%;
-    height: 100%;
-    background: $color;
-    z-index: -1;
-  }
-}
-
-/// Return the path to an image in the theme images directory.
-@function img-get($img) {
-  @return $img-dir + $img;
-}
-
 /// Background image style with background-size parameter
 /// @param {String} $background-size [cover] - Background color
 @mixin bg-style($background-size: cover) {
@@ -67,6 +35,65 @@ $img-dir: '../../assets/images' !default;
     #{$property}-top: $value;
     #{$property}-bottom: $value;
   }
+}
+
+// Screen Reader Only to hide text.
+@mixin sr-only {
+  border: 0 none;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin sr-only-focusable {
+  &:active, &:focus{
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+/*
+ * Unused Mixins
+ */
+
+
+/// Apply a background color that extends past it's wrapper.
+/// @example
+///   @include full-width-bg-color(green, before)
+@mixin full-width-bg-color($color, $psuedo-element: before, $addRelative: true, $z-index: null) {
+  @if  $addRelative {
+    position: relative;
+  }
+
+  @if  $z-index {
+    z-index: $z-index;
+  }
+
+  &:#{$psuedo-element} {
+    content: '';
+    position: absolute;
+    width: 500%;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    background: $color;
+    z-index: -1;
+  }
+}
+
+$img-dir: '../../assets/images' !default;
+
+/// Return the path to an image in the theme images directory.
+@function img-get($img) {
+  @return $img-dir + $img;
 }
 
 /// Background Image - Helpful mixin when using responsive images as background image.
@@ -115,28 +142,5 @@ $img-dir: '../../assets/images' !default;
         bottom: 0;
       }
     }
-  }
-}
-
-// Screen Reader Only to hide text.
-@mixin sr-only {
-  border: 0 none;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-@mixin sr-only-focusable {
-  &:active, &:focus{
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
   }
 }

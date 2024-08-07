@@ -21,7 +21,7 @@ h1, .h1 {
   letter-spacing: -1.5px;
   font-size: var(--fs-h1);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 56px;
   }
 }
@@ -31,7 +31,7 @@ h2, .h2 {
   letter-spacing: -1.5px;
   font-size: var(--fs-h2);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 52px;
   }
 }
@@ -41,7 +41,7 @@ h3, .h3 {
   letter-spacing: -1.05px;
   font-size: var(--fs-h3);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 48px;
     letter-spacing: -1.5px;
   }
@@ -52,7 +52,7 @@ h4, .h4 {
   letter-spacing: -1.05px;
   font-size: var(--fs-h4);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 38px;
     letter-spacing: -1.25px;
   }
@@ -63,7 +63,7 @@ h5, .h5 {
   letter-spacing: -1px;
   font-size: var(--fs-h5);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 34px;
   }
 }
@@ -73,7 +73,7 @@ h6, .h6 {
   letter-spacing: -0.5px;
   font-size: var(--fs-h6);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width ≥ 1024px) {
     line-height: 28px;
   }
 }
@@ -202,11 +202,13 @@ sup {
   font-weight: inherit;
   padding-left: 1px;
   vertical-align: baseline;
+
   .dark-mode &,
   .text-secondary-white &,
   .color-brand-text-white & {
     color: var(--color-brand-white);
   }
+
   a,
   .text-formatted & a,
   .cke_editable & a,
@@ -218,10 +220,12 @@ sup {
     font-size: inherit;
     font-weight: inherit;
     text-decoration: none !important;
+
     &:hover {
       color: inherit;
     }
   }
+
   h1 &,
   h2 &,
   h3 &,
@@ -237,6 +241,7 @@ sup {
   .cke_editable & {
     vertical-align: super;
   }
+
   h1:not(.heading--eyebrow) &,
   h2:not(.heading--eyebrow) &,
   h3 &,
@@ -266,8 +271,9 @@ sup {
   }
 
   a {
-    @include link(medium);
     display: inline-block;
+
+    @include link(medium);
   }
 
   a, button {
@@ -360,6 +366,7 @@ sup {
   display: inline-block;
   line-height: 1;
   padding: 4px;
+
   @include breakpoint(md) {
     padding: 6px;
   }
@@ -376,7 +383,7 @@ sup {
 // .text-heading-xl-it
 @each $category, $sizes in $typography {
   @each $size, $css in $sizes {
-    @if ($size != 'default') {
+    @if $size != 'default' {
       .text-#{$category}-#{$size},
       .text-#{$category}-#{$size}-it {
         @include text($category, 'default');
@@ -409,44 +416,51 @@ sup {
 
 .text-utility-eyebrow {
   @include text('body', 'md');
+
   font-weight: var(--fw-medium);
-  letter-spacing: toRem(1.75px);
+  letter-spacing: torem(1.75px);
 }
 
 .text-utility-link {
   @include text('body', 'md');
+
   font-weight: var(--fw-medium);
   text-decoration: underline;
 }
 
 .text-utility-link-sm {
   @include text('body', 'sm');
+
   text-decoration: underline;
 }
 
 .text-utility-link-standalone {
   @include text('body', 'sm');
+
   font-weight: var(--fw-medium);
   text-decoration: underline;
 }
 
 .text-utility-button {
   @include text('body', 'sm');
+
   font-weight: var(--fw-medium);
 }
 
 .text-utility-legal {
   @include text('body', 'md');
-  font-size: toRem(12px);
-  line-height: toRem(18px);
+
+  font-size: torem(12px);
+  line-height: torem(18px);
 }
 
 .text-utility-mega-menu {
   @include text('body', 'md');
+
   font-family: var(--ff-primary);
-  font-size: toRem(16px);
-  line-height: toRem(24px);
-  letter-spacing: toRem(-1.5px);
+  font-size: torem(16px);
+  line-height: torem(24px);
+  letter-spacing: torem(-1.5px);
 }
 
 .text-semibold {
