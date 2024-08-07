@@ -8,35 +8,35 @@ $galaxie-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Galax
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-Book.eot');
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-Book.eot?#iefix') format('embedded-opentype'),
-       'url'($galaxie-font-dir + 'GalaxieCopernicus-Book.woff2') format('woff2'),
-       'url'($galaxie-font-dir + 'GalaxieCopernicus-Book.ttf') format('truetype');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Book.eot');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Book.eot?#iefix') format('embedded-opentype'),
+       url($galaxie-font-dir + 'GalaxieCopernicus-Book.woff2') format('woff2'),
+       url($galaxie-font-dir + 'GalaxieCopernicus-Book.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-Semibold.woff2') format('woff2'),
-       'url'($galaxie-font-dir + 'GalaxieCopernicus-Semibold.ttf') format('truetype');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Semibold.woff2') format('woff2'),
+       url($galaxie-font-dir + 'GalaxieCopernicus-Semibold.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot');
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot?#iefix') format('embedded-opentype'),
-       'url'($galaxie-font-dir + 'GalaxieCopernicus-Bold.woff2') format('woff2'),
-       'url'($galaxie-font-dir + 'GalaxieCopernicus-Bold.ttf') format('truetype');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-Bold.eot?#iefix') format('embedded-opentype'),
+       url($galaxie-font-dir + 'GalaxieCopernicus-Bold.woff2') format('woff2'),
+       url($galaxie-font-dir + 'GalaxieCopernicus-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-BookItalic.woff2') format('woff2');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-BookItalic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -44,7 +44,7 @@ $galaxie-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Galax
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-SemiboldItalic.woff2') format('woff2');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-SemiboldItalic.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -52,7 +52,7 @@ $galaxie-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Galax
 
 @font-face {
   font-family: $galaxie-font-name;
-  src: 'url'($galaxie-font-dir + 'GalaxieCopernicus-BoldItalic.woff2') format('woff2');
+  src: url($galaxie-font-dir + 'GalaxieCopernicus-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -64,21 +64,21 @@ $graphik-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Graph
 
 @font-face {
   font-family: $graphik-font-name;
-  src: 'url'($graphik-font-dir + 'GraphikRegular.woff2') format('woff2');
+  src: url($graphik-font-dir + 'GraphikRegular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: $graphik-font-name;
-  src: 'url'($graphik-font-dir + 'GraphikMedium.woff2') format('woff2');
+  src: url($graphik-font-dir + 'GraphikMedium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: $graphik-font-name;
-  src: 'url'($graphik-font-dir + 'GraphikSemibold.otf') format('opentype');
+  src: url($graphik-font-dir + 'GraphikSemibold.otf') format('opentype');
   font-weight: 600;
   font-display: swap;
 }
@@ -89,11 +89,11 @@ $icon-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/icomoon/
 
 @font-face {
   font-family: $icon-font-name;
-  src: 'url'($icon-font-dir + $icon-font-name + '.eot?x16ztg');
-  src: 'url'($icon-font-dir + $icon-font-name + '.eot?x16ztg#iefix') format('embedded-opentype'),
-  'url'($icon-font-dir + $icon-font-name + '.woff?x16ztg') format('woff'),
-  'url'($icon-font-dir + $icon-font-name + '.ttf?x16ztg') format('truetype'),
-  'url'($icon-font-dir + $icon-font-name + '.svg?x16ztg#3xl') format('svg');
+  src: url($icon-font-dir + $icon-font-name + '.eot?x16ztg');
+  src: url($icon-font-dir + $icon-font-name + '.eot?x16ztg#iefix') format('embedded-opentype'),
+  url($icon-font-dir + $icon-font-name + '.woff?x16ztg') format('woff'),
+  url($icon-font-dir + $icon-font-name + '.ttf?x16ztg') format('truetype'),
+  url($icon-font-dir + $icon-font-name + '.svg?x16ztg#3xl') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
