@@ -24,8 +24,6 @@
 }
 
 @mixin link-arrow {
-  @include icon-after(arrow);
-
   color: var(--link-color);
   font-weight: var(--fw-medium);
   text-decoration: none;
@@ -34,6 +32,8 @@
   --link-color: var(--color-brand-lavender-500);
   --link-decoration: none;
   --link-tr: all var(--trt-4) var(--trtf-a2);
+
+  @include icon-after(arrow);
 
   &::after {
     bottom: 1px;
