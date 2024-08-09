@@ -120,6 +120,8 @@ $color-map: (
   --border-divider-dark: rgb(255 255 255 / 30%);
   --border-purple: var(--color-brand-twilightfade-45);
   --border-purple-100: var(--color-brand-twilightfade-15);
+  --border-button-unselected: var(--light-purple-60);
+  --border-button-selected: var(--lavender-500);
 
   /**
    * @tokens AKQA deprecated
