@@ -84,9 +84,7 @@ $icons: () !default;
 
   @if $theme == dark {
     $fill: #fff;
-  }
-
-  @if theme == orchid {
+  } @else if $theme == orchid {
     $fill: #B113C0;
   }
 
