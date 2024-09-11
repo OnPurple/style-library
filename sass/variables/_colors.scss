@@ -45,6 +45,8 @@ $color-map: (
         light-purple-50: #CEC9F1,
         light-purple-60: #D7AAFA, // replace with color-brand-lavender-400
         medium-purple: #C9BFEF, // New medium-purple used in badging.
+        promo: #D43330, // holiday promo
+        promo-alt: #395542, // holiday promo
 );
 
 :root {
@@ -55,10 +57,6 @@ $color-map: (
   @each $color-name, $color-value in $color-map {
   --color-brand-#{$color-name}: #{$color-value};
   }
-
-  // Promo / Holiday
-  --color-brand-promo: #D43330;
-  --color-brand-promo-alt: #395542;
 
   // Fades
   --color-brand-twilight-500-rgb: 31 26 94;
