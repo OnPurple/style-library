@@ -126,6 +126,7 @@ $theme-bg-colors: (
   "medium-purple": var(--color-brand-medium-purple),
   "twilightfade-5": var(--color-brand-twilightfade-5),
   "promo-alt": var(--color-brand-promo-alt),
+  "promo": var(--color-brand-promo),
 );
 
 // Gradient Background Colors
@@ -215,6 +216,30 @@ $buttons: (
     active-color: var(--color-brand-twilight-500),
     active-border: var(--white),
   ),
+  promo: (
+    background: transparent,
+    color: var(--color-brand-promo),
+    border: 1px solid var(--color-brand-promo),
+    active-background: var(--color-brand-promo),
+    active-color: var(--white),
+    active-border: var(--color-brand-promo),
+  ),
+  promo-alt: (
+    background: transparent,
+    color: var(--color-brand-promo-alt),
+    border: 1px solid var(--color-brand-promo-alt),
+    active-background: var(--color-brand-promo-alt),
+    active-color: var(--white),
+    active-border: var(--color-brand-promo-alt),
+  ),
+  eclipse: (
+    background: transparent,
+    color: var(--color-brand-eclipse),
+    border: 1px solid var(--color-brand-eclipse),
+    active-background: var(--color-brand-eclipse),
+    active-color: var(--white),
+    active-border: var(--color-brand-eclipse),
+  ),
 );
 
 /// Links config
@@ -236,6 +261,21 @@ $links: (
     color: var(--white),
     font-weight: var(--fw-medium),
     active-color: var(--white),
+  ),
+  promo: (
+    color: var(--color-brand-promo),
+    font-weight: var(--fw-medium),
+    active-color: var(--color-brand-promo),
+  ),
+  promo-alt: (
+    color: var(--color-brand-promo-alt),
+    font-weight: var(--fw-medium),
+    active-color: var(--color-brand-promo-alt),
+  ),
+  eclipse: (
+    color: var(--color-brand-eclipse),
+    font-weight: var(--fw-medium),
+    active-color: var(--color-brand-eclipse),
   ),
 );
 
