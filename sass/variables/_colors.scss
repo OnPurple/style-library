@@ -242,6 +242,7 @@ $color-map: (
   --bg-gradient-aqua: linear-gradient(180deg, var(--aqua-light-40) 0%, var(--white) 100%);
   --bg-gradient-green: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%);
   --bg-gradient-magic-hour: linear-gradient(104deg, var(--color-brand-lavender-400) 3.4%, var(--pink) 94%);
+  --bg-gradient-twilight-500: linear-gradient(90deg, var(--color-brand-twilight-500) 0%, rgb(var(--color-brand-twilight-500-rgb) / 0%) 100%);
   --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--color-brand-twilight-500-rgb) / 0%) 0%, var(--scrim-dark) 110.2%);
   --scrim-gradient-light: linear-gradient(180deg, rgb(96 92 102 / 0%) 0%, rgb(96 92 102 / 60%) 110.2%);
   --scrim-gradient-top: linear-gradient(180deg, rgb(18 5 46 / 60%) 0%, rgb(16 3 41 / 0%) 31.07%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%));
