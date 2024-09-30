@@ -44,3 +44,15 @@
 .color-brand-bg-feature {
   background-color: var(--color-brand-sandman);
 }
+
+// Gradient styles
+.gradient-border-top {
+  height: 8px;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+.gradient--twilight-500 {
+  background: var(--bg-gradient-twilight-500);
+}
