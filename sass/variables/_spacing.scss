@@ -43,6 +43,9 @@
   --vs-lg: 5rem;
   --vs-xl: 8rem; // 128px.
 
+  // Default spacing for mobile
+  --global-layout-spacing: --vs-xs; // 24px
+
   // Margin Bottom for H's and p's.
   --mb-paragraph: var(--vs-type-lg);
   --mb-heading: var(--vs-xs);
