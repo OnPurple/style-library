@@ -8,22 +8,6 @@
 @mixin btn($button-key, $size: large, $icon: null) {
   $button: extend-in-map($buttons, $button-key);
 
-  @if  $button-key == primary {
-    z-index: 1;
-
-    &::before {
-      @include trbl;
-
-      border-radius: inherit;
-      background: key($button, active-background);
-      content: '';
-      display: block;
-      opacity: 0;
-      transition: opacity var(--trt-4) var(--trtf-a2);
-      z-index: -1;
-    }
-  }
-
   @if  $size == large {
     --btn-fs: 1rem;
     --btn-lh: 1.4;
@@ -39,6 +23,37 @@
     --btn-lh: 1.4;
     --btn-border-radius: var(--btn-border-radius-sm);
     --btn-padding: var(--btn-padding-sm);
+  }
+
+  background: key($button, background);
+  border: key($button, border);
+  color: key($button, color);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: var(--fw-medium);
+  line-height: var(--btn-lh);
+  text-decoration: none;
+  transition: all var(--trt-4) var(--trtf-a2);
+  white-space: nowrap;
+  position: relative;
+  border-radius: 0;
+  padding: var(--btn-padding);
+  font-size: 0.875rem;
+
+  @if  $button-key == primary {
+    z-index: 1;
+
+    &::before {
+      border-radius: inherit;
+      background: key($button, active-background);
+      content: '';
+      display: block;
+      opacity: 0;
+      transition: opacity var(--trt-4) var(--trtf-a2);
+      z-index: -1;
+
+      @include trbl;
+    }
   }
 
   @if  $icon == play {
@@ -63,21 +78,6 @@
       }
     }
   }
-
-  background: key($button, background);
-  border: key($button, border);
-  color: key($button, color);
-  cursor: pointer;
-  display: inline-block;
-  font-weight: var(--fw-medium);
-  line-height: var(--btn-lh);
-  text-decoration: none;
-  transition: all var(--trt-4) var(--trtf-a2);
-  white-space: nowrap;
-  position: relative;
-  border-radius: 0;
-  padding: var(--btn-padding);
-  font-size: 0.875rem;
 }
 
 @mixin btn-style($button-key) {
