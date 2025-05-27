@@ -299,6 +299,10 @@ sup {
     margin: var(--ol-spacing);
   }
 
+  ol ol {
+    list-style-type: lower-roman;
+  }
+
   ul, ol {
     padding-left: var(--list-padding);
 
