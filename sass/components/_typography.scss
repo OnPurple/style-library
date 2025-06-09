@@ -419,10 +419,11 @@ sup {
 }
 
 .text-utility-eyebrow {
-  @include text('body', 'md');
+  @include text('body', 'sm');
 
   font-weight: var(--fw-medium);
-  letter-spacing: torem(1.75px);
+  letter-spacing: torem(1.75);
+  text-transform: uppercase;
 }
 
 .text-utility-link {
