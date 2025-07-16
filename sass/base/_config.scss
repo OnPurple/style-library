@@ -335,6 +335,7 @@ $icons: (
   share-link: '\e920',
 );
 
+// @todo: DCP-5182 to change 'lgx -> xl', 'xl -> xxl'.
 // Breakpoints
 $breakpoints: (
   xs: 0,
@@ -342,6 +343,7 @@ $breakpoints: (
   md: 768px,
   ml: 900px,
   lg: 1025px,
+  lgx: 1200px,
   xl: 1440px,
 );
 
