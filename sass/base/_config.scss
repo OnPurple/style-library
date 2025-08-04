@@ -174,7 +174,7 @@ $z-layers: (
 $buttons: (
   primary: (
     backdrop-filter: blur(5px),
-    background: var(--color-brand-whitefade-5),
+    background: var(--color-brand-whitefade-4),
     border-color: var(--color-brand-primary),
     color: var(--color-brand-primary),
     selectors: (
@@ -258,7 +258,7 @@ $buttons: (
   ),
   dark: (
     backdrop-filter: blur(5px),
-    background: var(--color-brand-whitefade-5),
+    background: var(--color-brand-whitefade-4),
     border-color: 1px solid var(--color-brand-white),
     color: var(--color-brand-white),
     selectors: (
