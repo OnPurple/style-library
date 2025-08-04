@@ -1,6 +1,6 @@
 /*
 Button Utility Classes
-.btn - Defaults to transparent with twilight border, large, no icon
+.btn - Defaults to transparent with twilight border, medium, no icon
 
 // Color
 .btn--disabled
@@ -18,111 +18,32 @@ Button Utility Classes
 .btn--arrow
 */
 
+// @deprecated
+// .btn and .btn--filled are no longer in use.
+// Use .cta-style--solid-dark, .cta-style--solid-light, .cta-style--outline-dark, .cta-style--outline-light
 // Define CSS variables.
 .btn {
-  --btn-background: transparent;
-  --btn-border: 1px solid var(--twilight);
-  --btn-color: var(--twilight);
-  --btn-active-background: var(--twilight);
-  --btn-active-border: 1px solid var(--twilight);
-  --btn-active-color: var(--white);
-  --btn-icon: none;
-  --btn-lh: 1.4;
-  --btn-padding: var(--btn-padding-lg);
-  --btn-fs: 1rem;
-  --btn-fw: var(--fw-medium);
-  --tr-button: all var(--trt-4) var(--trtf-a2);
-
-  background: var(--btn-background);
-  border: var(--btn-border);
-  border-radius: 0;
-  color: var(--btn-color);
-  cursor: pointer;
-  display: inline-block;
-  font-size: var(--btn-fs);
-  font-weight: var(--btn-fw);
-  line-height: var(--btn-lh);
-  padding: var(--btn-padding);
-  transition: var(--tr-button);
-  white-space: nowrap;
-
-  @include selectors(hover-active) {
-    // Fix 1px difference since button is dark.
-    --btn-active-border: var(--btn-active-background);
-
-    border-color: var(--btn-active-border);
-    background: var(--btn-active-background);
-    color: var(--btn-active-color);
-  }
+  @include btn(primary);
 
   .dark-mode & {
-    --btn-border: 1px solid var(--white);
-    --btn-color: var(--white);
-    --btn-active-background: var(--white);
-    --btn-active-border: 1px solid var(--white);
-    --btn-active-color: var(--twilight);
+    @include btn-style(dark);
   }
 }
 
-// Inverted button. twilight BG and transparent active BG
+// Inverted button.
 .btn--filled {
-  --btn-background: var(--twilight);
-  --btn-border: 1px solid var(--twilight);
-  --btn-color: var(--white);
-  --btn-active-background: transparent;
-  --btn-active-border: 1px solid var(--twilight);
-  --btn-active-color: var(--twilight);
-
-  @include selectors(hover-active) {
-    --btn-active-border: 1px solid var(--twilight);
-  }
+  @include btn(primary-filled);
 
   .dark-mode & {
-    --btn-background: var(--white);
-    --btn-border: 1px solid var(--white);
-    --btn-color: var(--twilight);
-    --btn-active-background: var(--twilight-10);
-    --btn-active-border: var(--twilight-10);
-    --btn-active-color: var(--twilight);
-  }
-}
-
-// Button Arrow without the border.
-.btn--secondary {
-  --btn-background: transparent;
-  --btn-border: none;
-  --btn-color: var(--twilight);
-  --btn-active-background: none;
-  --btn-active-border: none;
-  --btn-active-color: var(--twilight);
-
-  @include icon-after(arrow);
-
-  &::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.875rem;
-  }
-
-  &.btn--medium::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.8rem;
-  }
-
-  &.btn--small::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.75rem;
-  }
-
-  .dark-mode & {
-    --btn-color: var(--white);
-    --btn-active-color: var(--white);
+    @include btn-style(dark-filled);
   }
 }
 
 // Size
+.btn--large {
+  @include btn-size('large');
+}
+
 .btn--medium {
   @include btn-size('medium');
 }
@@ -131,69 +52,37 @@ Button Utility Classes
   @include btn-size('small');
 }
 
-// Disabled button.
-.btn--disabled, .btn.btn--disabled {
-  // Twilight with opacity.
-  pointer-events: none;
-
-  --btn-color: rgb(31 26 94 / 60%);
-  --btn-background: rgb(31 26 94 / 20%);
-  --btn-border: 1px solid rgb(31 26 94 / 0%);
-  --btn-active-background: rgb(31 26 94 / 20%);
-  --btn-active-border: rgb(31 26 94 / 20%);
-
-  .dark-mode & {
-    // Twilight with opacity.
-    --btn-color: white;
-    --btn-background: var(--midnight-light);
-    --btn-border: none;
-    --btn-active-background: var(--midnight-light);
-    --btn-active-border: var(--midnight-light);
-  }
-}
-
-// Icon
-.btn--arrow {
-  @include icon-after(arrow);
-
-  &::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.875rem;
-  }
-
-  &.btn--medium::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.8rem;
-  }
-
-  &.btn--small::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 0.75rem;
-  }
-}
-
 // Play Button
 .btn--play {
   @include icon-after(play);
 
   &::after {
-    font-size: 1.25rem;
+    font-size: var(--btn-fs);
     padding-left: 0.5rem;
-    vertical-align: text-bottom;
-  }
-
-  &.btn--medium::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: 1.1rem;
-  }
-
-  &.btn--small::after {
-    padding-left: 0.25rem;
-    padding-right: 1rem;
-    font-size: 0.875rem;
   }
 }
+
+// New CTA Styles
+.cta-style--solid-dark {
+  @include btn(primary-filled);
+
+  .dark-mode & {
+    @include btn-style(dark-filled);
+  }
+}
+
+.cta-style--solid-light {
+  @include btn-style(dark-filled);
+}
+
+.cta-style--outline-dark {
+  @include btn(primary);
+
+  .dark-mode & {
+    @include btn-style(dark);
+  }
+}
+
+.cta-style--outline-light {
+  @include btn-style(dark);
+ }
