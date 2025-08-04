@@ -3,37 +3,21 @@
 //  - countdown
 //  - regular eyebrow
 
-// Don't use the H1/H2 line height or spacing.
 .field--name-field-p-eyebrow {
-  letter-spacing: 0 !important;
-  line-height: 1.5 !important;
-}
-
-.field--name-field-p-eyebrow,
-.field--name-field-eyebrow {
   margin-bottom: 0;
-  font-size: 14px;
-  font-family: var(--ff-utility);
-  letter-spacing: 1.75px;
-  line-height: 20px;
 }
 
 .paragraph--type--offer,
 .paragraph--type--countdown,
-.field--name-field-eyebrow {
+.field--name-field-eyebrow,
+.field--name-field-p-eyebrow {
   --heading-color: var(--body-color);
 
   color: var(--heading-color);
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: var(--fw-medium);
-  letter-spacing: 1.75px;
-  line-height: 20px;
+  font-family: var(--ff-utility);
   margin-bottom: var(--vs-xxxs);
 
-  .bg-theme--light-purple-60 & {
-    --heading-color: var(--color-brand-twilight-500);
-  }
+  @include text(utility, eyebrow);
 
   .dark-mode & {
     --heading-color: var(--white);

@@ -6,6 +6,7 @@
 $color-map: (
         'white': #fff,
         'black' : #000,
+        primary: #181831, // color-brand-primary = color-brand-midnight
         twilight-100: #E9E8EF,
         twilight-200: #D2D1DF,
         twilight-300: #A6A4C1,
@@ -38,7 +39,7 @@ $color-map: (
         powernap: #D62EE5,
         rem: #2A62D4,
         'orchid': #B113C0,
-        midnight: #190F39,
+        midnight: #181831,
         light-purple-10: #F6F4FC,
         light-purple-20: #E4DFF7,
         light-purple-40: #DBD5F5,
@@ -54,7 +55,9 @@ $color-map: (
         violet: #5436CC,
         yellow: #FFCD6F,
         dark-navy: #0F0F3A,
-        daydream-light: #FEE5FF
+        daydream-light: #FEE5FF,
+        mist-30: #E7E6F7,
+        mist: #C8C7DD
 );
 
 :root {
@@ -82,6 +85,13 @@ $color-map: (
   --color-brand-whitefade-20: rgb(var(--color-brand-white-rgb) / 20%);
   --color-brand-whitefade-45: rgb(var(--color-brand-white-rgb) / 45%);
   --color-brand-whitefade-60: rgb(var(--color-brand-white-rgb) / 60%);
+  --color-brand-black-rgb: 0 0 0;
+  --color-brand-blackfade-4: rgb(var(--color-brand-black-rgb) / 4%);
+  --color-brand-primary-rgb: 24 24 49;
+  --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%);
+  --color-brand-primaryfade-70: rgb(var(--color-brand-primary-rgb) / 70%);
+  --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%);
+  --color-brand-primaryfade-90: rgb(var(--color-brand-primary-rgb) / 90%);
 
   /**
    * @tokens Brand Colors Backgrounds
@@ -100,7 +110,7 @@ $color-map: (
    * @tokens Brand Typography
    * @presenter Color
    */
-  --color-text-primary: var(--color-brand-twilight-500);
+  --color-text-primary: var(--color-brand-primary);
   --color-text-secondary: var(--color-brand-nocturnal);
   --color-text-accent: var(--color-brand-orchid);
   --color-text-link: var(--color-brand-lavender-500);
@@ -115,7 +125,7 @@ $color-map: (
    * @tokens Brand Iconography
    * @presenter Color
    */
-  --color-icon-primary: var(--color-brand-twilight-500);
+  --color-icon-primary: var(--color-brand-primary);
   --color-icon-primary-dark-mode: var(--color-brand-white);
 
   /**
@@ -128,6 +138,12 @@ $color-map: (
   --border-purple-100: var(--color-brand-twilightfade-15);
   --border-button-unselected: var(--light-purple-60);
   --border-button-selected: var(--color-brand-lavender-500);
+
+  /**
+ * @tokens Brand Utilities
+ * @presenter Color
+ */
+  --color-utilities-focus: #4B80EC;
 
   /**
    * @tokens AKQA deprecated
@@ -157,7 +173,7 @@ $color-map: (
    */
 
   // Purple
-  --purple: var(--color-brand-twilight-500);
+  --purple: var(--color-brand-midnight);
   --purple-60: #8E80BB;
   --purple-40: #B4AAD1;
   --purple-20: #D9D5E8;
@@ -179,7 +195,7 @@ $color-map: (
   --periwinkle-light: var(--periwinkle-10);
 
   // Midnight
-  --midnight: #190F39;
+  --midnight: #181831;
   --midnight-medium: #341458;
   --midnight-light: #473F61;
   --midnight-60: #756F88;
@@ -275,8 +291,8 @@ $color-map: (
   --light-gray: #F5F5F5;
   --green-utility: #008746;
   --red-utility: var(--red);
-  --body-color: var(--color-brand-twilight-500);
-  --heading-color: var(--color-brand-twilight-500);
+  --body-color: var(--color-text-primary);
+  --heading-color: var(--color-text-primary);
   --promo-color: var(--orchid);
   --scrim-dark: var(--color-brand-twilightfade-45);
   --scrim-light: var(--color-brand-twilightfade-20);

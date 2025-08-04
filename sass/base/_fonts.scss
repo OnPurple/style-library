@@ -64,6 +64,13 @@ $graphik-font-dir: 'https://purple.com/themes/custom/themekit/assets/fonts/Graph
 
 @font-face {
   font-family: $graphik-font-name;
+  src: url($graphik-font-dir + 'GraphikLight.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $graphik-font-name;
   src: url($graphik-font-dir + 'GraphikRegular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
