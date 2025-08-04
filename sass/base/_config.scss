@@ -214,12 +214,12 @@ $buttons: (
       active: (
         background: var(--color-brand-primaryfade-90),
         border-color: var(--color-brand-primaryfade-90),
-        color: var(--color-brand-primary),
+        color: var(--color-brand-white),
       ),
       focus: (
         background: var(--color-brand-primaryfade-90),
         border-color: var(--color-utilities-focus),
-        color: var(--color-brand-primary),
+        color: var(--color-brand-white),
       ),
       disabled: (
         background: var(--color-brand-gray-300),
@@ -373,14 +373,14 @@ $buttons: (
 /// Links config
 $links: (
   default: (
-    color: var(--color-brand-twilight-500),
+    color: var(--color-brand-primary),
     font-weight: var(--fw-normal),
-    active-color: var(--color-brand-twilight-500),
+    active-color: var(--color-brand-primary),
   ),
   medium: (
-    color: var(--color-brand-lavender-500),
+    color: var(--color-brand-violet),
     font-weight: var(--fw-medium),
-    active-color: var(--color-brand-lavender-500),
+    active-color: var(--color-brand-violet),
   ),
   primary: (
     extend: _base,
