@@ -196,6 +196,7 @@ h6, .h6 {
   text-align: center;
 }
 
+// Superscrips
 sup {
   color: inherit;
   font-size: 60%;
@@ -355,6 +356,7 @@ sup {
   }
 }
 
+// Desktop Only Line Breaks
 @include breakpoint-max(md) {
   br.desktop {
     display: none;
@@ -394,9 +396,10 @@ sup {
         @include text($category, $size);
 
         // Adjust <sup> font size for larger typography.
-        @if ($category != 'body' and
+        @if ($category != 'body' and $category != 'utility' and
         not ($category == 'heading' and $size == 'sm') and
         not ($category == 'heading' and $size == 'xs') and
+        not ($category == 'heading' and $size == 'xxs') and
         not ($category == 'banner' and $size == 'sm') and
         not ($category == 'banner' and $size == 'xs')) {
           sup {
@@ -407,7 +410,22 @@ sup {
       }
 
       .text-#{$category}-#{$size}-it {
+        font-family: var(--ff-italic);
         font-style: italic;
+
+        @if $category == 'display' {
+          font-weight: var(--fw-normal);
+        }
+
+        @if $category == 'body' {
+          letter-spacing: -0.15em;
+        }
+      }
+
+      .text-#{$category}-#{$size}-bold {
+        @if $category == 'body' {
+          font-weight: var(--fw-medium);
+        }
       }
     }
   }
@@ -418,54 +436,22 @@ sup {
   @include text('body', 'md');
 }
 
-.text-utility-eyebrow {
-  @include text('body', 'sm');
-
-  font-weight: var(--fw-medium);
-  letter-spacing: torem(1.75);
-  text-transform: uppercase;
-}
-
-.text-utility-link {
-  @include text('body', 'md');
-
-  font-weight: var(--fw-medium);
-  text-decoration: underline;
-}
-
-.text-utility-link-sm {
-  @include text('body', 'sm');
-
-  text-decoration: underline;
-}
-
-.text-utility-link-standalone {
-  @include text('body', 'sm');
-
-  font-weight: var(--fw-medium);
-  text-decoration: underline;
-}
-
-.text-utility-button {
-  @include text('body', 'sm');
-
-  font-weight: var(--fw-medium);
-}
-
-.text-utility-legal {
-  @include text('body', 'md');
-
-  font-size: torem(12px);
-  line-height: torem(18px);
-}
-
-.text-utility-mega-menu {
+.text-body-it {
   @include text('body', 'md');
 
   font-family: var(--ff-primary);
-  font-size: torem(16px);
-  line-height: torem(24px);
-  letter-spacing: torem(-1.5px);
+  font-style: italic;
+  letter-spacing: -0.1em;
+}
+
+.text-body-bold {
+  @include text('body', 'md');
+
+  font-weight: var(--fw-medium);
+}
+
+.text-medium {
+  font-weight: 500;
 }
 
 .text-semibold {

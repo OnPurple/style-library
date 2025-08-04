@@ -18,202 +18,233 @@
 $typography: (
   display: (
     default: (
-      font-family: var(--ff-primary),
+      font-family: var(--ff-header),
+    ),
+    italic: (
+      font-family: var(--ff-italic),
+      font-style: italic,
+      font-weight: var(--fw-normal),
     ),
     xl: (
       font-size: torem(68),
-      line-height: torem(76),
-      letter-spacing: torem(-2.25),
-      breakpoints: (
-        sm: (
-          font-size: torem(42),
-          line-height: torem(56),
-        ),
-      ),
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     lg: (
       font-size: torem(64),
-      line-height: torem(72),
-      letter-spacing: torem(-2),
-      breakpoints: (
-        sm: (
-          font-size: torem(36),
-          line-height: torem(48),
-        ),
-      )
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     md: (
       font-size: torem(54),
-      line-height: torem(62),
-      letter-spacing: torem(-1.75),
-      breakpoints: (
-        sm: (
-          font-size: torem(36),
-          line-height: torem(48),
-        ),
-      )
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     sm: (
       font-size: torem(48),
-      line-height: torem(56),
-      letter-spacing: torem(-1.5),
-      breakpoints: (
-        sm: (
-          font-size: torem(36),
-          line-height: torem(48),
-        ),
-      )
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
+    ),
+    xs: (
+      font-size: torem(40),
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
+    ),
+    xxs: (
+      font-size: torem(36),
+      font-weight: var(--fw-light),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
   ),
   heading: (
     default: (
-      font-family: var(--ff-primary),
+      font-family: var(--ff-header),
+    ),
+    italic: (
+      font-family: var(--ff-italic),
+      font-style: italic,
     ),
     xl: (
-      font-size: torem(40),
-      line-height: torem(52),
-      letter-spacing: torem(-1.5),
-      breakpoints: (
-        sm: (
-          font-size: torem(28),
-          line-height: torem(36),
-        ),
-      )
+      font-size: torem(36),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     lg: (
-      font-size: torem(36),
-      line-height: torem(48),
-      letter-spacing: torem(-1.5),
-      breakpoints: (
-        sm: (
-          font-size: torem(26),
-          line-height: torem(34),
-        ),
-      )
+      font-size: torem(32),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     md: (
       font-size: torem(28),
-      line-height: torem(38),
-      letter-spacing: torem(-1.25),
-      breakpoints: (
-        sm: (
-          font-size: torem(24),
-          line-height: torem(30),
-        ),
-      )
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     sm: (
       font-size: torem(24),
-      line-height: torem(34),
-      letter-spacing: torem(-1),
-      breakpoints: (
-        sm: (
-          font-size: torem(20),
-          line-height: torem(28),
-        ),
-      )
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
     xs: (
+      font-size: torem(21),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
+    ),
+    xxs: (
       font-size: torem(20),
-      line-height: torem(28),
-      letter-spacing: torem(-0.5),
-      breakpoints: (
-        sm: (
-          font-size: torem(18),
-          line-height: torem(26),
-        ),
-      )
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
     ),
   ),
   body: (
     default: (
-      font-family: var(--ff-secondary),
+      font-family: var(--ff-body),
+    ),
+    italic: (
+      font-family: var(--ff-italic),
+      font-style: italic,
+      letter-spacing: -0.15em,
     ),
     xxl: (
       font-size: torem(26),
-      line-height: torem(20),
+      line-height: var(--lh-body),
     ),
     xl: (
       font-size: torem(20),
-      line-height: torem(28),
+      line-height: var(--lh-body),
     ),
     lg: (
       font-size: torem(18),
-      line-height: torem(26),
+      line-height: var(--lh-body),
     ),
     md: (
       font-size: torem(16),
-      line-height: torem(24),
+      line-height: var(--lh-body),
     ),
     sm: (
       font-size: torem(14),
-      line-height: torem(20),
+      line-height: var(--lh-body),
+    ),
+    xs: (
+      font-size: torem(13),
+      line-height: var(--lh-body),
+    ),
+    xxs: (
+      font-size: torem(12),
+      line-height: var(--lh-body),
     ),
     xxl-lg: (
       font-size: torem(26),
-      line-height: torem(20),
+      line-height: var(--lh-body),
       breakpoints: (
-        sm: (
+        md: (
           font-size: torem(18),
-          line-height: torem(26),
+          line-height: var(--lh-body),
         ),
       )
     ),
     lg-xl: (
       font-size: torem(18),
-      line-height: torem(26),
+      line-height: var(--lh-body),
       breakpoints: (
         sm: (
           font-size: torem(20),
-          line-height: torem(28),
+          line-height: var(--lh-body),
         ),
       )
     ),
   ),
+  utility: (
+    default: (
+      font-family: var(--ff-utility),
+    ),
+    eyebrow: (
+      font-size: torem(14),
+      font-weight: var(--fw-medium),
+      line-height: var(--lh-body),
+      letter-spacing: var(--ls-eyebrow),
+      text-transform: uppercase,
+    ),
+    link: (
+      font-size: torem(16),
+      line-height: var(--lh-body),
+      text-decoration: underline,
+    ),
+    link-sm: (
+      font-size: torem(14),
+      line-height: var(--lh-body),
+      text-decoration: underline,
+    ),
+    link-xs: (
+      font-size: torem(13),
+      line-height: var(--lh-body),
+      text-decoration: underline,
+    ),
+    link-xxs: (
+      font-size: torem(12),
+      line-height: var(--lh-body),
+      text-decoration: underline,
+    ),
+    link-standalone: (
+      color: var(--color-brand-violet),
+      font-size: torem(14),
+      font-weight: var(--fw-medium),
+      line-height: var(--lh-body),
+      text-decoration: underline,
+    ),
+    button: (
+      color: var(--color-brand-violet),
+      font-size: torem(14),
+      font-weight: var(--fw-medium),
+      line-height: var(--lh-body),
+    ),
+    legal: (
+      font-size: torem(12),
+      line-height: var(--lh-body),
+    ),
+  ),
   banner: (
     default: (
-      font-family: var(--ff-primary),
+      font-family: var(--ff-header),
     ),
     lg: (
       font-size: torem(56),
-      line-height: torem(64),
-      letter-spacing: torem(-1.5),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
           font-size: torem(36),
-          line-height: torem(48),
+          line-height: var(--lh-heading),
+          letter-spacing: var(--ls-heading),
         ),
       )
     ),
     sm: (
       font-size: torem(24),
-      line-height: torem(34),
-      letter-spacing: torem(-1),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
           font-size: torem(18),
-          line-height: torem(26),
+          line-height: var(--lh-heading),
+          letter-spacing: var(--ls-heading),
         ),
       )
     ),
     xs: (
       font-size: torem(24),
-      line-height: torem(34),
-      letter-spacing: torem(-1),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
           font-size: torem(14),
-          line-height: torem(20),
-        ),
-      )
-    ),
-    xxs: (
-      font-size: torem(20),
-      line-height: torem(28),
-      breakpoints: (
-        sm: (
-          font-size: torem(14),
-          line-height: torem(20),
+          line-height: var(--lh-heading),
+          letter-spacing: var(--ls-heading),
         ),
       )
     ),

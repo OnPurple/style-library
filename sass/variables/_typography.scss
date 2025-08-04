@@ -7,8 +7,9 @@
   --ff-primary: 'Galaxie Copernicus', georgia, serif;
   --ff-secondary: 'Graphik', arial, sans-serif;
   --ff-utility: 'Graphik', arial, sans-serif;
-  --ff-header: var(--ff-primary);
+  --ff-header: var(--ff-utility);
   --ff-body: var(--ff-utility);
+  --ff-italic: var(--fw-primary);
 
   /**
    * @tokens Font Weight
@@ -18,6 +19,7 @@
   --fw-light: 300;
   --fw-normal: 400;
   --fw-medium: 500;
+  --fw-semibold: 600;
   --fw-bold: 700;
   --fw-heading: 500;
   --fw-body: var(--fw-normal);
@@ -27,7 +29,16 @@
    * @presenter LineHeight
    */
   // Line Height
-  --lh-body: 1.5;
+  --lh-heading: 1.2;
+  --lh-body: 1.4;
+
+  /**
+ * @tokens Letter Spacing
+ * @presenter LetterSpacing
+ */
+  // Letter Spacing
+  --ls-heading: -0.04em;
+  --ls-eyebrow: 0.12em;
 
   // Mobile and Tablet.
   --fs-h1: 2rem;     // 32px
