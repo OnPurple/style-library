@@ -87,9 +87,10 @@ $color-map: (
   --color-brand-whitefade-15: rgb(var(--color-brand-white-rgb) / 15%);
   --color-brand-whitefade-20: rgb(var(--color-brand-white-rgb) / 20%);
   --color-brand-whitefade-45: rgb(var(--color-brand-white-rgb) / 45%);
+  --color-brand-whitefade-50: rgb(var(--color-brand-white-rgb) / 50%);
   --color-brand-whitefade-60: rgb(var(--color-brand-white-rgb) / 60%);
-  --color-brand-black-rgb: 0 0 0;
-  --color-brand-blackfade-4: rgb(var(--color-brand-black-rgb) / 4%);
+  --color-brand-primary-rgb: 24, 24, 49;
+  --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%);
 
   /**
    * @tokens Brand Colors Backgrounds

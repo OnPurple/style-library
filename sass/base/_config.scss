@@ -291,19 +291,19 @@ $buttons: (
     color: var(--color-brand-primary),
     selectors: (
       hover: (
-        background: var(--color-brand-mist-30),
-        border-color: var(--color-brand-mist-30),
-        color: var(--color-brand-primary),
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
+        color: var(--color-brand-white),
       ),
       active: (
-        background: var(--color-brand-mist),
-        border-color: var(--color-brand-mist),
-        color: var(--color-brand-primary),
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
+        color: var(--color-brand-white),
       ),
       focus: (
-        background: var(--color-brand-mist),
+        background: var(--color-brand-midnight-90),
         border-color: var(--color-utilities-focus),
-        color: var(--color-brand-primary),
+        color: var(--color-brand-white),
       ),
       disabled: (
         background: transparent,
@@ -319,19 +319,19 @@ $buttons: (
     color: var(--color-brand-primary),
     selectors: (
       hover: (
-        background: var(--color-brand-mist-30),
-        border-color: var(--color-brand-mist-30),
-        color: var(--color-brand-primary),
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
+        color: var(--color-brand-white),
       ),
       active: (
-        background: var(--color-brand-mist),
-        border-color: var(--color-brand-mist),
-        color: var(--color-brand-primary),
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
+        color: var(--color-brand-white),
       ),
       focus: (
-        background: var(--color-brand-mist),
+        background: var(--color-brand-midnight-90),
         border-color: var(--color-utilities-focus),
-        color: var(--color-brand-primary),
+        color: var(--color-brand-white),
       ),
       disabled: (
         background: transparent,
@@ -371,12 +371,12 @@ $buttons: (
   outline-light: (
     backdrop-filter: blur(5px),
     background: var(--color-brand-whitefade-4),
-    border-color: 1px solid var(--color-brand-white),
+    border-color: 1px solid var(--color-brand-whitefade-50),
     color: var(--color-brand-white),
     selectors: (
       hover: (
-        background: var(--color-brand-midnight-70),
-        border-color: var(--color-brand-midnight-70),
+        background: var(--color-brand-primaryfade-30),
+        border-color: var(--color-brand-primaryfade-30),
         color: var(--color-brand-white),
       ),
       active: (
