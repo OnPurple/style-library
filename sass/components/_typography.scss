@@ -427,6 +427,15 @@ sup {
           font-weight: var(--fw-medium);
         }
       }
+
+      // CSS classes for typography starting at a specific breakpoint.
+      // ex. text-heading-md--lg-up
+      @each $bp_size in $breakpoints {
+        .text-#{$category}-#{$size}--#{$bp-size}-up {
+        @include breakpoint($bp_size) {
+          @include text($category, $size);
+        }
+      }
     }
   }
 }

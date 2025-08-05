@@ -82,7 +82,7 @@ $icons: () !default;
 // $inverted == false: transparent icon with $theme border
 // $inverted == true: $theme filled icon
 @mixin icon-info-circle($theme: default, $inverted: false) {
-  $fill: #1F1A5E;
+  $fill: #181831;
 
   @if $theme == dark {
     $fill: #fff;
