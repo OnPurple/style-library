@@ -166,40 +166,12 @@ $z-layers: (
 /// Button config
 // @deprecated
 // The following CTA names have been deprecated and will be replaced with new names.
-// - primary -> outline-dark
 // - primary-filled -> solid-dark
+// - primary -> outline-dark
 // - dark -> outline-light
 // - dark-filled -> solid-light
 // @todo: Remove the legacy config once there are no more instances on the site.
 $buttons: (
-  primary: (
-    backdrop-filter: blur(5px),
-    background: var(--color-brand-whitefade-4),
-    border-color: var(--color-brand-primary),
-    color: var(--color-brand-primary),
-    selectors: (
-      hover: (
-        background: var(--color-brand-mist-30),
-        border-color: var(--color-brand-mist-30),
-        color: var(--color-brand-primary),
-      ),
-      active: (
-        background: var(--color-brand-mist),
-        border-color: var(--color-brand-mist),
-        color: var(--color-brand-primary),
-      ),
-      focus: (
-        background: var(--color-brand-mist),
-        border-color: var(--color-utilities-focus),
-        color: var(--color-brand-primary),
-      ),
-      disabled: (
-        background: transparent,
-        border-color: var(--color-brand-gray-400),
-        color: var(--color-brand-gray-400),
-      ),
-    ),
-  ),
   primary-filled: (
     backdrop-filter: none,
     background: var(--color-brand-primary),
@@ -207,17 +179,45 @@ $buttons: (
     color: var(--color-brand-white),
     selectors: (
       hover: (
-        background: var(--color-brand-primaryfade-70),
-        border-color: var(--color-brand-primaryfade-70),
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
         color: var(--color-brand-white),
       ),
       active: (
-        background: var(--color-brand-primaryfade-90),
-        border-color: var(--color-brand-primaryfade-90),
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
         color: var(--color-brand-white),
       ),
       focus: (
-        background: var(--color-brand-primaryfade-90),
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-utilities-focus),
+        color: var(--color-brand-white),
+      ),
+      disabled: (
+        background: var(--color-brand-gray-300),
+        border-color: var(--color-brand-gray-300),
+        color: var(--color-brand-gray-500),
+      ),
+    ),
+  ),
+  solid-dark: (
+    backdrop-filter: none,
+    background: var(--color-brand-primary),
+    border-color: 1px solid var(--color-brand-primary),
+    color: var(--color-brand-white),
+    selectors: (
+      hover: (
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
+        color: var(--color-brand-white),
+      ),
+      active: (
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
+        color: var(--color-brand-white),
+      ),
+      focus: (
+        background: var(--color-brand-midnight-90),
         border-color: var(--color-utilities-focus),
         color: var(--color-brand-white),
       ),
@@ -256,10 +256,94 @@ $buttons: (
       ),
     ),
   ),
+  solid-light: (
+    backdrop-filter: none,
+    background: var(--color-brand-white),
+    border-color: 1px solid var(--color-brand-white),
+    color: var(--color-brand-primary),
+    selectors: (
+      hover: (
+        background: var(--color-brand-mist-30),
+        border-color: var(--color-brand-mist-30),
+        color: var(--color-brand-primary),
+      ),
+      active: (
+        background: var(--color-brand-mist),
+        border-color: var(--color-brand-mist),
+        color: var(--color-brand-primary),
+      ),
+      focus: (
+        background: var(--color-brand-mist),
+        border-color: var(--color-utilities-focus),
+        color: var(--color-brand-primary),
+      ),
+      disabled: (
+        background: transparent,
+        border-color: var(--color-brand-gray-400),
+        color: var(--color-brand-gray-400),
+      ),
+    ),
+  ),
+  primary: (
+    backdrop-filter: blur(5px),
+    background: var(--color-brand-whitefade-4),
+    border-color: var(--color-brand-primary),
+    color: var(--color-brand-primary),
+    selectors: (
+      hover: (
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
+        color: var(--color-brand-white),
+      ),
+      active: (
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
+        color: var(--color-brand-white),
+      ),
+      focus: (
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-utilities-focus),
+        color: var(--color-brand-white),
+      ),
+      disabled: (
+        background: transparent,
+        border-color: var(--color-brand-gray-400),
+        color: var(--color-brand-gray-400),
+      ),
+    ),
+  ),
+  outline-dark: (
+    backdrop-filter: blur(5px),
+    background: var(--color-brand-whitefade-4),
+    border-color: var(--color-brand-primary),
+    color: var(--color-brand-primary),
+    selectors: (
+      hover: (
+        background: var(--color-brand-midnight-70),
+        border-color: var(--color-brand-midnight-70),
+        color: var(--color-brand-white),
+      ),
+      active: (
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-brand-midnight-90),
+        color: var(--color-brand-white),
+      ),
+      focus: (
+        background: var(--color-brand-midnight-90),
+        border-color: var(--color-utilities-focus),
+        color: var(--color-brand-white),
+      ),
+      disabled: (
+        background: transparent,
+        border-color: var(--color-brand-gray-400),
+        color: var(--color-brand-gray-400),
+      ),
+    ),
+  ),
   dark: (
     backdrop-filter: blur(5px),
     background: var(--color-brand-whitefade-4),
-    border-color: 1px solid var(--color-brand-white),
+    border-color: 1px solid var(--color-brand-whitefade-50),
     color: var(--color-brand-white),
     selectors: (
       hover: (
@@ -269,7 +353,35 @@ $buttons: (
       ),
       active: (
         background: var(--color-brand-primaryfade-80),
-        border-color: var(--color-brand-primaryfade-80),
+        border-color: var(--color-brand-primaryfade-30),
+        color: var(--color-brand-white),
+      ),
+      focus: (
+        background: var(--color-brand-primaryfade-80),
+        border-color: var(--color-utilities-focus),
+        color: var(--color-brand-white),
+      ),
+      disabled: (
+        background: transparent,
+        border-color: var(--color-brand-gray-400),
+        color: var(--color-brand-gray-400),
+      ),
+    ),
+  ),
+  outline-light: (
+    backdrop-filter: blur(5px),
+    background: var(--color-brand-whitefade-4),
+    border-color: 1px solid var(--color-brand-whitefade-50),
+    color: var(--color-brand-white),
+    selectors: (
+      hover: (
+        background: var(--color-brand-primaryfade-30),
+        border-color: var(--color-brand-primaryfade-30),
+        color: var(--color-brand-white),
+      ),
+      active: (
+        background: var(--color-brand-primaryfade-80),
+        border-color: var(--color-brand-primaryfade-30),
         color: var(--color-brand-white),
       ),
       focus: (
