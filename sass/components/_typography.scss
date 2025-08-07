@@ -391,7 +391,8 @@ sup {
   @each $size, $css in $sizes {
     @if $size != 'default' {
       .text-#{$category}-#{$size},
-      .text-#{$category}-#{$size}-it {
+      .text-#{$category}-#{$size}-it,
+      .text-#{$category}-#{$size}-bold {
         @include text($category, 'default');
         @include text($category, $size);
 
@@ -409,21 +410,20 @@ sup {
         }
       }
 
-      .text-#{$category}-#{$size}-it {
-        font-family: var(--ff-italic);
-        font-style: italic;
+      // Italic font
+      @if $category == 'display' or $category == 'heading' or $category == 'body' {
+        .text-#{$category}-#{$size}-it {
+          @include text($category, 'italic');
 
-        @if $category == 'display' {
-          font-weight: var(--fw-normal);
-        }
-
-        @if $category == 'body' {
-          letter-spacing: -0.15em;
+          @if $category == 'body' and $size == 'md' {
+            letter-spacing: -0.01em;
+          }
         }
       }
 
-      .text-#{$category}-#{$size}-bold {
-        @if $category == 'body' {
+      // Bold font
+      @if $category == 'body' {
+        .text-#{$category}-#{$size}-bold {
           font-weight: var(--fw-medium);
         }
       }
@@ -448,10 +448,9 @@ sup {
 
 .text-body-it {
   @include text('body', 'md');
+  @include text(body, 'italic');
 
-  font-family: var(--ff-primary);
-  font-style: italic;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.01em;
 }
 
 .text-body-bold {
@@ -460,8 +459,12 @@ sup {
   font-weight: var(--fw-medium);
 }
 
+.text-normal {
+  font-weight: var(--fw-normal);
+}
+
 .text-medium {
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .text-semibold {

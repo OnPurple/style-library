@@ -175,7 +175,7 @@ $buttons: (
   primary-filled: (
     backdrop-filter: none,
     background: var(--color-brand-primary),
-    border-color: 1px solid var(--color-brand-primary),
+    border-color: var(--color-brand-primary),
     color: var(--color-brand-white),
     selectors: (
       hover: (
@@ -203,7 +203,7 @@ $buttons: (
   solid-dark: (
     backdrop-filter: none,
     background: var(--color-brand-primary),
-    border-color: 1px solid var(--color-brand-primary),
+    border-color: var(--color-brand-primary),
     color: var(--color-brand-white),
     selectors: (
       hover: (
@@ -231,7 +231,7 @@ $buttons: (
   dark-filled: (
     backdrop-filter: none,
     background: var(--color-brand-white),
-    border-color: 1px solid var(--color-brand-white),
+    border-color: var(--color-brand-white),
     color: var(--color-brand-primary),
     selectors: (
       hover: (
@@ -259,7 +259,7 @@ $buttons: (
   solid-light: (
     backdrop-filter: none,
     background: var(--color-brand-white),
-    border-color: 1px solid var(--color-brand-white),
+    border-color: var(--color-brand-white),
     color: var(--color-brand-primary),
     selectors: (
       hover: (
@@ -343,7 +343,7 @@ $buttons: (
   dark: (
     backdrop-filter: blur(5px),
     background: var(--color-brand-whitefade-4),
-    border-color: 1px solid var(--color-brand-whitefade-50),
+    border-color: var(--color-brand-whitefade-50),
     color: var(--color-brand-white),
     selectors: (
       hover: (
@@ -371,7 +371,7 @@ $buttons: (
   outline-light: (
     backdrop-filter: blur(5px),
     background: var(--color-brand-whitefade-4),
-    border-color: 1px solid var(--color-brand-whitefade-50),
+    border-color: var(--color-brand-whitefade-50),
     color: var(--color-brand-white),
     selectors: (
       hover: (
@@ -399,7 +399,7 @@ $buttons: (
   promo: (
     backdrop-filter: none,
     background: transparent,
-    border-color: 1px solid var(--color-brand-promo),
+    border-color: var(--color-brand-promo),
     color: var(--color-brand-promo),
     selectors: (
       hover: (
@@ -427,7 +427,7 @@ $buttons: (
   promo-alt: (
     backdrop-filter: none,
     background: transparent,
-    border-color: 1px solid var(--color-brand-promo-alt),
+    border-color: var(--color-brand-promo-alt),
     color: var(--color-brand-promo-alt),
     selectors: (
       hover: (
@@ -455,7 +455,7 @@ $buttons: (
   eclipse: (
     backdrop-filter: none,
     background: transparent,
-    border-color: 1px solid var(--color-brand-eclipse),
+    border-color: var(--color-brand-eclipse),
     color: var(--color-brand-eclipse),
     selectors: (
       hover: (
@@ -479,43 +479,6 @@ $buttons: (
         color: var(--color-brand-gray-400),
       ),
     ),
-  ),
-);
-
-/// Links config
-$links: (
-  default: (
-    color: var(--color-brand-primary),
-    font-weight: var(--fw-normal),
-    active-color: var(--color-brand-primary),
-  ),
-  medium: (
-    color: var(--color-brand-violet),
-    font-weight: var(--fw-medium),
-    active-color: var(--color-brand-violet),
-  ),
-  primary: (
-    extend: _base,
-  ),
-  dark: (
-    color: var(--white),
-    font-weight: var(--fw-medium),
-    active-color: var(--white),
-  ),
-  promo: (
-    color: var(--color-brand-promo),
-    font-weight: var(--fw-medium),
-    active-color: var(--color-brand-promo),
-  ),
-  promo-alt: (
-    color: var(--color-brand-promo-alt),
-    font-weight: var(--fw-medium),
-    active-color: var(--color-brand-promo-alt),
-  ),
-  eclipse: (
-    color: var(--color-brand-eclipse),
-    font-weight: var(--fw-medium),
-    active-color: var(--color-brand-eclipse),
   ),
 );
 

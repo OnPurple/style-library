@@ -1,88 +1,93 @@
 /*
 Button Utility Classes
-.btn - Defaults to transparent with twilight border, medium, no icon
 
 // Color
-.btn--disabled
-.btn--filled
-
-// Style (Variant)
-.btn--secondary - Shows plain link with arrow
+.link-style--solid-dark
+.link-style--solid-light
+.link-style--outline-dark
+.link-style--outline-light
 
 // Size
+.btn--large
 .btn--medium
 .btn--small
-
-// Treatment
-.btn--play
-.btn--arrow
 */
 
 // @deprecated
-// .btn and .btn--filled are no longer in use.
-// Use .cta-style--solid-dark, .cta-style--solid-light, .cta-style--outline-dark, .cta-style--outline-light
-// Define CSS variables.
+// Use .link-style--outline-dark
 .btn {
-  @include btn(primary);
+  @include btn(outline-dark);
 
   .dark-mode & {
-    @include btn-style(dark);
+    @include btn-style(outline-light);
   }
 }
 
-// Inverted button.
+// @deprecated
+// Use .link-style--solid-dark
 .btn--filled {
-  @include btn(primary-filled);
+  @include btn(solid-dark);
 
   .dark-mode & {
-    @include btn-style(dark-filled);
+    @include btn-style(solid-light);
   }
 }
 
-// Size
-.btn--large {
-  @include btn-size('large');
-}
-
-.btn--medium {
-  @include btn-size('medium');
-}
-
-.btn--small {
-  @include btn-size('small');
-}
-
-// Play Button
-.btn--play {
-  @include icon-after(play);
-
-  &::after {
-    font-size: var(--btn-fs);
-    padding-left: 0.5rem;
-  }
-}
-
-// New CTA Styles
-.cta-style--solid-dark {
-  @include btn(primary-filled);
+// CTA Button Styles ['solid-dark' 'solid-light', 'outline-dark', 'outline-light']
+.link-style--solid-dark a,
+.link-style--solid-dark button,
+a.link-style--solid-dark,
+button.link-style--solid-dark {
+  @include btn(solid-dark);
 
   .dark-mode & {
-    @include btn-style(dark-filled);
+    @include btn-style(solid-light);
   }
 }
 
-.cta-style--solid-light {
-  @include btn-style(dark-filled);
-}
-
-.cta-style--outline-dark {
-  @include btn(primary);
+.link-style--outline-dark a,
+.link-style--outline-dark button,
+a.link-style--outline-dark,
+button.link-style--outline-dark {
+  @include btn(outline-dark);
 
   .dark-mode & {
-    @include btn-style(dark);
+    @include btn-style(outline-light);
   }
 }
 
-.cta-style--outline-light {
-  @include btn-style(dark);
- }
+.link-style--solid-light a,
+.link-style--solid-light button,
+a.link-style--solid-light,
+button.link-style--solid-light {
+  @include btn(solid-light);
+}
+
+.link-style--outline-light a,
+.link-style--outline-light button,
+a.link-style--outline-light,
+button.link-style--outline-light {
+  @include btn(outline-light);
+}
+
+// Button Sizes ['small', 'medium', 'large']
+.btn--large a,
+.btn--large button,
+a.btn--large,
+button.btn--large {
+  @include btn-size(large);
+}
+
+.btn--medium a,
+.btn--medium button,
+a.btn--medium,
+button.btn--medium {
+  @include btn-size(medium);
+}
+
+.btn--small a,
+.btn--small button,
+a.btn--small,
+button.btn--small {
+  @include btn-size(small);
+}
