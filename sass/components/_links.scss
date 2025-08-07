@@ -1,4 +1,21 @@
-// Link Styles
+/*
+Link Utility Classes
+
+// Color
+.link-style--solid-dark
+.link-style--solid-light
+.link-style--outline-dark
+.link-style--outline-light
+
+// Size
+.btn--large
+.btn--medium
+.btn--small
+*/
+
+// @deprecated
+// .link is no longer in use.
+// Use .link-style--text
 .link {
   --link-color: var(--color-brand-violet);
   --link-tr: all var(--trt-4) var(--trtf-a2);
@@ -13,56 +30,90 @@
   }
 }
 
-.link--arrow {
-  text-decoration: none;
-
-  @include icon-after(arrow);
-
-  &::after {
-    bottom: 1px;
-    position: relative;
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    font-size: rem-calc(10);
-    font-weight: var(--fw-bold);
-    vertical-align: middle;
-  }
-}
-
-.link--down-arrow{
-  text-decoration: none;
-
-  @include icon-after(arrow-small);
-
-  &::after {
-    padding-left: 0.5rem;
-    padding-right: 1rem;
-    margin-left: 0.5rem;
-    margin-right: -0.5rem;
-    margin-top: -0.25rem;
-    font-size: rem-calc(10);
-    font-weight: var(--fw-bold);
-    vertical-align: middle;
-    transform: rotate(90deg);
-  }
-}
-
-.link--underline {
-  border-bottom: 1px solid var(--link-color);
-  text-decoration: none;
+// CTA Text Link Styles ['link-style--text']
+.link-style--text a,
+.link-style--text button,
+a.link-style--text,
+button.link-style--text {
+  @include link(violet, sm, medium);
 
   .dark-mode & {
-    --link-color: var(--white);
+    @include link-style(white);
   }
 }
 
-.link--back {
-  @include icon-before(arrow);
+// CTA Arrow Link Styles ['link-style--arrow', 'link-style--down-arrow', 'link-style--back-arrow']
+.link-style--arrow a,
+.link-style--arrow button,
+a.link-style--arrow,
+button.link-style--arrow {
+  @include link(violet, sm, medium);
+  @include link-arrow;
 
-  &::before {
-    transform: rotate(180deg);
-    font-size: 0.625rem;
-    padding-right: 1rem;
-    padding-left: 0.5rem;
+  .dark-mode & {
+    @include link-style(white);
   }
+}
+
+.link-style--down-arrow a,
+.link-style--down-arrow button,
+a.link-style--down-arrow,
+button.link-style--down-arrow {
+  @include link(violet, sm, medium);
+  @include link-down-arrow;
+
+  .dark-mode & {
+    @include link-style(white);
+  }
+}
+
+.link-style--back-arrow {
+  @include link(violet, sm, medium);
+  @include link-back-arrow;
+
+  .dark-mode & {
+    @include link-style(white);
+  }
+}
+
+// Link Colors ['primary', 'violet,', 'white']
+.link--primary {
+  @include link-style(primary);
+}
+
+.link--violet {
+  @include link-style(violet);
+}
+
+.link--white {
+  @include link-style(white);
+}
+
+// Link Sizes ['default', 'sm', 'xs', 'xxs']
+.link--default a,
+.link--default button,
+a.link--default,
+button.link--default {
+  @include link-size(default);
+}
+
+.link--sm a,
+.link--sm button,
+a.link--sm,
+button.link--sm {
+  @include link-size(sm);
+}
+
+.link--xs a,
+.link--xs button,
+a.link--xs,
+button.link--xs {
+  @include link-size(xs);
+}
+
+.link--xxs a,
+.link--xxs button,
+a.link--xxs,
+button.link--xxs {
+  @include link-size(xxs);
 }

@@ -50,13 +50,13 @@ $typography: (
       letter-spacing: var(--ls-heading),
     ),
     xs: (
-      font-size: torem(40),
+      font-size: torem(44),
       font-weight: var(--fw-light),
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     xxs: (
-      font-size: torem(36),
+      font-size: torem(40),
       font-weight: var(--fw-light),
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
@@ -108,7 +108,7 @@ $typography: (
     italic: (
       font-family: var(--ff-italic),
       font-style: italic,
-      letter-spacing: -0.15em,
+      letter-spacing: -0.015em,
     ),
     xxl: (
       font-size: torem(26),
@@ -165,6 +165,7 @@ $typography: (
     ),
     eyebrow: (
       font-size: torem(13),
+      font-weight: var(--fw-medium),
       line-height: var(--lh-body),
       letter-spacing: var(--ls-eyebrow),
       text-transform: uppercase,
@@ -173,21 +174,25 @@ $typography: (
       font-size: torem(16),
       line-height: var(--lh-body),
       text-decoration: underline,
+      text-underline-offset: 25%,
     ),
     link-sm: (
       font-size: torem(14),
       line-height: var(--lh-body),
       text-decoration: underline,
+      text-underline-offset: 25%,
     ),
     link-xs: (
       font-size: torem(13),
       line-height: var(--lh-body),
       text-decoration: underline,
+      text-underline-offset: 25%,
     ),
     link-xxs: (
       font-size: torem(12),
       line-height: var(--lh-body),
       text-decoration: underline,
+      text-underline-offset: 25%,
     ),
     link-standalone: (
       color: var(--color-brand-violet),
@@ -195,6 +200,7 @@ $typography: (
       font-weight: var(--fw-medium),
       line-height: var(--lh-body),
       text-decoration: underline,
+      text-underline-offset: 25%,
     ),
     button: (
       color: var(--color-brand-violet),

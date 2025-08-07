@@ -1,42 +1,56 @@
 ////
-/// Framework - Links
-/// @group frameworkComponents
+/// Mixin - Links
 ////
 
-/// Standard link style mixin
-/// @param {String} $link-key - the key in the $buttons map to use from config
-/// @example
-///   @include link(inline)
-@mixin link($link-key: default) {
-  $link-conf: extend-in-map($links, $link-key);
+/// Standard link mixin
+/// @param {String} $color - link color ['primary', 'violet,', 'white', 'promo', 'promo-alt', 'eclipse']
+/// @param {String} $size - link size ['default', 'sm', 'xs', 'xxs']
+/// @param {String} $font-weight - link font weight ['medium', 'normal']
+// ex:
+//   @include link(primary, default);
+//   @include link(violet, sm, normal);
+@mixin link($color: primary, $size: default, $font-weight: medium) {
+  --link-color: var(--color-brand-#{$color});
+  --link-font-weight: var(--fw-#{$font-weight});
 
-  color: key($link-conf, color);
-  font-size: rem-calc(14);
-  font-weight: key($link-conf, font-weight);
-  text-decoration: none;
-  border-bottom: 1px solid key($link-conf, color);
+  color: var(--link-color);
+  cursor: pointer;
+  font-weight: var(--link-font-weight);
   letter-spacing: inherit;
-  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 25%;
 
-  @include selectors(active) {
-    color: key($link-conf, active-color);
+  @if $size == 'default' {
+    @include text(utility, link);
+  } @else {
+    @include text(utility, 'link-#{$size}');
   }
 }
 
+/// Mixin to change the link style.
+/// @param {String} $color - link color ['primary', 'violet,', 'white', 'promo', 'promo-alt', 'eclipse']
+@mixin link-style($color: primary) {
+  --link-color: var(--color-brand-#{$color});
+}
+
+/// Mixin to change the link size.
+/// @param {String} $size - link size ['default', 'sm', 'xs', 'xxs']
+@mixin link-size($size: default) {
+  @if $size == 'default' {
+    @include text(utility, link);
+  } @else {
+    @include text(utility, 'link-#{$size}');
+  }
+}
+
+/// Link arrow mixin
 @mixin link-arrow {
-  @include icon-after(arrow);
-
-  color: var(--link-color);
-  font-weight: var(--fw-medium);
   text-decoration: none;
-  transition: var(--link-tr);
-
-  --link-color: var(--color-brand-lavender-500);
-  --link-decoration: none;
-  --link-tr: all var(--trt-4) var(--trtf-a2);
+  transition: all var(--trt-4) var(--trtf-a2);
 
   &::after {
     bottom: 1px;
+    color: var(--link-color);
     font-size: rem-calc(10);
     font-weight: var(--fw-medium);
     padding-left: 0.5rem;
@@ -44,8 +58,39 @@
     position: relative;
     vertical-align: middle;
   }
+
+  @include icon-after(arrow);
 }
 
-@mixin link-arrow-dark {
-  --link-color: var(--white);
+/// Link down arrow mixin
+@mixin link-down-arrow {
+  text-decoration: none;
+
+  &::after {
+    margin-top: -0.25rem;
+    font-size: rem-calc(10);
+    font-weight: var(--fw-bold);
+    margin-left: 0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    transform: rotate(90deg);
+    vertical-align: middle;
+  }
+
+  @include icon-after(arrow-small);
+}
+
+/// Link back arrow mixin
+@mixin link-back-arrow {
+  text-decoration: none;
+
+  &::before {
+    font-size: rem-calc(10);
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    transform: rotate(180deg);
+  }
+
+  @include icon-before(arrow-small);
 }
