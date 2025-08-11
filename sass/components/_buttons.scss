@@ -91,3 +91,11 @@ a.btn--small,
 button.btn--small {
   @include btn-size(small);
 }
+
+// Button Icons
+.btn--down-arrow a,
+.btn--down-arrow button,
+a.btn--down-arrow,
+button.btn--down-arrow {
+  @include link-down-arrow;
+}
