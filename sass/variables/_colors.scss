@@ -4,7 +4,7 @@
 // color-map is used in components/color to generate text and bg colors.
 
 $color-map: (
-        'white': #fff,
+        'white': #FFF,
         'black' : #000,
         primary: #181831, // color-brand-primary = color-brand-midnight
         twilight-100: #E9E8EF,
@@ -49,7 +49,8 @@ $color-map: (
         light-purple-60: #D7AAFA, // replace with color-brand-lavender-400
         medium-purple: #C9BFEF, // New medium-purple used in badging.
         dreamlayer-purple: #F0EBFF, // used for Rejuvenate 2.0
-        promo: #D43330, // holiday promo
+        red: #E63720, // same as promo
+        promo: #E63720, // holiday promo
         promo-alt: #395542, // holiday promo
         eclipse: #2E1A4D, // holiday color
         petal: #FFC3D1,
@@ -92,6 +93,8 @@ $color-map: (
   --color-brand-primary-rgb: 24 24 49;
   --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%);
   --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%);
+  --color-brand-violet-rgb: 84 54 204;
+  --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%);
 
   /**
    * @tokens Brand Colors Backgrounds
@@ -113,7 +116,7 @@ $color-map: (
   --color-text-primary: var(--color-brand-primary);
   --color-text-secondary: var(--color-brand-nocturnal);
   --color-text-accent: var(--color-brand-orchid);
-  --color-text-link: var(--color-brand-lavender-500);
+  --color-text-link: var(--color-brand-violet);
   --color-text-promo: var(--color-brand-promo);
   --color-text-promo-alt: var(--color-brand-promo-alt);
   --color-text-success: var(--color-messaging-success-300);
