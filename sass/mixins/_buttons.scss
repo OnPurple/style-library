@@ -49,6 +49,10 @@
   @each $prop, $value in $button {
     @if $prop != 'selectors' {
       #{$prop}: #{$value};
+
+      @if $prop == 'color' {
+        --btn-text-color: #{$value};
+      }
     }
   }
 
@@ -59,6 +63,10 @@
       &:#{$selector} {
         @each $prop, $value in $selector_props {
           #{$prop}: #{$value};
+
+          @if $prop == 'color' {
+            --btn-text-color: #{$value};
+          }
         }
       }
 
@@ -98,14 +106,17 @@
   width: fit-content;
 
   &::after {
-    // $svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11.5" fill="white" stroke="#D1CFD7"/><path d="M9.3 15.6C9.22044 15.6 9.14413 15.5684 9.08787 15.5121C9.03161 15.4558 9 15.3795 9 15.3V8.69997C9.00001 8.64784 9.0136 8.59661 9.03944 8.55134C9.06528 8.50606 9.10247 8.46829 9.14735 8.44177C9.19222 8.41524 9.24324 8.40087 9.29536 8.40006C9.34749 8.39925 9.39892 8.41205 9.4446 8.43717L15.4446 11.7372C15.4916 11.7631 15.5309 11.8011 15.5582 11.8473C15.5855 11.8936 15.5999 11.9463 15.5999 12C15.5999 12.0537 15.5855 12.1064 15.5582 12.1526C15.5309 12.1988 15.4916 12.2369 15.4446 12.2628L9.4446 15.5628C9.40031 15.5872 9.35056 15.6 9.3 15.6Z" fill="#181831"/></svg>';
-    // background-image: svg-url($svg);
-    // content: '';
+    align-items: center;
+    border: 1px solid var(--btn-text-color);
+    border-radius: 50%;
     color: inherit;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
+    content: '';
+    display: inline-flex;
+    font-size: rem-calc(12);
+    height: 1rem;
+    justify-content: center;
+    width: 1rem;
   }
 
-  @include icon-before(play);
+  @include icon-after(play);
 }
