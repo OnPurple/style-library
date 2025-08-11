@@ -430,7 +430,7 @@ sup {
 
       // CSS classes for typography starting at a specific breakpoint.
       // ex. text-heading-md--lg-up
-      @each $bp_size in $breakpoints {
+      @each $bp_size, $bp_value in $breakpoints {
         .text-#{$category}-#{$size}--#{$bp-size}-up {
           @include breakpoint($bp_size) {
             @include text($category, $size);
