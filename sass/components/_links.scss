@@ -67,7 +67,10 @@ button.link-style--down-arrow {
   }
 }
 
-.link-style--back-arrow {
+.link-style--back-arrow a,
+.link-style--back-arrow button,
+a.link-style--back-arrow,
+button.link-style--back-arrow {
   @include link(violet, sm, medium);
   @include link-back-arrow;
 
@@ -77,15 +80,24 @@ button.link-style--down-arrow {
 }
 
 // Link Colors ['primary', 'violet,', 'white']
-.link--primary {
+.link--primary a,
+.link--primary button,
+a.link--primary,
+button.link--primary {
   @include link-style(primary);
 }
 
-.link--violet {
+.link--violet a,
+.link--violet button,
+a.link--violet,
+button.link--violet {
   @include link-style(violet);
 }
 
-.link--white {
+.link--white a,
+.link--white button,
+a.link--white,
+button.link--white {
   @include link-style(white);
 }
 

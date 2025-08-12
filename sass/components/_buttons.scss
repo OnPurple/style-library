@@ -92,10 +92,31 @@ button.btn--small {
   @include btn-size(small);
 }
 
-// Button Icons
+// Button Icons ['play', 'arrow', 'down-arrow', 'back-arrow']
+.btn--play a,
+.btn--play button,
+a.btn--play,
+button.btn--play {
+  @include btn-play-icon;
+}
+
+.btn--arrow a,
+.btn--arrow button,
+a.btn--arrow,
+button.btn--arrow {
+  @include link-arrow;
+}
+
 .btn--down-arrow a,
 .btn--down-arrow button,
 a.btn--down-arrow,
 button.btn--down-arrow {
   @include link-down-arrow;
+}
+
+.btn--back-arrow a,
+.btn--back-arrow button,
+a.btn--back-arrow,
+button.btn--back-arrow {
+  @include link-back-arrow;
 }
