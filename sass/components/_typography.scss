@@ -17,22 +17,18 @@
 
 // Heading
 h1, .h1 {
-  line-height: 48px;
-  letter-spacing: -1.5px;
-  font-size: var(--fs-h1);
+  @include text(display, xs);
 
-  @media all and (min-width: 1024px) {
-    line-height: 56px;
+  @include breakpoint(lg) {
+    @include text(display, sm);
   }
 }
 
 h2, .h2 {
-  line-height: 36px;
-  letter-spacing: -1.5px;
-  font-size: var(--fs-h2);
+  @include text(heading, md);
 
-  @media all and (min-width: 1024px) {
-    line-height: 52px;
+  @include breakpoint(lg) {
+    @include text(heading, lg);
   }
 }
 
@@ -41,7 +37,7 @@ h3, .h3 {
   letter-spacing: -1.05px;
   font-size: var(--fs-h3);
 
-  @media all and (min-width: 1024px) {
+  @include breakpoint(lg) {
     line-height: 48px;
     letter-spacing: -1.5px;
   }
@@ -52,7 +48,7 @@ h4, .h4 {
   letter-spacing: -1.05px;
   font-size: var(--fs-h4);
 
-  @media all and (min-width: 1024px) {
+  @include breakpoint(lg) {
     line-height: 38px;
     letter-spacing: -1.25px;
   }
@@ -63,7 +59,7 @@ h5, .h5 {
   letter-spacing: -1px;
   font-size: var(--fs-h5);
 
-  @media all and (min-width: 1024px) {
+  @include breakpoint(lg) {
     line-height: 34px;
   }
 }
@@ -73,7 +69,7 @@ h6, .h6 {
   letter-spacing: -0.5px;
   font-size: var(--fs-h6);
 
-  @media all and (min-width: 1024px) {
+  @include breakpoint(lg) {
     line-height: 28px;
   }
 }
@@ -425,16 +421,6 @@ sup {
       @if $category == 'body' {
         .text-#{$category}-#{$size}-bold {
           font-weight: var(--fw-medium);
-        }
-      }
-
-      // CSS classes for typography starting at a specific breakpoint.
-      // ex. text-heading-md--lg-up
-      @each $bp_size, $bp_value in $breakpoints {
-        .text-#{$category}-#{$size}--#{$bp-size}-up {
-          @include breakpoint($bp_size) {
-            @include text($category, $size);
-          }
         }
       }
     }
