@@ -109,10 +109,10 @@
     align-items: center;
     border: 1px solid var(--btn-text-color);
     border-radius: 50%;
-    color: inherit;
+    color: var(--btn-text-color);
     content: '';
     display: inline-flex;
-    font-size: rem-calc(12);
+    font-size: rem-calc(10);
     height: 1rem;
     justify-content: center;
     width: 1rem;

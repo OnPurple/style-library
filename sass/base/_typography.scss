@@ -173,26 +173,18 @@ $typography: (
     link: (
       font-size: torem(16),
       line-height: var(--lh-body),
-      text-decoration: underline,
-      text-underline-offset: 25%,
     ),
     link-sm: (
       font-size: torem(14),
       line-height: var(--lh-body),
-      text-decoration: underline,
-      text-underline-offset: 25%,
     ),
     link-xs: (
       font-size: torem(13),
       line-height: var(--lh-body),
-      text-decoration: underline,
-      text-underline-offset: 25%,
     ),
     link-xxs: (
       font-size: torem(12),
       line-height: var(--lh-body),
-      text-decoration: underline,
-      text-underline-offset: 25%,
     ),
     link-standalone: (
       color: var(--color-brand-violet),
