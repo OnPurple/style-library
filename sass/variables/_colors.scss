@@ -49,7 +49,7 @@ $color-map: (
         light-purple-60: #D7AAFA, // replace with color-brand-lavender-400
         medium-purple: #C9BFEF, // New medium-purple used in badging.
         dreamlayer-purple: #F0EBFF, // used for Rejuvenate 2.0
-        red: #E63720, // same as promo
+        hot-flash: #E63720,
         promo: #E63720, // holiday promo
         promo-alt: #395542, // holiday promo
         eclipse: #2E1A4D, // holiday color
@@ -94,6 +94,7 @@ $color-map: (
   --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%);
   --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%);
   --color-brand-violet-rgb: 84 54 204;
+  --color-brand-violetfade-20: rgb(var(--color-brand-violet-rgb) / 20%);
   --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%);
 
   /**
@@ -296,7 +297,7 @@ $color-map: (
   --red-utility: var(--red);
   --body-color: var(--color-text-primary);
   --heading-color: var(--color-text-primary);
-  --promo-color: var(--orchid);
+  --promo-color: var(--color-brand-violet);
   --scrim-dark: var(--color-brand-twilightfade-45);
   --scrim-light: var(--color-brand-twilightfade-20);
   --scrim-gray: rgb(21 21 38 / 20%);

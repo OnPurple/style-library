@@ -50,7 +50,7 @@
 
   &::after {
     bottom: 1px;
-    color: var(--link-color);
+    color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-medium);
     padding-left: 0.5rem;
@@ -67,11 +67,10 @@
   text-decoration: none;
 
   &::after {
-    margin-top: -0.25rem;
+    color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-bold);
-    margin-left: 0.5rem;
-    margin-right: -0.5rem;
+    margin: -0.25rem -0.5rem 0 0.5rem;
     padding-left: 0.5rem;
     padding-right: 1rem;
     transform: rotate(90deg);
@@ -79,18 +78,4 @@
   }
 
   @include icon-after(arrow-small);
-}
-
-/// Link back arrow mixin
-@mixin link-back-arrow {
-  text-decoration: none;
-
-  &::before {
-    font-size: rem-calc(10);
-    padding-left: 1rem;
-    padding-right: 0.5rem;
-    transform: rotate(180deg);
-  }
-
-  @include icon-before(arrow-small);
 }
