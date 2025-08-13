@@ -13,8 +13,10 @@
   --link-color: var(--color-brand-#{$color});
   --link-font-weight: var(--fw-#{$font-weight});
 
+  align-items: center;
   color: var(--link-color);
   cursor: pointer;
+  display: inline-flex;
   font-weight: var(--link-font-weight);
   letter-spacing: inherit;
   text-decoration: underline;
@@ -45,16 +47,14 @@
 
 /// Link arrow mixin
 @mixin link-arrow {
+  gap: 0.5rem;
   text-decoration: none;
   transition: all var(--trt-4) var(--trtf-a2);
 
   &::after {
-    bottom: 1px;
     color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-medium);
-    padding-left: 0.5rem;
-    padding-right: 1rem;
     position: relative;
     vertical-align: middle;
   }
@@ -64,15 +64,13 @@
 
 /// Link down arrow mixin
 @mixin link-down-arrow {
+  gap: 0.5rem;
   text-decoration: none;
 
   &::after {
     color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-bold);
-    margin: -0.25rem -0.5rem 0 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 1rem;
     transform: rotate(90deg);
     vertical-align: middle;
   }
