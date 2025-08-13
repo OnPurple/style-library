@@ -6,16 +6,16 @@
 /// @param {String} $button-key - the key in the $buttons map to use from config
 //      ['solid-dark' 'solid-light', 'outline-dark', 'outline-light', 'promo', 'promo-alt', 'eclipse']
 /// @param {String} $size - button size ['small', 'medium', 'large']
-/// @param {String} $icon - optional icon ['play']
 // ex:
-//   @include btn(outline-dark, large);
+//   @include btn(outline-dark);
 //   @include btn(solid-dark, large);
-@mixin btn($button-key, $size: medium, $icon: '') {
+@mixin btn($button-key, $size: medium) {
+  align-items: center;
   border-radius: 3rem;
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   font-size: var(--btn-fs);
   font-weight: var(--fw-normal);
   letter-spacing: -0.01em;
@@ -33,11 +33,6 @@
   &:disabled,
   &.btn--disabled {
     pointer-events: none;
-  }
-
-  // Play Icon
-  @if $icon == 'play' {
-    @include btn-play-icon;
   }
 }
 
@@ -97,12 +92,9 @@
   }
 }
 
-/// Buton play icon mixin
+/// Button play icon mixin
 @mixin btn-play-icon {
-  align-items: center;
-  display: inline-flex;
   gap: 0.375rem;
-  justify-content: center;
   width: fit-content;
 
   &::after {

@@ -92,31 +92,24 @@ button.btn--small {
   @include btn-size(small);
 }
 
-// Button Icons ['play', 'arrow', 'down-arrow', 'back-arrow']
-.btn--play a,
-.btn--play button,
-a.btn--play,
-button.btn--play {
+// Button Icons ['play', 'arrow', 'down-arrow']
+.btn--play-icon a,
+.btn--play-icon button,
+a.btn--play-icon,
+button.btn--play-icon {
   @include btn-play-icon;
 }
 
-.btn--arrow a,
-.btn--arrow button,
-a.btn--arrow,
-button.btn--arrow {
+.btn--arrow-icon a,
+.btn--arrow-icon button,
+a.btn--arrow-icon,
+button.btn--arrow-icon {
   @include link-arrow;
 }
 
-.btn--down-arrow a,
-.btn--down-arrow button,
-a.btn--down-arrow,
-button.btn--down-arrow {
+.btn--down-arrow-icon a,
+.btn--down-arrow-icon button,
+a.btn--down-arrow-icon,
+button.btn--down-arrow-icon {
   @include link-down-arrow;
-}
-
-.btn--back-arrow a,
-.btn--back-arrow button,
-a.btn--back-arrow,
-button.btn--back-arrow {
-  @include link-back-arrow;
 }

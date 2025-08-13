@@ -13,8 +13,10 @@
   --link-color: var(--color-brand-#{$color});
   --link-font-weight: var(--fw-#{$font-weight});
 
+  align-items: center;
   color: var(--link-color);
   cursor: pointer;
+  display: inline-flex;
   font-weight: var(--link-font-weight);
   letter-spacing: inherit;
   text-decoration: underline;
@@ -45,16 +47,14 @@
 
 /// Link arrow mixin
 @mixin link-arrow {
+  gap: 0.5rem;
   text-decoration: none;
   transition: all var(--trt-4) var(--trtf-a2);
 
   &::after {
-    bottom: 1px;
-    color: var(--link-color);
+    color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-medium);
-    padding-left: 0.5rem;
-    padding-right: 1rem;
     position: relative;
     vertical-align: middle;
   }
@@ -64,33 +64,16 @@
 
 /// Link down arrow mixin
 @mixin link-down-arrow {
+  gap: 0.5rem;
   text-decoration: none;
 
   &::after {
-    margin-top: -0.25rem;
+    color: inherit;
     font-size: rem-calc(10);
     font-weight: var(--fw-bold);
-    margin-left: 0.5rem;
-    margin-right: -0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 1rem;
     transform: rotate(90deg);
     vertical-align: middle;
   }
 
   @include icon-after(arrow-small);
-}
-
-/// Link back arrow mixin
-@mixin link-back-arrow {
-  text-decoration: none;
-
-  &::before {
-    font-size: rem-calc(10);
-    padding-left: 1rem;
-    padding-right: 0.5rem;
-    transform: rotate(180deg);
-  }
-
-  @include icon-before(arrow-small);
 }

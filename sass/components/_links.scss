@@ -42,7 +42,7 @@ button.link-style--text {
   }
 }
 
-// CTA Arrow Link Styles ['link-style--arrow', 'link-style--down-arrow', 'link-style--back-arrow']
+// CTA Arrow Link Styles ['link-style--arrow', 'link-style--down-arrow']
 .link-style--arrow a,
 .link-style--arrow button,
 a.link-style--arrow,
@@ -61,18 +61,6 @@ a.link-style--down-arrow,
 button.link-style--down-arrow {
   @include link(violet, sm, medium);
   @include link-down-arrow;
-
-  .dark-mode & {
-    @include link-style(white);
-  }
-}
-
-.link-style--back-arrow a,
-.link-style--back-arrow button,
-a.link-style--back-arrow,
-button.link-style--back-arrow {
-  @include link(violet, sm, medium);
-  @include link-back-arrow;
 
   .dark-mode & {
     @include link-style(white);
