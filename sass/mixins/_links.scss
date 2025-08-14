@@ -18,9 +18,11 @@
   cursor: pointer;
   display: inline-flex;
   font-weight: var(--link-font-weight);
+  justify-content: center;
   letter-spacing: inherit;
   text-decoration: underline;
   text-underline-offset: 25%;
+  width: fit-content;
 
   @if $size == 'default' {
     @include text(utility, link);
