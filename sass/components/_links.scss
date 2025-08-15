@@ -35,7 +35,7 @@ Link Utility Classes
 .link-style--text button,
 a.link-style--text,
 button.link-style--text {
-  @include link(violet, sm, medium);
+  @include link(primary, sm, medium);
 
   .dark-mode & {
     @include link-style(white);
@@ -47,7 +47,7 @@ button.link-style--text {
 .link-style--arrow button,
 a.link-style--arrow,
 button.link-style--arrow {
-  @include link(violet, sm, medium);
+  @include link(primary, sm, medium);
   @include link-arrow;
 
   .dark-mode & {
@@ -59,7 +59,7 @@ button.link-style--arrow {
 .link-style--down-arrow button,
 a.link-style--down-arrow,
 button.link-style--down-arrow {
-  @include link(violet, sm, medium);
+  @include link(primary, sm, medium);
   @include link-down-arrow;
 
   .dark-mode & {
