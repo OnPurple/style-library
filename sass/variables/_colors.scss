@@ -50,7 +50,8 @@ $color-map: (
         medium-purple: #C9BFEF, // New medium-purple used in badging.
         dreamlayer-purple: #F0EBFF, // used for Rejuvenate 2.0
         red: #E63720,
-        promo: #D43330, // holiday promo
+        promo: #E63720, // promo = red
+        holiday-promo: #D43330, // holiday promo
         promo-alt: #395542, // holiday promo
         eclipse: #2E1A4D, // holiday color
         petal: #FFC3D1,
@@ -95,6 +96,8 @@ $color-map: (
   --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%);
   --color-brand-violet-rgb: 84 54 204;
   --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%);
+  --color-brand-red-rgb: 230 55 32;
+  --color-brand-redfade-20: rgb(var(--color-brand-red-rgb) / 20%);
 
   /**
    * @tokens Brand Colors Backgrounds
@@ -296,7 +299,7 @@ $color-map: (
   --red-utility: var(--red);
   --body-color: var(--color-text-primary);
   --heading-color: var(--color-text-primary);
-  --promo-color: var(--color-brand-red);
+  --promo-color: var(--color-brand-promo);
   --scrim-dark: var(--color-brand-twilightfade-45);
   --scrim-light: var(--color-brand-twilightfade-20);
   --scrim-gray: rgb(21 21 38 / 20%);
