@@ -1,6 +1,7 @@
 .field--name-field-promotion {
-  @include text(utility, eyebrow);
+  @include text(body, xs);
 
   color: var(--promo-color);
+  font-weight: var(--fw-medium);
   margin-top: 0.5rem;
 }

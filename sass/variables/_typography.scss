@@ -41,6 +41,7 @@
   --ls-eyebrow: 0.1em;
 
   // Mobile and Tablet.
+  // @deprecated - DO NOT USE - use @text mixin instead.
   --fs-h1: 2rem;     // 32px
   --fs-h2: 1.75rem;  // 28px
   --fs-h3: 1.625rem; // 26px
@@ -54,6 +55,7 @@
    */
 
   // Body Font Size
+  // @deprecated - DO NOT USE - use @text mixin instead.
   --fs-p00: 1.25rem; // 20px
   --fs-p0: 1.125rem; // 18px
   --fs-p1: 1rem;     // 16px
