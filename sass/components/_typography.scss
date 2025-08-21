@@ -17,10 +17,10 @@
 
 // Heading
 h1, .h1 {
-  @include text(display, xs);
+  @include text(display, md);
 
   @include breakpoint(lg) {
-    @include text(display, sm);
+    @include text(display, lg);
   }
 }
 
@@ -114,7 +114,7 @@ h6, .h6 {
 
 // Used in the WYSIWYG as a subheading style
 .heading--subheading {
-  color: var(--twilight);
+  color: var(--color-text-primary);
   margin: 0.5rem 0;
   font-size: 1rem;
   font-family: var(--ff-utility);
@@ -260,7 +260,7 @@ sup {
   --li-fs: var(--fs-p2);
 
   .color-purple {
-    color: var(--color-brand-twilight-500);
+    color: var(--color-brand-primary);
   }
 
   > *:last-child {
@@ -270,7 +270,7 @@ sup {
   a {
     display: inline-block;
 
-    @include link(medium);
+    @include link(violet, sm, medium);
   }
 
   a, button {
@@ -388,7 +388,7 @@ sup {
     @if $size != 'default' {
       .text-#{$category}-#{$size},
       .text-#{$category}-#{$size}-it,
-      .text-#{$category}-#{$size}-bold {
+      .text-#{$category}-#{$size}-medium {
         @include text($category, 'default');
         @include text($category, $size);
 
@@ -410,39 +410,17 @@ sup {
       @if $category == 'display' or $category == 'heading' or $category == 'body' {
         .text-#{$category}-#{$size}-it {
           @include text($category, 'italic');
-
-          @if $category == 'body' and $size == 'md' {
-            letter-spacing: -0.01em;
-          }
         }
       }
 
       // Bold font
       @if $category == 'body' {
-        .text-#{$category}-#{$size}-bold {
+        .text-#{$category}-#{$size}-medium {
           font-weight: var(--fw-medium);
         }
       }
     }
   }
-}
-
-// Body class is the same as "md" just without the key.
-.text-body {
-  @include text('body', 'md');
-}
-
-.text-body-it {
-  @include text('body', 'md');
-  @include text(body, 'italic');
-
-  letter-spacing: -0.01em;
-}
-
-.text-body-bold {
-  @include text('body', 'md');
-
-  font-weight: var(--fw-medium);
 }
 
 .text-normal {

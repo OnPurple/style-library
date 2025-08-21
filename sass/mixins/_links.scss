@@ -3,79 +3,69 @@
 ////
 
 /// Standard link mixin
-/// @param {String} $color - link color ['primary', 'violet,', 'white', 'promo', 'promo-alt', 'eclipse']
-/// @param {String} $size - link size ['default', 'sm', 'xs', 'xxs']
+/// @param {String} $color - link color ['primary', 'violet,', 'white', 'promo']
+/// @param {String} $size - link size ['md', 'sm', 'xs', 'xxs']
 /// @param {String} $font-weight - link font weight ['medium', 'normal']
 // ex:
-//   @include link(primary, default);
+//   @include link(primary, md);
 //   @include link(violet, sm, normal);
-@mixin link($color: primary, $size: default, $font-weight: medium) {
-  --link-color: var(--color-brand-#{$color});
-  --link-font-weight: var(--fw-#{$font-weight});
-
+@mixin link($color: primary, $size: md, $font-weight: medium) {
   align-items: center;
-  color: var(--link-color);
   cursor: pointer;
   display: inline-flex;
-  font-weight: var(--link-font-weight);
+  font-weight: var(--fw-#{$font-weight});
   justify-content: center;
   letter-spacing: inherit;
   text-decoration: underline;
   text-underline-offset: 25%;
   width: fit-content;
 
-  @if $size == 'default' {
-    @include text(utility, link);
-  } @else {
-    @include text(utility, 'link-#{$size}');
+  @include link-size($size);
+  @include link-style($color);
+
+  // Disabled
+  &:disabled,
+  &.btn--disabled {
+    pointer-events: none;
   }
 }
 
 /// Mixin to change the link style.
-/// @param {String} $color - link color ['primary', 'violet,', 'white', 'promo', 'promo-alt', 'eclipse']
-@mixin link-style($color: primary) {
-  --link-color: var(--color-brand-#{$color});
+/// @param {String} $link-key - the key in the $links map to use from config
+//      ['primary' 'violet', 'white', 'promo']
+@mixin link-style($link-key) {
+  $link: map.get($links, $link-key);
+
+  @each $prop, $value in $link {
+    @if $prop != 'selectors' {
+      #{$prop}: #{$value};
+    }
+  }
+
+  @if map.has-key($link, 'selectors') {
+    $selectors: map.get($link, 'selectors');
+
+    @each $selector, $selector_props in $selectors {
+      &:#{$selector} {
+        @each $prop, $value in $selector_props {
+          #{$prop}: #{$value};
+        }
+      }
+
+      // Disabled class
+      @if $selector == 'disabled' {
+        &.btn--disabled {
+          @each $prop, $value in $selector_props {
+            #{$prop}: #{$value};
+          }
+        }
+      }
+    }
+  }
 }
 
 /// Mixin to change the link size.
-/// @param {String} $size - link size ['default', 'sm', 'xs', 'xxs']
-@mixin link-size($size: default) {
-  @if $size == 'default' {
-    @include text(utility, link);
-  } @else {
-    @include text(utility, 'link-#{$size}');
-  }
-}
-
-/// Link arrow mixin
-@mixin link-arrow {
-  gap: 0.5rem;
-  text-decoration: none;
-  transition: all var(--trt-4) var(--trtf-a2);
-
-  &::after {
-    color: inherit;
-    font-size: rem-calc(10);
-    font-weight: var(--fw-medium);
-    position: relative;
-    vertical-align: middle;
-  }
-
-  @include icon-after(arrow);
-}
-
-/// Link down arrow mixin
-@mixin link-down-arrow {
-  gap: 0.5rem;
-  text-decoration: none;
-
-  &::after {
-    color: inherit;
-    font-size: rem-calc(10);
-    font-weight: var(--fw-bold);
-    transform: rotate(90deg);
-    vertical-align: middle;
-  }
-
-  @include icon-after(arrow-small);
+/// @param {String} $size - link size ['md', 'sm', 'xs', 'xxs']
+@mixin link-size($size) {
+  @include text(body, $size);
 }

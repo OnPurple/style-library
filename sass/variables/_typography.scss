@@ -29,6 +29,7 @@
    * @presenter LineHeight
    */
   // Line Height
+  --lh-display: 1.2;
   --lh-heading: 1.2;
   --lh-body: 1.4;
 
@@ -37,8 +38,8 @@
  * @presenter LetterSpacing
  */
   // Letter Spacing
-  --ls-heading: -0.04em;
-  --ls-eyebrow: 0.1em;
+  --ls-display: -0.04em;
+  --ls-heading: -0.03em;
 
   // Mobile and Tablet.
   // @deprecated - DO NOT USE - use @text mixin instead.

@@ -49,9 +49,7 @@ $color-map: (
         light-purple-60: #D7AAFA, // replace with color-brand-lavender-400
         medium-purple: #C9BFEF, // New medium-purple used in badging.
         dreamlayer-purple: #F0EBFF, // used for Rejuvenate 2.0
-        red: #E63720,
-        promo: #E63720, // promo = red
-        holiday-promo: #D43330, // holiday promo
+        promo: #CA2B16,
         promo-alt: #395542, // holiday promo
         eclipse: #2E1A4D, // holiday color
         petal: #FFC3D1,
@@ -61,7 +59,8 @@ $color-map: (
         dark-navy: #0F0F3A,
         daydream-light: #FEE5FF,
         mist-30: #E7E6F7,
-        mist: #C8C7DD
+        mist: #C8C7DD,
+        luna: #4E4766
 );
 
 :root {
@@ -110,18 +109,16 @@ $color-map: (
   --color-background-darker: var(--color-brand-lavender-500);
   --color-background-darkest: var(--color-brand-twilight-500);
   --color-background-promo: var(--color-brand-promo);
-  --color-background-promo-alt: var(--color-brand-promo-alt);
 
   /**
    * @tokens Brand Typography
    * @presenter Color
    */
   --color-text-primary: var(--color-brand-primary);
-  --color-text-secondary: var(--color-brand-nocturnal);
-  --color-text-accent: var(--color-brand-orchid);
-  --color-text-link: var(--color-brand-violet);
+  --color-text-secondary: var(--color-brand-luna);
+  --color-text-accent: var(--color-brand-promo);
+  --color-text-link: var(--color-brand-primary);
   --color-text-promo: var(--color-brand-promo);
-  --color-text-promo-alt: var(--color-brand-promo-alt);
   --color-text-success: var(--color-messaging-success-300);
   --color-text-warning: var(--color-messaging-warning-300);
   --color-text-error: var(--color-messaging-error-300);
@@ -138,7 +135,7 @@ $color-map: (
    * @tokens Brand Borders
    * @presenter Color
    */
-  --border-divider: #dbdae5;
+  --border-divider: var(--color-brand-twilightfade-15);
   --border-divider-dark: rgb(255 255 255 / 30%);
   --border-purple: var(--color-brand-twilightfade-45);
   --border-purple-100: var(--color-brand-twilightfade-15);
@@ -201,7 +198,7 @@ $color-map: (
   --periwinkle-light: var(--periwinkle-10);
 
   // Midnight
-  --midnight: #181831;
+  --midnight: var(--color-brand-midnight);
   --midnight-medium: #341458;
   --midnight-light: #473F61;
   --midnight-60: #756F88;
