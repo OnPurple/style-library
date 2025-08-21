@@ -4,7 +4,7 @@
 
 /// Standard button mixin
 /// @param {String} $button-key - the key in the $buttons map to use from config
-//      ['solid-dark' 'solid-light', 'outline-dark', 'outline-light', 'promo', 'promo-alt', 'eclipse']
+//      ['solid-dark' 'solid-light', 'outline-dark', 'outline-light', 'promo']
 /// @param {String} $size - button size ['small', 'medium', 'large']
 // ex:
 //   @include btn(outline-dark);
@@ -39,7 +39,22 @@
 
 /// Mixin to change the button style.
 /// @param {String} $button-key - the key in the $buttons map to use from config
-@mixin btn-style($button-key) {
+//      ['solid-dark' 'solid-light', 'outline-dark', 'outline-light', 'promo']
+@mixin btn-style($button-name) {
+  $button-key: $button-name;
+  
+  // Replace legacy names with new names.
+  // @todo: Remove once there are no more instances on the site.
+  @if $button-name == 'primary' {
+    $button-key: 'outline-dark';
+  } @else if $button-name == 'primary-filled' {
+    $button-key: 'solid-dark';
+  } @else if $button-name == 'dark' {
+    $button-key: 'outline-light';
+  } @else if $button-name == 'dark-filled' {
+    $button-key: 'solid-light';
+  }
+
   $button: map.get($buttons, $button-key);
 
   @each $prop, $value in $button {
@@ -79,8 +94,8 @@
 }
 
 /// Mixin to change the button size.
-/// @param {String} $size [small] - the button size. choose from 'small', 'medium', 'large'
-@mixin btn-size($size: medium) {
+/// @param {String} $size - button size ['small', 'medium', 'large']
+@mixin btn-size($size) {
   @if  $size == large {
     --btn-fs: 1rem;
     --btn-padding: 0.75rem 1.75rem;

@@ -42,31 +42,6 @@ button.link-style--text {
   }
 }
 
-// CTA Arrow Link Styles ['link-style--arrow', 'link-style--down-arrow']
-.link-style--arrow a,
-.link-style--arrow button,
-a.link-style--arrow,
-button.link-style--arrow {
-  @include link(primary, sm, medium);
-  @include link-arrow;
-
-  .dark-mode & {
-    @include link-style(white);
-  }
-}
-
-.link-style--down-arrow a,
-.link-style--down-arrow button,
-a.link-style--down-arrow,
-button.link-style--down-arrow {
-  @include link(primary, sm, medium);
-  @include link-down-arrow;
-
-  .dark-mode & {
-    @include link-style(white);
-  }
-}
-
 // Link Colors ['primary', 'violet,', 'white']
 .link--primary a,
 .link--primary button,
@@ -89,12 +64,12 @@ button.link--white {
   @include link-style(white);
 }
 
-// Link Sizes ['default', 'sm', 'xs', 'xxs']
-.link--default a,
-.link--default button,
-a.link--default,
-button.link--default {
-  @include link-size(default);
+// Link Sizes ['md', 'sm', 'xs', 'xxs']
+.link--md a,
+.link--md button,
+a.link--md,
+button.link--md {
+  @include link-size(md);
 }
 
 .link--sm a,
