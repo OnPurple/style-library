@@ -13,7 +13,7 @@ $color-map: (
         twilight-400: #35316E,
         twilight-500: #1F1A5E,
         twilight-600: #151526,
-        lavender-100: #EFE8F5, // lilac
+        lavender-100: #EFE8F5,
         lavender-200: #E8DAF4,
         lavender-300: #D7C6E6, // lavender-skies
         lavender-400: #D7AAFA, // daydream & light-purple-60
@@ -29,7 +29,7 @@ $color-map: (
         catnap: #844FB0, // replace with color-brand-lavender-500
         daydream: #D7AAFA, // replace with color-brand-lavender-400
         lavender-skies: #D7C6E6, // replace-with color-brand-lavender-300
-        lilac: #EFE8F5, // replace with color-brand-lavender-100
+        lilac: #F0EBFF,
         lilly: #E5B5E8,
         'pink': #EB72FF,
         sandman: #F8F5EF,
@@ -163,7 +163,6 @@ $color-map: (
   --golden-hour: var(--color-brand-goldenhour);
   --powernap: var(--color-brand-powernap);
   --rem: var(--color-brand-rem);
-  --lilac: var(--color-brand-lavender-100);
   --light-lilac: #F7F5FF; // replace
   --sandman: var(--color-brand-sandman);
   --nocturnal: var(--color-brand-nocturnal);
