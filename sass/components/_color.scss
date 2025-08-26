@@ -14,22 +14,6 @@
   background-color: var(--color-brand-twilightfade-5);
 }
 
-// @deprecated
-// The following Badge Type terms inside the Badges taxonomy are deprecated.
-// - Blue Promotion, Purple Promotion, Feature
-// @todo: Remove these styles once there are no more taxonomy terms with this Badge Type.
-.color-brand-bg-blue-promotion {
-  background-color: var(--color-brand-orchid);
-}
-
-.color-brand-bg-purple-promotion {
-  background-color: var(--color-brand-lavender-100);
-}
-
-.color-brand-bg-feature {
-  background-color: var(--color-brand-sandman);
-}
-
 // Gradient styles
 .gradient-border-top {
   height: 8px;
