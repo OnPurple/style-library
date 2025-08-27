@@ -270,7 +270,7 @@ sup {
   a {
     display: inline-block;
 
-    @include link(violet, sm, medium);
+    @include link(primary, sm, medium);
   }
 
   a, button {
