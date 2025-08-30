@@ -268,9 +268,8 @@ sup {
   }
 
   a {
-    display: inline-block;
-
     @include link(primary, sm, medium);
+    font-size: inherit;
   }
 
   a, button {
