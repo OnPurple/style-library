@@ -11,7 +11,7 @@
 //   @include btn(solid-dark, large);
 @mixin btn($button-key, $size: medium) {
   align-items: center;
-  border-radius: 3rem;
+  border-radius: var(--btn-border-radius);
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
@@ -20,7 +20,7 @@
   font-weight: var(--fw-medium);
   justify-content: center;
   letter-spacing: -0.01em;
-  line-height: 1.4;
+  line-height: var(--btn-lh);
   padding: var(--btn-padding);
   position: relative;
   text-decoration: none;
@@ -98,12 +98,15 @@
 @mixin btn-size($size) {
   @if  $size == large {
     --btn-fs: 1rem;
+    --btn-lh: 1.25rem;
     --btn-padding: 0.75rem 1.75rem;
   } @else if $size == medium {
     --btn-fs: 0.875rem;
+    --btn-lh: 1rem;
     --btn-padding: 0.625rem 1.5rem;
   } @else if $size == small {
     --btn-fs: 0.75rem;
+    --btn-lh: 1rem;
     --btn-padding: 0.375rem 1rem;
   }
 }
