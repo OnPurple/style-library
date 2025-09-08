@@ -13,6 +13,11 @@ Button Utility Classes
 .btn--small
 */
 
+// Root CSS Variables - Buttons
+:root {
+  --btn-border-radius: 3rem;
+}
+
 // @deprecated
 // Use .link-style--outline-dark
 .btn {
