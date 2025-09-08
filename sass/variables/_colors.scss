@@ -272,6 +272,7 @@ $color-map: (
   --scrim-gradient-white: linear-gradient(rgb(255 255 255 / 30%) 0, rgb(255 255 255 / 60%) 100%);
   --active-bg-primary: var(--color-brand-twilight-500);
   --border-gray: var(--border-divider);
+  --sunrise-gradient: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
 
   /**
    * @tokens Colors Common Legacy
