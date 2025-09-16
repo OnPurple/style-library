@@ -251,9 +251,11 @@ sup {
   }
 }
 
-// Default italic styles
-em {
-  @include text(heading, italic);
+// Heading italic styles
+.field--name-field-heading {
+  em {
+    @include text(heading, italic);
+  }
 }
 
 // Formatted body text styles
