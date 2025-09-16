@@ -251,6 +251,12 @@ sup {
   }
 }
 
+// Default italic styles
+em {
+  @include text(heading, italic);
+}
+
+// Formatted body text styles
 .text-formatted,
 .cke_editable {
   --ul-spacing: 1.8125rem 0;
@@ -284,6 +290,11 @@ sup {
     b,
     strong {
       font-weight: var(--fw-medium);
+    }
+
+    // Body font italic styles
+    em {
+      @include text(body, italic);
     }
   }
 
@@ -376,6 +387,17 @@ sup {
 // "--custom-highlight-color" is set in field--heading-1.html.twig & field--heading-2.html.twig.
 .highlight-custom {
   background-color: var(--custom-highlight-color);
+}
+
+.text-display-indented {
+  display: block;
+  margin-left: 4.5rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-left: 2rem;
+  }
+  @include breakpoint-max(md) {
+    margin-left: 1.5rem;
+  }
 }
 
 // Creates a class for each combination in $typography map

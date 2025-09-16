@@ -69,6 +69,7 @@ $typography: (
     italic: (
       font-family: var(--ff-italic),
       font-style: italic,
+      font-weight: var(--fw-normal),
       letter-spacing: -0.04em,
     ),
     xl: (
