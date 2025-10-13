@@ -277,6 +277,7 @@ sup {
 
   a {
     @include link(primary, sm, medium);
+    
     font-size: inherit;
   }
 
@@ -394,9 +395,11 @@ sup {
 .text-display-indented {
   display: block;
   margin-left: 4.5rem;
+  
   @media (min-width: 768px) and (max-width: 1024px) {
     margin-left: 2rem;
   }
+  
   @include breakpoint-max(md) {
     margin-left: 1.5rem;
   }
@@ -412,7 +415,6 @@ sup {
       .text-#{$category}-#{$size},
       .text-#{$category}-#{$size}-it,
       .text-#{$category}-#{$size}-medium {
-        @include text($category, 'default');
         @include text($category, $size);
 
         // Adjust <sup> font size for larger typography.
@@ -426,6 +428,14 @@ sup {
             font-size: 30%;
             vertical-align: super;
           }
+        }
+      }
+
+      // Set default font for non-italic classes
+      .text-#{$category}-#{$size},
+      .text-#{$category}-#{$size}-medium {
+        &:not(em &) {
+          @include text($category, 'default');
         }
       }
 
