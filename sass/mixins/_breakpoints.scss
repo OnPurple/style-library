@@ -9,6 +9,12 @@
   }
 }
 
+@mixin breakpoint-range($min, $max) {
+  @media (min-width: map.get(config.$breakpoints, $min)) and (max-width: map.get(config.$breakpoints, $max) - 1px) {
+    @content;
+  }
+}
+
 @mixin breakpoint-max($bp) {
   @media (max-width: map.get(config.$breakpoints, $bp) - 1px) {
     @content;
