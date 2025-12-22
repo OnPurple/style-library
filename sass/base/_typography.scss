@@ -125,6 +125,7 @@ $typography: (
     md: (
       font-size: torem(16),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     sm: (
       font-size: torem(14),
