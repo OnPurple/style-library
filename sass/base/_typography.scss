@@ -115,10 +115,12 @@ $typography: (
     xl: (
       font-size: torem(20),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     lg: (
       font-size: torem(18),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     md: (
       font-size: torem(16),
@@ -127,14 +129,17 @@ $typography: (
     sm: (
       font-size: torem(14),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     xs: (
       font-size: torem(13),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     xxs: (
       font-size: torem(12),
       line-height: var(--lh-body),
+      letter-spacing: normal,
     ),
     xxl-lg: (
       font-size: torem(26),
