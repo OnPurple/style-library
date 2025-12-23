@@ -102,6 +102,11 @@ $typography: (
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
+    xxxs: (
+      font-size: torem(18),
+      line-height: var(--lh-heading),
+      letter-spacing: var(--ls-heading),
+    ),
   ),
   body: (
     default: (
