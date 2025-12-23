@@ -9,10 +9,16 @@
  *   Size, e.g. "xl", "lg", "xs".
  */
 @mixin text($type, $size) {
-  $size-map: map.get(map.get($typography, $type), $size);
+  $type-map: map.get($typography, $type);
+
+  @if $type-map == null {
+    @error "Typography #{$type} not found.";
+  }
+
+  $size-map: map.get($type-map, $size);
 
   @if $size-map == null {
-    @error "Typography #{$type} -> #{$size} not found.";
+    @error "Typography #{$type} / #{$size} not found.";
   }
 
 
