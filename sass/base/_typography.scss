@@ -13,8 +13,15 @@
  *
  * A nested array by type and size. There can be a "default" size which will be
  * applied to all sizes.
- */
+ *
+ * Use the text(type, size) mixin to use this mapping.
 
+ * @param $type
+ *   Type, e.g. "display", "heading", "body".
+ *
+ * @param $size
+ *   Size, e.g. "xl", "lg", "xs".
+ */
 $typography: (
   display: (
     default: (
@@ -26,37 +33,37 @@ $typography: (
       --fw-display: var(--fw-normal),
     ),
     xl: (
-      font-size: torem(54),
+      font-size: torem(54), // 3.375rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
     ),
     lg: (
-      font-size: torem(48),
+      font-size: torem(48), // 3rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
     ),
     md: (
-      font-size: torem(44),
+      font-size: torem(44), // 2.75rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
     ),
     sm: (
-      font-size: torem(40),
+      font-size: torem(40), // 2.5rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
     ),
     xs: (
-      font-size: torem(36),
+      font-size: torem(36), // 2.25rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
     ),
     xxs: (
-      font-size: torem(32),
+      font-size: torem(32), // 2rem
       font-weight: var(--fw-display),
       line-height: var(--lh-display),
       letter-spacing: var(--ls-display),
@@ -73,37 +80,37 @@ $typography: (
       --ls-heading: -0.04em,
     ),
     xl: (
-      font-size: torem(36),
+      font-size: torem(36), // 2.25rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     lg: (
-      font-size: torem(32),
+      font-size: torem(32), // 2rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     md: (
-      font-size: torem(28),
+      font-size: torem(28), // 1.75rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     sm: (
-      font-size: torem(24),
+      font-size: torem(24), // 1.5rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     xs: (
-      font-size: torem(22),
+      font-size: torem(22), // 1.375rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     xxs: (
-      font-size: torem(20),
+      font-size: torem(20), // 1.25rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
     xxxs: (
-      font-size: torem(18),
+      font-size: torem(18), // 1.125rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
     ),
@@ -118,45 +125,45 @@ $typography: (
       letter-spacing: -0.015em,
     ),
     xl: (
-      font-size: torem(20),
+      font-size: torem(20), // 1.25rem
       line-height: var(--lh-body),
     ),
     lg: (
-      font-size: torem(18),
+      font-size: torem(18), // 1.125rem
       line-height: var(--lh-body),
     ),
     md: (
-      font-size: torem(16),
+      font-size: torem(16), // 1rem
       line-height: var(--lh-body),
     ),
     sm: (
-      font-size: torem(14),
+      font-size: torem(14), // 0.875rem
       line-height: var(--lh-body),
     ),
     xs: (
-      font-size: torem(13),
+      font-size: torem(13), // 0.8125rem
       line-height: var(--lh-body),
     ),
     xxs: (
-      font-size: torem(12),
+      font-size: torem(12), // 0.75rem
       line-height: var(--lh-body),
     ),
     xxl-lg: (
-      font-size: torem(26),
+      font-size: torem(26), // 1.625rem
       line-height: var(--lh-body),
       breakpoints: (
         md: (
-          font-size: torem(18),
+          font-size: torem(18), // 1.125rem
           line-height: var(--lh-body),
         ),
       )
     ),
     lg-xl: (
-      font-size: torem(18),
+      font-size: torem(18), // 1.125rem
       line-height: var(--lh-body),
       breakpoints: (
         sm: (
-          font-size: torem(20),
+          font-size: torem(20), // 1.25rem
           line-height: var(--lh-body),
         ),
       )
@@ -167,7 +174,7 @@ $typography: (
       font-family: var(--ff-utility),
     ),
     eyebrow: (
-      font-size: torem(13),
+      font-size: torem(13), // 0.8125rem
       font-weight: var(--fw-medium),
       line-height: var(--lh-body),
       letter-spacing: 0.1em,
@@ -179,36 +186,36 @@ $typography: (
       font-family: var(--ff-header),
     ),
     lg: (
-      font-size: torem(56),
+      font-size: torem(56), // 3.5rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
-          font-size: torem(36),
+          font-size: torem(36), // 2.25rem
           line-height: var(--lh-heading),
           letter-spacing: var(--ls-heading),
         ),
       )
     ),
     sm: (
-      font-size: torem(24),
+      font-size: torem(24), // 1.5rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
-          font-size: torem(18),
+          font-size: torem(18), // 1.125
           line-height: var(--lh-heading),
           letter-spacing: var(--ls-heading),
         ),
       )
     ),
     xs: (
-      font-size: torem(24),
+      font-size: torem(24), // 1.5rem
       line-height: var(--lh-heading),
       letter-spacing: var(--ls-heading),
       breakpoints: (
         sm: (
-          font-size: torem(14),
+          font-size: torem(14), // 0.875rem
           line-height: var(--lh-heading),
           letter-spacing: var(--ls-heading),
         ),

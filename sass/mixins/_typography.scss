@@ -1,4 +1,5 @@
 @use "sass:map";
+@import "../base/typography";
 
 /**
  * @param $type
@@ -9,6 +10,11 @@
  */
 @mixin text($type, $size) {
   $size-map: map.get(map.get($typography, $type), $size);
+
+  @if $size-map == null {
+    @error "Typography #{$type} -> #{$size} not found.";
+  }
+
 
   @each $prop, $value in $size-map {
     @if $prop != 'breakpoints' {
