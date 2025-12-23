@@ -52,10 +52,10 @@
 @function extend-in-map($map-to-search, $sub-map-key) {
   $map-to-merge: key($map-to-search, $sub-map-key);
 
-  @if  map.has-key($map-to-merge, extend) {
+  @if map.has-key($map-to-merge, extend) {
     $key-of-map-to-extend: map.get($map-to-merge, extend);
 
-    @if  map.has-key($map-to-search, $key-of-map-to-extend) {
+    @if map.has-key($map-to-search, $key-of-map-to-extend) {
       @return map.merge(key($map-to-search, $key-of-map-to-extend), $map-to-merge);
     }
   }

@@ -21,7 +21,6 @@
     @error "Typography #{$type} / #{$size} not found.";
   }
 
-
   @each $prop, $value in $size-map {
     @if $prop != 'breakpoints' {
       #{$prop}: #{$value};
