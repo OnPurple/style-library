@@ -24,25 +24,7 @@ $errorbg: #c74e4e;
 $warningbg: #d28712;
 $statusokbg: #2ca20d;
 
-// Solid Background Colors
-// Unused delete
-
-/*
-$bg-colors: (
-  "purple-60": var(--color-brand-lavender-400),
-  "purple-50": var(--light-purple-50),
-  "purple-40": var(--light-purple-40),
-  "purple-20": var(--light-purple-20),
-  "purple-10": var(--light-purple-10),
-  "orange": var(--orange-20),
-  "aqua": var(--aqua-light-40),
-  "pink": var(--pink-light),
-  "green": var(--green-10),
-  "periwinkle": var(--periwinkle-10),
-  "card-gray": var(--card-gray),
-);
- */
-
+// Layout Builder + Editorial Carousel Hero (2021) Solid Background Colors
 $theme-bg-colors: (
   "light-purple-60": var(--color-brand-lavender-400),
   "light-purple-50": var(--light-purple-50),
@@ -64,16 +46,6 @@ $theme-bg-colors: (
   "pink-40": var(--pink-40),
   "pink-20": var(--pink-20),
   "pink-10": var(--pink-10),
-  "aqua": var(--aqua),
-  "aqua-60": var(--aqua-60),
-  "aqua-40": var(--aqua-40),
-  "aqua-20": var(--aqua-20),
-  "light-aqua": var(--aqua-light-40),
-  "coral": var(--coral),
-  "coral-60": var(--coral-60),
-  "coral-40": var(--coral-40),
-  "coral-20": var(--coral-20),
-  "coral-10": var(--coral-10),
   "periwinkle": var(--periwinkle),
   "periwinkle-60": var(--periwinkle-60),
   "periwinkle-40": var(--periwinkle-40),
@@ -108,20 +80,6 @@ $theme-bg-colors: (
   "daydream-light": var(--color-brand-daydream-light),
   "petal": var(--color-brand-petal),
 );
-
-// Gradient Background Colors
-// Unused
-
-/*
-$bg-gradients: (
-  purple: var(--bg-gradient-purple),
-  pink: var(--bg-gradient-pink),
-  orange: var(--bg-gradient-orange),
-  aqua: var(--bg-gradient-aqua),
-  green: var(--bg-gradient-green),
-  magic-hour: var(--bg-gradient-magic-hour),
-);
- */
 
 /// z-index organization.
 /// See links below for more information.
