@@ -1,0 +1,101 @@
+// Root Css Variables - Colors
+
+// the color-map generates a token for each.
+// color-map is used in components/color to generate text and bg colors.
+
+$colors-map: (
+  primary: (
+    primary: #181831,
+    luna: #4E4766,
+    violet: #5436CC,
+    promo: #CA2B16,
+    twilight: #1F1A5E,
+    dark-navy: #0F0F3A,
+    yellow: #0F0F3A,
+    petal: #0F0F3A,
+    daydream: #FEE5FF,
+    cloud: #D0D9F8,
+    periwinkle: #C4AFFE,
+    lilac: #F0EBFF,
+    sandman: #F8F5EF,
+    white: #FFF,
+  ),
+  utilities: (
+    mist: #C8C7DD,
+    mist-30: #E7E6F7,
+    grey-300: #E0E0E0,
+    grey-400: #C0C0C0,
+    grey-500: #AEAEAE,
+    midnight-70: #58566A,
+    midnight-90: #2F2F46,
+    error: #AE0A00,
+  ),
+);
+
+// RGB colors map needed for faded or gradient color tokens
+$colors-map-rgb: (
+  primary: (
+    primary: 24 24 49,
+    violet: 84 54 204,
+    white: 255 255 255,
+  ),
+);
+
+:root {
+  /**
+   * @tokens Primary and Utilities colors
+   * @presenter Color
+   */
+  @each $color-name, $color-value in $color-map {
+  --color-brand-#{$color-name}: #{$color-value};
+  }
+
+  @each $category, $colors in $color-map {
+    @each $color-name, $color-value in $colors {
+      --colors-#{$category}-#{$color-name}: #{$color-value};
+    }
+  }
+
+  /**
+   * @tokens Faded colors
+   * @presenter Color
+   */
+  --color-utilities-page-overlay: rgba(0, 0, 0, 0.60);
+
+  /**
+  * @tokens Gradient colors
+  * @presenter Color
+  */
+  --colors-utilities-sunrise: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
+  
+  
+  
+
+  /**
+   * @tokens Brand Typography
+   * @presenter Color
+   */
+  --color-text-primary: var(--color-brand-primary); // common color
+
+  /**
+   * @tokens Brand Iconography
+   * @presenter Color
+   */
+  --color-icon-primary: var(--color-brand-primary); // NOT USED
+
+  /**
+   * @tokens Brand Borders
+   * @presenter Color
+   */
+  --border-divider: var(--color-brand-twilightfade-15); // common border color
+
+  /**
+ * @tokens Brand Utilities
+ * @presenter Color
+ */
+  --color-utilities-focus: #4B80EC; // new btn focus color
+
+  .dark-mode {
+    --promo-color: var(--color-brand-lavender-100);
+  }
+}

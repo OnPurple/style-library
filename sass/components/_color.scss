@@ -1,5 +1,6 @@
 // Create a text color class and background color class for each color
 
+// @todo: deprecated
 @each $color-name, $color-info in $color-map {
   .color-brand-text-#{$color-name} {
     color: var(--color-brand-#{$color-name});
@@ -12,6 +13,10 @@
 // Gradient background colors
 .color-brand-bg-sunrise-gradient {
   background: var(--sunrise-gradient);
+}
+
+.bg--colors-utilities-sunrise {
+  background: var(--colors-utilities-sunrise);
 }
 
 // DCP-2567 background color for 50/50 hero
@@ -30,4 +35,16 @@
 
 .gradient--twilight-500 {
   background: var(--bg-gradient-twilight-500);
+}
+
+@each $category, $colors in $colors-map {
+  @each $color-name, $color-value in $colors {
+    .text--colors-#{$category}-#{color-name} {
+      color: var(--colors-#{$category}-#{$color-name});
+    }
+
+    .bg--colors-#{$category}-#{color-name} {
+      background-color: var(--colors-#{$category}-#{$color-name});
+    }
+  }
 }
