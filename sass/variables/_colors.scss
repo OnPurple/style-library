@@ -11,7 +11,7 @@ $color-map: (
         twilight-200: #D2D1DF,
         twilight-300: #A6A4C1,
         twilight-400: #35316E,
-        twilight-500: #1F1A5E,
+        twilight-500: #1F1A5E, // display settings option
         twilight-600: #151526,
         lavender-100: #EFE8F5,
         lavender-200: #E8DAF4, // section bg color, promo banner bg color
@@ -19,7 +19,6 @@ $color-map: (
         lavender-400: #D7AAFA, // daydream & light-purple-60
         lavender-500: #844FB0, // catnap - tooltip header & input focus state outline color, promo banner bg color
         lavender-600: #693A8F, // promo banner text color option
-        gray-100: #F2F2F2, // NOT USED
         gray-200: #F6F6F6, // 50 50 collection card bg color
         gray-300: #E0E0E0, // some drupal border colors & DPDP image loading bg
         gray-400: #C0C0C0, // buttons disabled state
@@ -27,17 +26,15 @@ $color-map: (
         nocturnal: #6F6990, // used in some react components & compare modal - may be an old secondary color - replace with luna?
         dreamscape: #E091E6, // used as part of a border color for power reviews
         catnap: #844FB0, // replace with color-brand-lavender-500 - still need? option for countdown text color, DMB theme
-        daydream: #D7AAFA, // replace with color-brand-lavender-400 // NOT USED
+        daydream: #D7AAFA, // replace with color-brand-lavender-400
         lavender-skies: #D7C6E6, // replace-with color-brand-lavender-300 // promo banner bg color option
         lilac: #F0EBFF,
-        lilly: #E5B5E8, // NOT USED
         'pink': #EB72FF, // options for section bg color, countdown bg color
         sandman: #F8F5EF,
         stardust: #ECEAE4, // bg color option for section, BMSM, promo banner
         clearskies: #98DED9,
         goldenhour: #F4B53F, // option for countdown bg, countdown text color, html burst bg color
         powernap: #D62EE5, // customer review giant quote, old review carousel star rating color
-        rem: #2A62D4, // NOT USED
         'orchid': #B113C0, // HTML svg badge bg, upgrade badge, promo banner text color option
         midnight: #181831, // duplicate for primary
         midnight-70: #58566A, // new buttons
@@ -75,7 +72,6 @@ $color-map: (
   // Fades
   --color-brand-twilight-500-rgb: 31 26 94;
   --color-brand-twilightfade-5: rgb(var(--color-brand-twilight-500-rgb) / 5%); // section bg color option (was added for 50 50 hero at some point) + a few bg colors for drupal
-  --color-brand-twilightfade-10: rgb(var(--color-brand-twilight-500-rgb) / 10%); // NOT USED
   --color-brand-twilightfade-15: rgb(var(--color-brand-twilight-500-rgb) / 15%); // common border color, duplicate for --border-divider
   --color-brand-twilightfade-20: rgb(var(--color-brand-twilight-500-rgb) / 20%); // some border/bg colors in drupal - duplicate for --scrim-light
   --color-brand-twilightfade-45: rgb(var(--color-brand-twilight-500-rgb) / 45%); // some border/bg colors in drupal - duplicate for --scrim-dark
@@ -83,19 +79,12 @@ $color-map: (
   --color-brand-white: #FFF;
   --color-brand-white-rgb: 255 255 255;
   --color-brand-whitefade-4: rgb(var(--color-brand-white-rgb) / 4%); // new buttons
-  --color-brand-whitefade-5: rgb(var(--color-brand-white-rgb) / 5%); // NOT USED
-  --color-brand-whitefade-10: rgb(var(--color-brand-white-rgb) / 10%); // NOT USED
-  --color-brand-whitefade-15: rgb(var(--color-brand-white-rgb) / 15%); // NOT USED
-  --color-brand-whitefade-20: rgb(var(--color-brand-white-rgb) / 20%); // NOT USED
-  --color-brand-whitefade-45: rgb(var(--color-brand-white-rgb) / 45%); // NOT USED
   --color-brand-whitefade-50: rgb(var(--color-brand-white-rgb) / 50%); // new buttons
-  --color-brand-whitefade-60: rgb(var(--color-brand-white-rgb) / 60%); // NOT USED
   --color-brand-primary-rgb: 24 24 49;
   --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%); // new buttons
   --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%); // new buttons
   --color-brand-violet-rgb: 84 54 204;
   --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%); // star rating unfilled color
-  --color-brand-red-rgb: 230 55 32; // NOT USED
 
   /**
    * @tokens Brand Colors Backgrounds
@@ -105,8 +94,6 @@ $color-map: (
   --color-background-lighter: var(--color-brand-sandman); // promo banner tracker
   --color-background-light: var(--color-brand-stardust); // some react usages
   --color-background-dark: var(--color-brand-lavender-100); // quiz, some react components
-  --color-background-darker: var(--color-brand-lavender-500); // NOT USED
-  --color-background-darkest: var(--color-brand-twilight-500); // NOT USED
   --color-background-promo: var(--color-brand-promo); // promo widget
 
   /**
@@ -118,17 +105,8 @@ $color-map: (
   --color-text-accent: var(--color-brand-promo); // pdp & collection scale (can change to new name)
   --color-text-link: var(--color-brand-primary); // common react color
   --color-text-promo: var(--color-brand-promo); // qty react color
-  --color-text-success: var(--color-messaging-success-300); // NOT USED
-  --color-text-warning: var(--color-messaging-warning-300); // NOT USED
   --color-text-error: var(--color-messaging-error-300); // footer email input error color
   --color-text-notification: var(--color-messaging-notification-300); // react payment processing text
-
-  /**
-   * @tokens Brand Iconography
-   * @presenter Color
-   */
-  --color-icon-primary: var(--color-brand-primary); // NOT USED
-  --color-icon-primary-dark-mode: var(--color-brand-white); // NOT USED
 
   /**
    * @tokens Brand Borders
@@ -138,8 +116,6 @@ $color-map: (
   --border-divider-dark: rgb(255 255 255 / 30%); // dmb transparent border color
   --border-purple: var(--color-brand-twilightfade-45); // some react borders (can replace with new name)
   --border-purple-100: var(--color-brand-twilightfade-15); // accounts + react usages (can replace with new name)
-  --border-button-unselected: var(--light-purple-60); // NOT USED
-  --border-button-selected: var(--color-brand-lavender-500); // NOT USED
 
   /**
  * @tokens Brand Utilities
@@ -152,22 +128,11 @@ $color-map: (
    * @tokens AKQA deprecated
    * @presenter Color
    */
-  --twilight: var(--color-brand-twilight-500); // NOT USED
-  --twilight-10: rgb(230 228 237); // NOT USED
   --cat-nap: var(--color-brand-lavender-500); // section bg color, accounts form control text edit btn, some react components (can change to new name)
-  --daydream: var(--color-brand-lavender-400); // NOT USED
-  --dreamscape: var(--color-brand-dreamscape); // NOT USED
-  --lavender-skies: var(--color-brand-lavender-300); // NOT USED
   --stardust: var(--color-brand-stardust); // section bg color, old react nav color (can change to new name)
-  --clear-skies: var(--color-brand-clearskies); // NOT USED
-  --golden-hour: var(--color-brand-goldenhour); // NOT USED - old react nav cart qty badge color (can change to new name)
-  --powernap: var(--color-brand-powernap); // NOT USED
-  --rem: var(--color-brand-rem); // duplicate for --color-messaging-notification-300
   --light-lilac: #F7F5FF; // replace - dmb purple/teal theme bg color
-  --sandman: var(--color-brand-sandman);
   --nocturnal: var(--color-brand-nocturnal); // used in some react components - may be an old secondary color - replace with luna?
   --orchid: var(--color-brand-orchid); // used in some react components - may be an old promo color
-  --linen: var(--color-brand-gray-200); // NOT USED
 
   /**
    * @tokens Colors Legacy
@@ -194,11 +159,9 @@ $color-map: (
   --periwinkle-40: #C5CCF3; // section bg color
   --periwinkle-20: #E2E5F9; // section bg color
   --periwinkle-10: #F0F2FC; // section bg color, expert advice color + some potential old components
-  --periwinkle-light: var(--periwinkle-10); // NOT USED
 
   // Midnight
   --midnight: var(--color-brand-midnight); // duplicate color (primary) - used in accounts
-  --midnight-medium: #341458; // NOT USED
   --midnight-light: #473F61; // common color in drupal + react + accounts input placeholder, underline color, other various pieces of text
   --midnight-60: #756F88; // section bg color, dark mode carousel circle bullets bg color, PDP, BDP promotion disclaimer, inset media video btn dark mode, react Stepper?
 
@@ -207,11 +170,9 @@ $color-map: (
   --green-60: #6EA9A3; // section bg color
   --green-40: #9FC6C1; // section bg color
   --green-20: #CFE2E0; // section bg color
-  --green-10: #E7F1F0; // section bg color - duplicate --green-light
-  --green-light: var(--green-10); // NOT USED
+  --green-10: #E7F1F0; // section bg color
 
   // Pink
-  --pink: #FEC7D2; // NOT USED
   --pink-60: #FEDDE4; // section bg color
   --pink-40: #FFE9ED; // section bg color, accounts login form error bg - duplicate --pink-light
   --pink-20: #FFF4F6; // section bg color
@@ -224,23 +185,17 @@ $color-map: (
   --orange-40: #FBE1C8; // section bg color
   --orange-20: #FDF0E4; // section bg color
   --orange-10: #FEF8F1; // section bg color
-  --orange-light: var(--orange-60); // NOT USED
 
   // Lavender
   --lavender: #D2ADEE; // chart bar color option
-  --lavender-60: #E4CEF5; // NOT USED
-  --lavender-40: #EDDEF8; // NOT USED
-  --lavender-20: #F6EFFC; // NOT USED
-  --lavender-10: #FBF7FD; // NOT USED
 
   // Gray
-  --gray-10: #F2F2F2; // fancybox, search, product reviews bg color - duplicate "gray-100"
+  --gray-10: #F2F2F2; // fancybox, search, product reviews bg color
   --gray-20: #E0E0E0; // search and blog border - duplicate "gray-300"
   --gray-30: #D9D9D9; // some borders and box shadows in react
-  --gray-40: #AEAEAE; // NOT USED - duplicate "gray-500"
 
   // Background Colors
-  --bg-yellow: var(--yellow-light); // react cart toast banner info
+  --bg-yellow: #FFF0CD; // react cart toast banner info
 
   /**
    * @tokens Colors Gradients
@@ -248,18 +203,11 @@ $color-map: (
    */
 
   // Background Gradients
-  --bg-gradient-purple: linear-gradient(180deg, var(--light-purple-20) 0%, var(--white) 100%); // NOT USED
-  --bg-gradient-pink: linear-gradient(180deg, var(--pink-light) 0%, var(--white) 100%); // NOT USED
-  --bg-gradient-orange: linear-gradient(180deg, var(--orange-20) 0%, var(--white) 100%); // NOT USED
-  --bg-gradient-green: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%); // NOT USED
-  --bg-gradient-magic-hour: linear-gradient(104deg, var(--color-brand-lavender-400) 3.4%, var(--pink) 94%); // NOT USED
   --bg-gradient-twilight-500: linear-gradient(90deg, var(--color-brand-twilight-500) 0%, rgb(var(--color-brand-twilight-500-rgb) / 0%) 100%); // top border gradient for banner component
   --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--color-brand-twilight-500-rgb) / 0%) 0%, var(--scrim-dark) 110.2%); // some drupal component scrims
-  --scrim-gradient-light: linear-gradient(180deg, rgb(96 92 102 / 0%) 0%, rgb(96 92 102 / 60%) 110.2%); // NOT USED
   --scrim-gradient-top: linear-gradient(180deg, rgb(18 5 46 / 60%) 0%, rgb(16 3 41 / 0%) 31.07%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media top scrim
   --scrim-gradient-bottom: linear-gradient(180deg, rgb(16 3 41 / 0%) 67.26%, rgb(18 5 46 / 60%) 100%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media bottom scrim
   --scrim-gradient-white: linear-gradient(rgb(255 255 255 / 30%) 0, rgb(255 255 255 / 60%) 100%);  // full width hero, hero inset, inset media white scrim
-  --active-bg-primary: var(--color-brand-twilight-500); // NOT USED
   --border-gray: var(--border-divider); // common - duplicate of --border-divider
   --sunrise-gradient: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
 
@@ -269,7 +217,6 @@ $color-map: (
    */
 
   // Cart & Checkout
-  --price-gray: #c2bfc7; // NOT USED
   --black-title: #3f3c44; // Replace with correct token - shipping method for products title
 
   // Common Colors
@@ -278,7 +225,7 @@ $color-map: (
   --red: #D43900; // common color - duplicate of --red-utility
   --light-red-utility: #FEF1F0; // toast banner red theme bg
   --gray-utility: #D1CFD7; // common border color used + accounts confirmation card bg
-  --light-gray: #F5F5F5; // NOT USED in accounts + used in pdp bundle cards + some react disabled buttons
+  --light-gray: #F5F5F5; // used in pdp bundle cards + some react disabled buttons
   --green-utility: #008746; // used a lot in accounts + some drupal/react
   --red-utility: var(--red); // used a lot in react
   --body-color: var(--color-text-primary); // used to change body color for light vs dark mode
@@ -287,22 +234,16 @@ $color-map: (
   --scrim-dark: var(--color-brand-twilightfade-45); // full width hero, hero inset, inset media, media content block dark scrim
   --scrim-light: var(--color-brand-twilightfade-20); // full width hero, hero inset, inset media, media content block light scrim
   --scrim-gray: rgb(21 21 38 / 20%); // full width hero, hero inset, inset media gray scrim
-  --card-gray: #F9F8F9; // NOT USED
-  --yellow-light: #FFF0CD; // NOT USED - duplicate for --bg-yellow
 
   // Messaging
   --color-messaging-success-100: #E0FFF2; // accounts banner success bg
-  --color-messaging-success-200: #59F0BE; // NOT USED
   --color-messaging-success-300: #066C47; // react contact box flyout availability + accounts banner success text + order complete badge
   --color-messaging-error-100: #FFDDDB; // react toast banner error bg + accounts banner error bg
-  --color-messaging-error-200: #FF7870; // NOT USED
   --color-messaging-error-300: #AE0A00; // react toast banner error border + accounts banner error text + email modal error text
   --color-messaging-warning-100: #FFF6E1; // accounts banner warning bg
-  --color-messaging-warning-200: #FFDA84; // NOT USED
   --color-messaging-warning-300: #AC5D0F; // accounts banner warning text
   --color-messaging-notification-100: #EBF1FF; // checkout processing payment bg
-  --color-messaging-notification-200: #6FA4FF; // NOT USED
-  --color-messaging-notification-300: var(--rem); // checkout processing payment border
+  --color-messaging-notification-300: #2A62D4; // checkout processing payment border
 
   .dark-mode {
     --promo-color: var(--color-brand-lavender-100);
