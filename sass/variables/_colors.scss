@@ -16,7 +16,7 @@ $color-map: (
         lavender-100: #EFE8F5,
         lavender-200: #E8DAF4, // section bg color, promo banner bg color
         lavender-300: #D7C6E6, // lavender-skies - option for section bg color, html burst bg color
-        lavender-400: #D7AAFA, // daydream & light-purple-60
+        lavender-400: #D7AAFA, // daydream
         lavender-500: #844FB0, // catnap - tooltip header & input focus state outline color, promo banner bg color
         lavender-600: #693A8F, // promo banner text color option
         gray-200: #F6F6F6, // 50 50 collection card bg color
@@ -36,7 +36,7 @@ $color-map: (
         goldenhour: #F4B53F, // option for countdown bg, countdown text color, html burst bg color
         powernap: #D62EE5, // customer review giant quote, old review carousel star rating color
         'orchid': #B113C0, // HTML svg badge bg, upgrade badge, promo banner text color option
-        midnight: #181831, // duplicate for primary
+        midnight: #181831,
         midnight-70: #58566A, // new buttons
         midnight-90: #2F2F46, // new buttons
         light-purple-10: #F6F4FC, // aov bundle cards bg color, text block bg color, promo banner bg color
@@ -87,35 +87,11 @@ $color-map: (
   --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%); // star rating unfilled color
 
   /**
-   * @tokens Brand Colors Backgrounds
-   * @presenter Color
-   */
-  --color-background-lightest: var(--color-brand-white); // some react usages
-  --color-background-lighter: var(--color-brand-sandman); // promo banner tracker
-  --color-background-light: var(--color-brand-stardust); // some react usages
-  --color-background-dark: var(--color-brand-lavender-100); // quiz, some react components
-  --color-background-promo: var(--color-brand-promo); // promo widget
-
-  /**
-   * @tokens Brand Typography
-   * @presenter Color
-   */
-  --color-text-primary: var(--color-brand-primary); // common color
-  --color-text-secondary: var(--color-brand-luna); // common color
-  --color-text-accent: var(--color-brand-promo); // pdp & collection scale (can change to new name)
-  --color-text-link: var(--color-brand-primary); // common react color
-  --color-text-promo: var(--color-brand-promo); // qty react color
-  --color-text-error: var(--color-messaging-error-300); // footer email input error color
-  --color-text-notification: var(--color-messaging-notification-300); // react payment processing text
-
-  /**
    * @tokens Brand Borders
    * @presenter Color
    */
   --border-divider: var(--color-brand-twilightfade-15); // common border color
   --border-divider-dark: rgb(255 255 255 / 30%); // dmb transparent border color
-  --border-purple: var(--color-brand-twilightfade-45); // some react borders (can replace with new name)
-  --border-purple-100: var(--color-brand-twilightfade-15); // accounts + react usages (can replace with new name)
 
   /**
  * @tokens Brand Utilities
@@ -128,11 +104,7 @@ $color-map: (
    * @tokens AKQA deprecated
    * @presenter Color
    */
-  --cat-nap: var(--color-brand-lavender-500); // section bg color, accounts form control text edit btn, some react components (can change to new name)
-  --stardust: var(--color-brand-stardust); // section bg color, old react nav color (can change to new name)
   --light-lilac: #F7F5FF; // replace - dmb purple/teal theme bg color
-  --nocturnal: var(--color-brand-nocturnal); // used in some react components - may be an old secondary color - replace with luna?
-  --orchid: var(--color-brand-orchid); // used in some react components - may be an old promo color
 
   /**
    * @tokens Colors Legacy
@@ -140,18 +112,10 @@ $color-map: (
    */
 
   // Purple
-  --purple: var(--color-brand-midnight); // duplicate color (primary), chart bar item color, countdown text style, heading text color, DMB Notification theme
   --purple-60: #8E80BB; // section bg color
   --purple-40: #B4AAD1; // section bg color, fallback customer care banner icon color, timed carousel progress bar color, empty product compare modal border color
   --purple-20: #D9D5E8; // section bg color
   --purple-10: #ECEAF4; // section bg color, product reviews border color
-  --medium-purple: var(--color-brand-medium-purple); // Old medium purple. replace and delete - clover privacy link, some accounts border color
-  --light-purple: var(--color-brand-lavender-400); // section bg color, chart bar color option
-  --light-purple-60: var(--color-brand-lavender-400); // section bg color, some react components + accounts border color, guarantee banner bg color
-  --light-purple-50: #CEC9F1; // section bg color - duplicate "light-purple-50"
-  --light-purple-40: #DBD5F5; // section bg color, media content block dark mode caption/description - duplicate "light-purple-40"
-  --light-purple-20: #E4DFF7; // section bg color, thank you bg color, style library print style? - duplicate "light-purple-20"
-  --light-purple-10: #F6F4FC; // section bg color, aov bundle cards bg color, common bg color in react, accounts login form alert bg color + some other instances in accounts - duplicate "light-purple-10"
 
   // Periwinkle
   --periwinkle: #6D7FE1; // section bg color, customer care item block svg bg color, chart bar color option, guarantee banner bg color
@@ -161,7 +125,6 @@ $color-map: (
   --periwinkle-10: #F0F2FC; // section bg color, expert advice color + some potential old components
 
   // Midnight
-  --midnight: var(--color-brand-midnight); // duplicate color (primary) - used in accounts
   --midnight-light: #473F61; // common color in drupal + react + accounts input placeholder, underline color, other various pieces of text
   --midnight-60: #756F88; // section bg color, dark mode carousel circle bullets bg color, PDP, BDP promotion disclaimer, inset media video btn dark mode, react Stepper?
 
@@ -174,10 +137,9 @@ $color-map: (
 
   // Pink
   --pink-60: #FEDDE4; // section bg color
-  --pink-40: #FFE9ED; // section bg color, accounts login form error bg - duplicate --pink-light
+  --pink-40: #FFE9ED; // section bg color, accounts login form error bg
   --pink-20: #FFF4F6; // section bg color
   --pink-10: #FFF9FB; // section bg color
-  --pink-light: var(--pink-40); // react bundle product card image
 
   // Orange
   --orange: #F6B576; // section bg color
@@ -191,16 +153,10 @@ $color-map: (
 
   // Gray
   --gray-10: #F2F2F2; // fancybox, search, product reviews bg color
-  --gray-20: #E0E0E0; // search and blog border - duplicate "gray-300"
   --gray-30: #D9D9D9; // some borders and box shadows in react
 
   // Background Colors
   --bg-yellow: #FFF0CD; // react cart toast banner info
-
-  /**
-   * @tokens Colors Gradients
-   * @presenter Color
-   */
 
   // Background Gradients
   --bg-gradient-twilight-500: linear-gradient(90deg, var(--color-brand-twilight-500) 0%, rgb(var(--color-brand-twilight-500-rgb) / 0%) 100%); // top border gradient for banner component
@@ -208,13 +164,7 @@ $color-map: (
   --scrim-gradient-top: linear-gradient(180deg, rgb(18 5 46 / 60%) 0%, rgb(16 3 41 / 0%) 31.07%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media top scrim
   --scrim-gradient-bottom: linear-gradient(180deg, rgb(16 3 41 / 0%) 67.26%, rgb(18 5 46 / 60%) 100%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media bottom scrim
   --scrim-gradient-white: linear-gradient(rgb(255 255 255 / 30%) 0, rgb(255 255 255 / 60%) 100%);  // full width hero, hero inset, inset media white scrim
-  --border-gray: var(--border-divider); // common - duplicate of --border-divider
   --sunrise-gradient: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
-
-  /**
-   * @tokens Colors Common Legacy
-   * @presenter Color
-   */
 
   // Cart & Checkout
   --black-title: #3f3c44; // Replace with correct token - shipping method for products title
@@ -222,15 +172,16 @@ $color-map: (
   // Common Colors
   --white: #FFF;
   --black: #000;
-  --red: #D43900; // common color - duplicate of --red-utility
   --light-red-utility: #FEF1F0; // toast banner red theme bg
   --gray-utility: #D1CFD7; // common border color used + accounts confirmation card bg
   --light-gray: #F5F5F5; // used in pdp bundle cards + some react disabled buttons
   --green-utility: #008746; // used a lot in accounts + some drupal/react
-  --red-utility: var(--red); // used a lot in react
-  --body-color: var(--color-text-primary); // used to change body color for light vs dark mode
-  --heading-color: var(--color-text-primary); // used to change heading color for light vs dark mode
-  --promo-color: var(--color-brand-promo);
+  --red-utility: #D43900; // used a lot in react + customer accounts
+  
+  --body-color: var(--color-brand-primary); // used to change body color for light vs dark mode
+  --heading-color: var(--color-brand-primary); // used to change heading color for light vs dark mode
+  --promo-color: var(--color-brand-promo); // used for promotions - easy overrides (keep)
+  
   --scrim-dark: var(--color-brand-twilightfade-45); // full width hero, hero inset, inset media, media content block dark scrim
   --scrim-light: var(--color-brand-twilightfade-20); // full width hero, hero inset, inset media, media content block light scrim
   --scrim-gray: rgb(21 21 38 / 20%); // full width hero, hero inset, inset media gray scrim
@@ -249,3 +200,6 @@ $color-map: (
     --promo-color: var(--color-brand-lavender-100);
   }
 }
+
+// Unused colors
+// #F9F8F9: react/src/components/common/BundleProductCard/BundleProductCard.module.scss

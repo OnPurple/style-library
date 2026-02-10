@@ -57,6 +57,14 @@ $colors-map-rgb: (
   }
 
   /**
+   * @tokens General colors
+   * @presenter Color
+   */
+  --body-color: var(--color-brand-primary);
+  --heading-color: var(--color-brand-primary);
+  --promo-color: var(--color-brand-promo);
+
+  /**
    * @tokens Faded colors
    * @presenter Color
    */
@@ -67,33 +75,21 @@ $colors-map-rgb: (
   * @presenter Color
   */
   --colors-utilities-sunrise: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
-  
-  
-  
 
   /**
-   * @tokens Brand Typography
+   * @tokens Border colors
    * @presenter Color
    */
-  --color-text-primary: var(--color-brand-primary); // common color
-
-  /**
-   * @tokens Brand Iconography
-   * @presenter Color
-   */
-
-  /**
-   * @tokens Brand Borders
-   * @presenter Color
-   */
+  // @todo: is this variable in Figma? also what about --color-background-dark, light, etc
   --border-divider: var(--color-brand-twilightfade-15); // common border color
 
   /**
- * @tokens Brand Utilities
+ * @tokens Utility colors
  * @presenter Color
  */
   --color-utilities-focus: #4B80EC; // new btn focus color
 
+  // @todo: do we need this?
   .dark-mode {
     --promo-color: var(--color-brand-lavender-100);
   }
