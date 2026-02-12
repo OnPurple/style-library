@@ -110,6 +110,7 @@ $color-map: (
   --green-utility: #008746; // used a lot in accounts + some drupal/react
   --red-utility: #D43900; // used a lot in react + customer accounts
   
+  // Scrim colors
   --scrim-dark: var(--color-brand-twilightfade-45); // full width hero, hero inset, inset media, media content block dark scrim
   --scrim-light: var(--color-brand-twilightfade-20); // full width hero, hero inset, inset media, media content block light scrim
   --scrim-gray: rgb(21 21 38 / 20%); // full width hero, hero inset, inset media gray scrim
