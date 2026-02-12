@@ -2,13 +2,13 @@
 // Typography
 // Dark Mode styles apply to midnight or catnap backgrounds.
 .dark-mode {
-  --body-color: var(--white);
+  --body-color: var(--colors-core-white);
 
   color: var(--body-color);
 
   &--desktop {
     @include breakpoint(md) {
-      --body-color: var(--white);
+      --body-color: var(--colors-core-white);
 
       color: var(--body-color);
     }
@@ -97,14 +97,14 @@ h6, .h6 {
 
   .dark-mode & {
     &:not(.heading--eyebrow) {
-      --heading-color: var(--white);
+      --heading-color: var(--colors-core-white);
     }
   }
 
   .dark-mode--desktop & {
     &:not(.heading--eyebrow) {
       @include breakpoint(md) {
-        --heading-color: var(--white);
+        --heading-color: var(--colors-core-white);
 
         text-shadow: 0 2px 8px rgb(0 0 0 / 25%);
       }
@@ -114,7 +114,7 @@ h6, .h6 {
 
 // Used in the WYSIWYG as a subheading style
 .heading--subheading {
-  color: var(--color-text-primary);
+  color: var(--colors-core-primary);
   margin: 0.5rem 0;
   font-size: 1rem;
   font-family: var(--ff-utility);
@@ -202,8 +202,8 @@ sup {
 
   .dark-mode &,
   .text-secondary-white &,
-  .color-brand-text-white & {
-    color: var(--color-brand-white);
+  .text--colors-core-white & {
+    color: var(--colors-core-white);
   }
 
   a,
@@ -268,7 +268,7 @@ sup {
   --li-fs: var(--fs-p2);
 
   .color-purple {
-    color: var(--color-brand-primary);
+    color: var(--colors-core-primary);
   }
 
   > *:last-child {

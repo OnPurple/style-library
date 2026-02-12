@@ -23,7 +23,7 @@ form {
 
     &[type='submit']{
       color: white;
-      background-color: var(--color-brand-primary);
+      background-color: var(--colors-core-primary);
       font-size: 14px;
       border-radius: 18px;
       border: none;
@@ -35,8 +35,8 @@ form {
       appearance: none;
       background-color: transparent;
       margin: 0;
-      color: var(--color-brand-primary);
-      border: 2px solid var(--color-brand-primary);
+      color: var(--colors-core-primary);
+      border: 2px solid var(--colors-core-primary);
       border-radius: 3px;
 
       &::before {
@@ -44,7 +44,7 @@ form {
       }
 
       &:checked {
-        background-color: var(--purple);
+        background-color: var(--colors-core-primary);
         color: white;
         font-size: 1rem;
 
@@ -64,7 +64,7 @@ form {
 
         &:checked {
           background-color: white;
-          color: var(--purple);
+          color: var(--colors-core-primary);
           font-size: 1rem;
 
           @include icon-before(check);

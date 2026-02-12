@@ -20,12 +20,12 @@
   @include text(utility, eyebrow);
 
   .dark-mode & {
-    --heading-color: var(--white);
+    --heading-color: var(--colors-core-white);
   }
 
   // Field_p_eyebrow options.
   &.text-secondary-white {
-    color: var(--white);
+    color: var(--colors-core-white);
   }
 
   &.text-promo {
