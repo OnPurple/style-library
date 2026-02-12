@@ -1,50 +1,25 @@
-// Root Css Variables - Colors
-
-// RGB colors map needed for faded or gradient color tokens
-$colors-map-rgb: (
-  primary: (
-    primary: 24 24 49,
-    violet: 84 54 204,
-    white: 255 255 255,
-  ),
-);
+/**
+ * Root CSS Variables - Colors
+ */
 
 :root {
-  @each $category, $colors in $color-map {
+  /**
+   * @tokens Core and Utilities colors
+   * @presenter Color
+   */
+  @each $category, $colors in $colors-map {
     @each $color-name, $color-value in $colors {
       --colors-#{$category}-#{$color-name}: #{$color-value};
     }
   }
 
-  // Colors to keep
-  --color-brand-white-rgb: 255 255 255;
-  --color-brand-whitefade-4: rgb(var(--color-brand-white-rgb) / 4%); // new buttons
-  --color-brand-whitefade-50: rgb(var(--color-brand-white-rgb) / 50%); // new buttons
-  --color-brand-primary-rgb: 24 24 49;
-  --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%); // new buttons
-  --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%); // new buttons
-  --color-brand-violet-rgb: 84 54 204;
-  --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%); // star rating unfilled color
-
   /**
-   * @tokens Global typography colors
+   * @tokens Global colors for default typography styles
    * @presenter Color
    */
-  --body-color: var(--color-brand-primary);
-  --heading-color: var(--color-brand-primary);
-  --promo-color: var(--color-brand-promo);
-
-  /**
-   * @tokens Faded colors
-   * @presenter Color
-   */
-
-  /**
-   * @tokens Gradient colors
-   * @presenter Color
-   */
-  // @todo: change from  --sunrise-gradient
-  --colors-utilities-sunrise: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
+  --body-color: var(--colors-core-primary);
+  --heading-color: var(--colors-core-primary);
+  --promo-color: var(--colors-core-promo);
 
   /**
    * @tokens Border colors
@@ -52,6 +27,25 @@ $colors-map-rgb: (
    */
   // @todo: is this variable in Figma? also what about --color-background-dark, light, etc
   --border-divider: var(--color-brand-twilightfade-15); // common border color
+
+  /**
+   * @tokens Faded colors
+   * @presenter Color
+   */
+  --colors-core-white-rgb: 255 255 255;
+  --colors-core-whitefade-4: rgb(var(--colors-core-white-rgb) / 4%); // new buttons
+  --colors-core-whitefade-50: rgb(var(--colors-core-white-rgb) / 50%); // new buttons
+  --colors-core-primary-rgb: 24 24 49;
+  --colors-core-primaryfade-30: rgb(var(--colors-core-primary-rgb) / 30%); // new buttons
+  --colors-core-primaryfade-80: rgb(var(--colors-core-primary-rgb) / 80%); // new buttons
+  --colors-core-violet-rgb: 84 54 204;
+  --colors-core-violetfade-30: rgb(var(--colors-core-violet-rgb) / 30%); // star rating unfilled color
+
+  /**
+   * @tokens Gradient colors
+   * @presenter Color
+   */
+  --colors-core-sunrise: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
 
   /**
    * @tokens Utility colors
@@ -62,5 +56,44 @@ $colors-map-rgb: (
   // @todo: do we need this?
   .dark-mode {
     --promo-color: var(--color-brand-lavender-100);
+  }
+  
+  /**
+   * Everything below is deprecated
+   * @todo: replace and remove
+   */
+  $color-map-prev: (
+    'black' : #000,
+    twilight-100: #E9E8EF,
+    twilight-200: #D2D1DF,
+    twilight-300: #A6A4C1,
+    twilight-500: #1F1A5E, // display settings option
+    twilight-600: #151526,
+    lavender-100: #EFE8F5,
+    lavender-300: #D7C6E6, // lavender-skies - option for section bg color, html burst bg color
+    lavender-400: #D7AAFA, // daydream
+    lavender-500: #844FB0, // catnap - tooltip header & input focus state outline color
+    lavender-600: #693A8F, // countdown text option
+    gray-200: #F6F6F6, // 50 50 collection card bg color
+    nocturnal: #6F6990, // used in some react components & compare modal - may be an old secondary color - replace with luna?
+    dreamscape: #E091E6, // used as part of a border color for power reviews
+    catnap: #844FB0, // replace with color-brand-lavender-500 - still need? option for countdown text color, DMB theme
+    'pink': #EB72FF, // countdown bg color
+    stardust: #ECEAE4, // BMSM
+    clearskies: #98DED9, // countdown text option
+    goldenhour: #F4B53F, // option for countdown bg, countdown text color, html burst bg color
+    powernap: #D62EE5, // customer review giant quote, old review carousel star rating color
+    'orchid': #B113C0, // HTML svg badge bg, upgrade badge
+    midnight: #181831, // still some options
+    light-purple-10: #F6F4FC, // aov bundle cards bg color, text block bg color
+    light-purple-20: #E4DFF7, // thank you bg color
+    light-purple-40: #DBD5F5,
+    light-purple-60: #D7AAFA,
+    medium-purple: #C9BFEF, // New medium-purple used in badging.
+    promo-alt: #395542, // holiday promo still need?
+  );
+  
+  @each $color-name, $color-value in $color-map-prev {
+    --color-brand-#{$color-name}: #{$color-value};
   }
 }

@@ -17,7 +17,7 @@ Link Utility Classes
 // .link is no longer in use.
 // Use .link-style--text
 .link {
-  --link-color: var(--color-brand-violet);
+  --link-color: var(--colors-core-violet);
   --link-tr: all var(--trt-4) var(--trtf-a2);
   --link-decoration: none;
 
@@ -26,7 +26,7 @@ Link Utility Classes
   text-decoration: var(--link-decoration);
 
   .dark-mode & {
-    --link-color: var(--color-brand-white);
+    --link-color: var(--colors-core-white);
   }
 }
 

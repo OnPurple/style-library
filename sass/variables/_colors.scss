@@ -1,49 +1,7 @@
-// Root Css Variables - Colors
+// Deprecated colors
+// @todo: move to new file
 
-// the color-map generates a token for each.
-// color-map is used in components/color to generate text and bg colors.
-
-// @todo: deprecated
-$color-map: (
-        'black' : #000,
-        twilight-100: #E9E8EF,
-        twilight-200: #D2D1DF,
-        twilight-300: #A6A4C1,
-        twilight-500: #1F1A5E, // display settings option
-        twilight-600: #151526,
-        lavender-100: #EFE8F5,
-        lavender-300: #D7C6E6, // lavender-skies - option for section bg color, html burst bg color
-        lavender-400: #D7AAFA, // daydream
-        lavender-500: #844FB0, // catnap - tooltip header & input focus state outline color
-        lavender-600: #693A8F, // countdown text option
-        gray-200: #F6F6F6, // 50 50 collection card bg color
-        nocturnal: #6F6990, // used in some react components & compare modal - may be an old secondary color - replace with luna?
-        dreamscape: #E091E6, // used as part of a border color for power reviews
-        catnap: #844FB0, // replace with color-brand-lavender-500 - still need? option for countdown text color, DMB theme
-        'pink': #EB72FF, // countdown bg color
-        stardust: #ECEAE4, // BMSM
-        clearskies: #98DED9, // countdown text option
-        goldenhour: #F4B53F, // option for countdown bg, countdown text color, html burst bg color
-        powernap: #D62EE5, // customer review giant quote, old review carousel star rating color
-        'orchid': #B113C0, // HTML svg badge bg, upgrade badge
-        midnight: #181831, // still some options
-        light-purple-10: #F6F4FC, // aov bundle cards bg color, text block bg color
-        light-purple-20: #E4DFF7, // thank you bg color
-        light-purple-40: #DBD5F5,
-        light-purple-60: #D7AAFA,
-        medium-purple: #C9BFEF, // New medium-purple used in badging.
-        promo-alt: #395542, // holiday promo still need?
-);
-
-:root {
-  /**
-   * @tokens Brand Colors
-   * @presenter Color
-   */
-  @each $color-name, $color-value in $color-map {
-  --color-brand-#{$color-name}: #{$color-value};
-  }
-  
+:root {  
   // Colors to check if they should be deprecated
   --periwinkle: #6D7FE1;
   --periwinkle-10: #F0F2FC;
@@ -51,12 +9,12 @@ $color-map: (
   --color-brand-twilight-400: #35316E; 
 
   // Fades
-  --color-brand-twilight-500-rgb: 31 26 94;
-  --color-brand-twilightfade-5: rgb(var(--color-brand-twilight-500-rgb) / 5%); // a few bg colors for drupal
-  --color-brand-twilightfade-15: rgb(var(--color-brand-twilight-500-rgb) / 15%); // common border color, duplicate for --border-divider
-  --color-brand-twilightfade-20: rgb(var(--color-brand-twilight-500-rgb) / 20%); // some border/bg colors in drupal - duplicate for --scrim-light
-  --color-brand-twilightfade-45: rgb(var(--color-brand-twilight-500-rgb) / 45%); // some border/bg colors in drupal - duplicate for --scrim-dark
-  --color-brand-twilightfade-60: rgb(var(--color-brand-twilight-500-rgb) / 60%); // accounts flyout overlay + stripe element loading button - keep this var
+  --colors-core-twilight-rgb: 31 26 94;
+  --color-brand-twilightfade-5: rgb(var(--colors-core-twilight-rgb) / 5%); // a few bg colors for drupal
+  --color-brand-twilightfade-15: rgb(var(--colors-core-twilight-rgb) / 15%); // common border color, duplicate for --border-divider
+  --color-brand-twilightfade-20: rgb(var(--colors-core-twilight-rgb) / 20%); // some border/bg colors in drupal - duplicate for --scrim-light
+  --color-brand-twilightfade-45: rgb(var(--colors-core-twilight-rgb) / 45%); // some border/bg colors in drupal - duplicate for --scrim-dark
+  --color-brand-twilightfade-60: rgb(var(--colors-core-twilight-rgb) / 60%); // accounts flyout overlay + stripe element loading button - keep this var
 
   /**
    * @tokens Brand Borders
@@ -94,8 +52,8 @@ $color-map: (
   --bg-yellow: #FFF0CD; // react cart toast banner info
 
   // Background Gradients
-  --bg-gradient-twilight-500: linear-gradient(90deg, var(--color-brand-twilight-500) 0%, rgb(var(--color-brand-twilight-500-rgb) / 0%) 100%); // top border gradient for banner component
-  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--color-brand-twilight-500-rgb) / 0%) 0%, var(--scrim-dark) 110.2%); // some drupal component scrims
+  --bg-gradient-twilight-500: linear-gradient(90deg, var(--colors-core-twilight) 0%, rgb(var(--colors-core-twilight-rgb) / 0%) 100%); // top border gradient for banner component
+  --scrim-gradient-dark: linear-gradient(180deg, rgb(var(--colors-core-twilight-rgb) / 0%) 0%, var(--scrim-dark) 110.2%); // some drupal component scrims
   --scrim-gradient-top: linear-gradient(180deg, rgb(18 5 46 / 60%) 0%, rgb(16 3 41 / 0%) 31.07%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media top scrim
   --scrim-gradient-bottom: linear-gradient(180deg, rgb(16 3 41 / 0%) 67.26%, rgb(18 5 46 / 60%) 100%), var(--color-brand-twilightfade-20, rgb(31 26 94 / 20%)); // full width hero, hero inset, inset media bottom scrim
   --scrim-gradient-white: linear-gradient(rgb(255 255 255 / 30%) 0, rgb(255 255 255 / 60%) 100%);  // full width hero, hero inset, inset media white scrim

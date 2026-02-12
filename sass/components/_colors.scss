@@ -1,0 +1,37 @@
+/**
+ * Create CSS classes - Colors.
+ */
+
+// Create a text color class and background color class for each color.
+// $colors-map defined in base/colors.
+@each $category, $colors in $colors-map {
+  @each $color-name, $color-value in $colors {
+    .text--colors-#{$category}-#{color-name} {
+      color: var(--colors-#{$category}-#{$color-name});
+    }
+
+    .bg--colors-#{$category}-#{color-name} {
+      background-color: var(--colors-#{$category}-#{$color-name});
+    }
+  }
+}
+
+// Gradient background colors
+// @todo: this needs to be 'core' instead of 'utilities' since it's an authoring bg color option
+.bg--colors-core-sunrise {
+  background: var(--colors-core-sunrise);
+}
+
+// Gradient styles
+.gradient-border-top {
+  height: 8px;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+// Used in banner and finance banner
+.gradient--twilight-500 {
+  background: var(--bg-gradient-twilight-500);
+}
