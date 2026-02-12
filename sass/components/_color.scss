@@ -11,17 +11,12 @@
 }
 
 // Gradient background colors
+// @todo: deprecated
 .color-brand-bg-sunrise-gradient {
   background: var(--sunrise-gradient);
 }
-
 .bg--colors-utilities-sunrise {
   background: var(--colors-utilities-sunrise);
-}
-
-// DCP-2567 background color for 50/50 hero
-.color-brand-bg-twilightfade-5 {
-  background-color: var(--color-brand-twilightfade-5);
 }
 
 // Gradient styles
@@ -32,11 +27,12 @@
   top: 0;
   width: 100vw;
 }
-
+// Used in banner and finance banner
 .gradient--twilight-500 {
   background: var(--bg-gradient-twilight-500);
 }
 
+// Create a text color class and background color class for each color
 @each $category, $colors in $colors-map {
   @each $color-name, $color-value in $colors {
     .text--colors-#{$category}-#{color-name} {

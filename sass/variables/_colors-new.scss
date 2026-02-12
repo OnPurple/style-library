@@ -1,37 +1,5 @@
 // Root Css Variables - Colors
 
-// the color-map generates a token for each.
-// color-map is used in components/color to generate text and bg colors.
-
-$colors-map: (
-  core: (
-    primary: #181831,
-    luna: #4E4766,
-    violet: #5436CC,
-    promo: #CA2B16,
-    twilight: #1F1A5E,
-    dark-navy: #0F0F3A,
-    yellow: #0F0F3A,
-    petal: #0F0F3A,
-    daydream: #FEE5FF,
-    cloud: #D0D9F8,
-    periwinkle: #C4AFFE,
-    lilac: #F0EBFF,
-    sandman: #F8F5EF,
-    white: #FFF,
-  ),
-  utilities: (
-    mist: #C8C7DD,
-    mist-30: #E7E6F7,
-    grey-300: #E0E0E0,
-    grey-400: #C0C0C0,
-    grey-500: #AEAEAE,
-    midnight-70: #58566A,
-    midnight-90: #2F2F46,
-    error: #AE0A00,
-  ),
-);
-
 // RGB colors map needed for faded or gradient color tokens
 $colors-map-rgb: (
   primary: (
@@ -42,22 +10,24 @@ $colors-map-rgb: (
 );
 
 :root {
-  /**
-   * @tokens Primary and Utilities colors
-   * @presenter Color
-   */
-  @each $color-name, $color-value in $color-map {
-  --color-brand-#{$color-name}: #{$color-value};
-  }
-
   @each $category, $colors in $color-map {
     @each $color-name, $color-value in $colors {
       --colors-#{$category}-#{$color-name}: #{$color-value};
     }
   }
 
+  // Colors to keep
+  --color-brand-white-rgb: 255 255 255;
+  --color-brand-whitefade-4: rgb(var(--color-brand-white-rgb) / 4%); // new buttons
+  --color-brand-whitefade-50: rgb(var(--color-brand-white-rgb) / 50%); // new buttons
+  --color-brand-primary-rgb: 24 24 49;
+  --color-brand-primaryfade-30: rgb(var(--color-brand-primary-rgb) / 30%); // new buttons
+  --color-brand-primaryfade-80: rgb(var(--color-brand-primary-rgb) / 80%); // new buttons
+  --color-brand-violet-rgb: 84 54 204;
+  --color-brand-violetfade-30: rgb(var(--color-brand-violet-rgb) / 30%); // star rating unfilled color
+
   /**
-   * @tokens General colors
+   * @tokens Global typography colors
    * @presenter Color
    */
   --body-color: var(--color-brand-primary);
@@ -68,12 +38,12 @@ $colors-map-rgb: (
    * @tokens Faded colors
    * @presenter Color
    */
-  --color-utilities-page-overlay: rgba(0, 0, 0, 0.60);
 
   /**
   * @tokens Gradient colors
   * @presenter Color
   */
+  // @todo: change from  --sunrise-gradient
   --colors-utilities-sunrise: linear-gradient(356deg, #FAF9FA 26.72%, #E9E4EE 54.46%, #F6E9E9 74.55%, #F5EFEC 92.45%);
 
   /**
@@ -82,12 +52,6 @@ $colors-map-rgb: (
    */
   // @todo: is this variable in Figma? also what about --color-background-dark, light, etc
   --border-divider: var(--color-brand-twilightfade-15); // common border color
-
-  /**
- * @tokens Utility colors
- * @presenter Color
- */
-  --color-utilities-focus: #4B80EC; // new btn focus color
 
   // @todo: do we need this?
   .dark-mode {

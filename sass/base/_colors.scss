@@ -1,0 +1,53 @@
+/**
+ * Design system colors from Figma.
+ *
+ * A nested array by category and color-name.
+ */
+
+// the colors-map generates a token for each ex. colors-#{category}-#{color-name}
+// colors-map is used in components/color to generate text and bg color classes.
+$colors-map: (
+  core: (
+    primary: #181831, // todo: remove duplicate 'midnight'
+    luna: #4E4766,
+    violet: #5436CC,
+    promo: #CA2B16,
+    twilight: #1F1A5E, // todo: change from twilight-500
+    dark-navy: #0F0F3A,
+    yellow: #FFCD6F,
+    petal: #FFC3D1,
+    daydream: #FEE5FF, // @todo: change from daydream-light
+    cloud: #D0D9F8,
+    periwinkle: #C4AFFE,
+    lilac: #F0EBFF,
+    sandman: #F8F5EF,
+    white: #FFF,
+  ),
+  utilities: (
+    mist: #C8C7DD,
+    mist-30: #E7E6F7,
+    grey-300: #E0E0E0, // @todo: change from gray-300
+    grey-400: #C0C0C0, // @todo: change from gray-400
+    grey-500: #AEAEAE, // todo: change from gray-500
+    midnight-70: #58566A,
+    midnight-90: #2F2F46,
+    error: #AE0A00,
+    focus: #4B80EC,
+    page-overlay: rgba(0, 0, 0, 0.60),
+  ),
+);
+
+// Background colors for layout builder sections
+// referenced in purple-drupal
+$theme-bg-colors: (
+  "dark-navy": var(--color-brand-dark-navy),
+  "daydream-light": var(--color-brand-daydream-light), // @todo: change to daydream
+  "lilac": var(--color-brand-lilac),
+  "petal": var(--color-brand-petal),
+  "promo": var(--color-brand-promo),
+  "sandman": var(--color-brand-sandman),
+  "violet": var(--color-brand-violet),
+  "white": var(--color-brand-white),
+  "yellow": var(--color-brand-yellow),
+  "light-purple-20": var(--color-brand-light-purple-20), // @todo: do we need? thank you bg on order confirmation
+);
