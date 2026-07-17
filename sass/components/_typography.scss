@@ -275,7 +275,7 @@ sup {
     margin-bottom: 0;
   }
 
-  // Inline CTAs
+  // Inline text links - don't target <a> tags inside embedded .paragraphs.
   a:not(.paragraph a) {
     @include link(primary, sm, medium);
     font-size: inherit;
