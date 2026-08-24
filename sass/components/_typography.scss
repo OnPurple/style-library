@@ -405,6 +405,13 @@ sup {
   }
 }
 
+.mobile-text-display-indented {
+  @include breakpoint-max(md) {
+    display: block;
+    margin-left: 1.5rem;
+  }
+}
+
 // Creates a class for each combination in $typography map
 // .text-heading-lg
 // .text-display-xl
